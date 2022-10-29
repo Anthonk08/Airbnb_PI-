@@ -1,0 +1,13 @@
+*.log
+bash.exe.stackdump
+Log.txt
+mail_temp
+*.pdf
+captura.png
+*.xlsx
+node_modules
+temp
+sys_temp
+.idea
+.vscode
+changes_log.txt
