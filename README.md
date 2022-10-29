@@ -9,9 +9,13 @@
 * Alejandro Perez 1-19-1872
 * Anthony Tineo Cabreja 1-19-0423
 
+## **Configuración IDE Recomendada**
 
+* Nodejs
 
-
-
-
+## **Tecnologías Utilizadas**
+* Javascript
+* Bootstrap 4
+* Html
+* Css
 
