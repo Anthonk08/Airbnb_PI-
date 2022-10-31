@@ -1,8 +1,8 @@
 module.exports = {
     dbConecction :{
-        host: "localhost", // DEV: american-tele.dev.doing.fr, PROD: amf-srv.doing.fr
+        host: "localhost",
         user: "root",
-        password: "",
+        password: "1234",
         database: "airbnb",
         dateStrings: true,
     }

@@ -1,12 +1,11 @@
-const crypto = require("crypto");
+// const crypto = require("crypto");
 
 const logService = require("../services/log");
 const mysqlService = require("../services/mysql");
-const funciones_node = require("../funciones_node");
 const config = require("../config");
 
 
-const logout = (req, val) => {
+const logOut = (req, val) => {
 
     // Datos de acceso
 
@@ -22,9 +21,8 @@ const logout = (req, val) => {
 
 };
 
-
 const loadIndex = (req, res) => {
-    logService.info("Estado de la sesion: " + req.pointpost.state);
+    logService.info("Estado de la sesion: " + req.state);
 
     // Al acceder a la ruta raiz:
 
@@ -81,8 +79,8 @@ const loadIndex = (req, res) => {
                 break;
         }
 
-        logout(req, undefined);
-
+        logOut(req, undefined);
+        mysqlService.getUserInfo('joshue_10@hotmail.es');
         res.render("index", {
             login_val: mensajeError,
             sessionError,
@@ -91,7 +89,6 @@ const loadIndex = (req, res) => {
     }
 
 }
-
 
 // POST
 const logIn = async (req, res) => {
@@ -159,16 +156,8 @@ const logIn = async (req, res) => {
     res.redirect("/dashboard");
 }
 
-
-// Vaciando el cookie de sesión.
-const salir = (req, res) => {
-    logout(req, undefined);
-    res.redirect("/");
-}
-
 module.exports = {
     loadIndex,
     logIn,
-    acceder,
-    logout
+    logOut
 }

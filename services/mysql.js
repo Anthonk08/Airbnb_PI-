@@ -103,7 +103,7 @@ const cargarUsuario = (userName) => {
  */
 const getUserInfo = (userName) =>
   new Promise((resolve, reject) => {
-    const query = `select * from user where user_name = ${connection.escape(userName.toUpperCase())} limit 1;`;
+    const query = `select * from user where email = ${connection.escape(userName.toUpperCase())} limit 1;`;
     connection.query(query, (err, rows) => {
       if (err) {
         reject(err);
@@ -208,5 +208,5 @@ module.exports = {
   connection,
   cargarUsuario,
   getUserInfo,
-  updateUser_vs_grupo_accesos,
+  // updateUser_vs_grupo_accesos,
 };

@@ -2,6 +2,9 @@
 const express = require("express");
 const mysql = require("mysql");
 const https = require("https");
+const cookieParser = require("cookie-parser");
+const session = require("client-sessions");
+const logService = require("./services/log");
 
 // Importacion de modulos propios
 const config = require("./config");
@@ -18,11 +21,11 @@ const app = express();
 
 // El view engine que se utilizara para renderizar la pagina web
 
-app.set("view engine", "html");
+app.set("view engine", "ejs");
 
 // Configuración de carpeta estática.
 
-app.use(express.static("public"));
+app.use(express.static(__dirname + '/public'));
 
 // Configuración de body-parser
 

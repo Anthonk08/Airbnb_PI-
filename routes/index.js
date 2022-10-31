@@ -1,12 +1,10 @@
 const router = require("express").Router();
 
 // Controladores
-const ctrlLogin = require("../controllers/login");
+const ctrlLogin = require("../controller/login");
 // rutas de los controladores
-router.get('/', ctrlLogin.vistaLogin); // ruta raiz de todo el proyecto
-router.post('/login', ctrlLogin.acceder);
-router.post('/logout', ctrlLogin.salir);
+router.get('/', ctrlLogin.loadIndex); // ruta raiz de todo el proyecto
+router.post('/login', ctrlLogin.logIn);
+router.post('/logout', ctrlLogin.logOut);
 
-module.exports = {
-    
-}
+module.exports = router;
