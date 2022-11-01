@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="/style/registrarse.css">
+        <!------ Include the above in your HEAD tag ---------->
+
+        
+    </head>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 mx-auto">
+                  <div id="first">
+                     <div class="myform form ">
+                           <div class="logo mb-3">
+                              <div class="col-md-12 text-center">
+                                 <h1 align="center">Registrarse</h1>
+                              </div>
+                           </div>
+                        <form action="" method="post" name="registro">
+                              <div class="form-group">
+                                 <label>Tipo de vivienda</label>
+                                 <input type="text" name="tipo_vivienda"  class="form-control" id="tipo_vivienda" placeholder="Apartamento, Casa, etc.">
+                                 <p></p>
+                              </div>
+                              <div class="form-group">
+                                <label>Que tipo de espacio tendra el huesped</label>
+                                <input type="text" name="tipo_espacio"  class="form-control" id="tipo_espacio" placeholder="Lugar completo, Habitacion">
+                                <p></p>
+                             </div>
+                             <div class="form-group">
+                                <label>Direccion</label>
+                                <input type="text" name="direccion"  class="form-control" id="direccion" placeholder="Lugar completo, Habitacion">
+                                <p></p>
+                             </div>
+                             <div class="form-group">
+                                <label>Cantidad de personas</label>
+                                <input type="number" name="cant_personas"  class="form-control" id="cant_personas" placeholder="1, 2, 3, ...">
+                                <p></p>
+                             </div>
+                             <div class="form-group">
+                                <label>Numero de camas</label>
+                                <input type="number" name="cant_camas"  class="form-control" id="cant_camas" placeholder="1, 2, 3, ...">
+                                <p></p>
+                             </div>
+                             <div class="form-group">
+                                <label>Numero de habitaciones</label>
+                                <input type="number" name="cant_hab"  class="form-control" id="cant_hab" placeholder="1, 2, 3, ...">
+                                <p></p>
+                             </div>
+                             <div class="form-group">
+                                <label>Numero de baños</label>
+                                <input type="number" name="cant_banos"  class="form-control" id="cant_banos" placeholder="1, 1.5, 2, ...">
+                                <p></p>
+                             </div>
+                             <div class="form-group">
+                                <label>Fotos del lugar</label>
+                                <input type="file" id="myFile" name="filename">
+                                <p></p>
+                             </div>
+                             <div class="form-group">
+                                <label>Precio por noche</label>
+                                <input type="number" name="precio"  class="form-control" id="precio" placeholder="$86">
+                                <p></p>
+                             </div>
+
+
+
+
+                              <div class="form-group">
+                                 <input type="checkbox" id="descuento" name="descuentoinicial" value="descuento">
+                                 <label > Ofrecer un 20% de descuento a los 3 primeros huespedes.</label>
+                                 <p></p>
+                              </div>
+                              <div class="col-md-12 text-center ">
+                                 <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Finalizar</button>
+                              </div>
+                        </form>
+                     </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+    </body>
+</html>
