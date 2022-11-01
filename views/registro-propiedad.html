@@ -1,0 +1,145 @@
+<!-- Airbnb clone using Bootstrap 4 and Custom CSS -->
+
+<!-- Bootstrap 4 is the newest version of Bootstrap, which is the most popular HTML, CSS, and JavaScript framework for developing responsive, mobile-first websites.
+
+Bootstrap 4 is completely free to download and use! -->
+
+<!-- What is Bootstrap?  -->
+
+<!-- Bootstrap is a free front-end framework for faster and easier web development.
+
+Bootstrap includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins.
+
+Bootstrap also gives you the ability to easily create responsive designs. -->
+
+<!DOCTYPE html>
+<html>
+
+<!-- The name between <title> tag defines the title of the document. -->
+    <title>Alquiler de alojamientos vacacionales, casas, apartamentos y experiencias</title>
+
+    <!-- Bootstrap 4 is designed to be responsive to mobile devices. Mobile-first styles are part of the core framework.
+
+    To ensure proper rendering and touch zooming, add the following <meta> tag inside the <head> element: -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap link -->
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <!-- Font selection link -->
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- The Styles used has been stored and saved in another file named "style.css" and linked through <link> tag as shown below: -->	
+
+        <link rel="stylesheet" href="/style/home.css">
+        <link rel="shortcut icon" type="image/x-icon" href="/sources/Airbnb icon.ico"/>
+    </head>
+    <body class="background_img">
+
+            <!-- This is to display the Navbar of the website. -->
+
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="collapse navbar-collapse">
+
+                    <!-- SVG for Logo -->
+
+                    <!-- Scalable Vector Graphics (SVG) is an XML-based vector image format for two-dimensional graphics with support for interactivity and animation. The SVG specification is an open standard developed by the World Wide Web Consortium (W3C) since 1999. SVG images and their behaviors are defined in XML text files. -->
+                <a href="/views/home.html"><img src="/sources/Airbnb icon navbar.png" alt="" style="height: 50px; width: 100px;"></a>
+                <!-- End of SVG -->
+                <ul class="navbar-nav d-flex flex-row">
+                    <li class="nav-item"><a class="nav-link" href="/views/home.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#booking">Reservas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#suggestions">Sugerencias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#aboutus">Sobre Nosotros</a></li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    <!-- <li class="btn_flashy" class="nav-item"><a class="nav-link" href="#host">Hazte Anfitri&oacuten</a></li> -->
+                    <li class="btn_flashy" class="nav-item"><a class="nav-link" href="#signup">Registrarse</a></li>
+                    <li class="btn_flashy" class="nav-item"><a class="nav-link" href="#login">Iniciar Sesi&oacuten</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- End of NavBar -->
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 mx-auto">
+                  <div id="first">
+                     <div class="myform form ">
+                           <div class="logo mb-3">
+                              <div class="col-md-12 text-center">
+                                 <h1 align="center">Registrarse</h1>
+                              </div>
+                           </div>
+                        <form action="" method="post" name="registro">
+                              <div class="form-group">
+                                 <label>Tipo de vivienda</label>
+                                 <input type="text" name="tipo_vivienda"  class="form-control" id="tipo_vivienda" placeholder="Apartamento, Casa, etc.">
+                                 <p></p>
+                              </div>
+                              <div class="form-group">
+                                <label>Que tipo de espacio tendra el huesped</label>
+                                <input type="text" name="tipo_espacio"  class="form-control" id="tipo_espacio" placeholder="Lugar completo, Habitacion">
+                                <p></p>
+                             </div>
+                             <div class="form-group">
+                                <label>Direccion</label>
+                                <input type="text" name="direccion"  class="form-control" id="direccion" placeholder="Lugar completo, Habitacion">
+                                <p></p>
+                             </div>
+                             <div class="form-group">
+                                <label>Cantidad de personas</label>
+                                <input type="number" name="cant_personas"  class="form-control" id="cant_personas" placeholder="1, 2, 3, ...">
+                                <p></p>
+                             </div>
+                             <div class="form-group">
+                                <label>Numero de camas</label>
+                                <input type="number" name="cant_camas"  class="form-control" id="cant_camas" placeholder="1, 2, 3, ...">
+                                <p></p>
+                             </div>
+                             <div class="form-group">
+                                <label>Numero de habitaciones</label>
+                                <input type="number" name="cant_hab"  class="form-control" id="cant_hab" placeholder="1, 2, 3, ...">
+                                <p></p>
+                             </div>
+                             <div class="form-group">
+                                <label>Numero de baños</label>
+                                <input type="number" name="cant_banos"  class="form-control" id="cant_banos" placeholder="1, 1.5, 2, ...">
+                                <p></p>
+                             </div>
+                             <div class="form-group">
+                                <label>Fotos del lugar</label>
+                                <input type="file" id="myFile" name="filename">
+                                <p></p>
+                             </div>
+                             <div class="form-group">
+                                <label>Precio por noche</label>
+                                <input type="number" name="precio"  class="form-control" id="precio" placeholder="$86">
+                                <p></p>
+                             </div>
+
+
+
+
+                              <div class="form-group">
+                                 <input type="checkbox" id="descuento" name="descuentoinicial" value="descuento">
+                                 <label > Ofrecer un 20% de descuento a los 3 primeros huespedes.</label>
+                                 <p></p>
+                              </div>
+                              <div class="col-md-12 text-center ">
+                                 <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Finalizar</button>
+                              </div>
+                        </form>
+                     </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+    </body>
+</html>
