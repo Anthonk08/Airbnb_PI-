@@ -81,7 +81,7 @@ const loadIndex = (req, res) => {
 
         logOut(req, undefined);
         mysqlService.getUserInfo('joshue_10@hotmail.es');
-        res.render("index", {
+        res.render("login", {
             login_val: mensajeError,
             sessionError,
         });
@@ -89,6 +89,39 @@ const loadIndex = (req, res) => {
     }
 
 }
+
+const getRegisterEmail = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("register", {
+        
+    });
+}
+
+const getRegisterPhone = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("register-phone", {
+        
+    });
+}
+
 
 // POST
 const logIn = async (req, res) => {
@@ -159,5 +192,7 @@ const logIn = async (req, res) => {
 module.exports = {
     loadIndex,
     logIn,
-    logOut
+    logOut,
+    getRegisterEmail,
+    getRegisterPhone
 }

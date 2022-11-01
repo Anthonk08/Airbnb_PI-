@@ -182,7 +182,7 @@ const getUserInfo = (userName) =>
 
 module.exports = {
   connection,
-  cargarUsuario,
+  // cargarUsuario,
   getUserInfo,
   // updateUser_vs_grupo_accesos,
 };
