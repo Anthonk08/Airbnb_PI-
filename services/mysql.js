@@ -4,30 +4,6 @@ const config = require("../config");
 
 const connection = mysql.createConnection(config.dbConecction);
 
-/**
- * Obtiene la lista de usuarios con el nombre especificado.
- * @param {string} userName Nombre de usuario
- * @returns {Promise} Lista de usuarios
- */
-const cargarUsuario = (userName) => {
-  return new Promise((resolve, reject) => {
-    const query = `select * from user where user_name = ${connection.escape(userName.toUpperCase())}`;
-
-    connection.query(query, (err, rows, fields) => {
-      if (err) {
-        reject(err);
-        return;
-      }
-      if (rows.length > 0) {
-        resolve(rows);
-      } else {
-        reject("No hubo resultados.");
-      }
-    });
-  });
-};
-
-
 // /**
 //  * 
 //  * Obtenemos los permisos de un usuario
