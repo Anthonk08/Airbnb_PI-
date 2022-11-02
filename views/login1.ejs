@@ -4,7 +4,7 @@
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="/style/login.css">
+        <link rel="stylesheet" href="../style/login.css">
         <!------ Include the above in your HEAD tag ---------->
 
         
@@ -14,34 +14,6 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <body>
-        <!-- This is to display the Navbar of the website. -->
-
-				<nav class="navbar navbar-expand-lg navbar-light">
-					<div class="collapse navbar-collapse">
-
-						<!-- SVG for Logo -->
-
-						<!-- Scalable Vector Graphics (SVG) is an XML-based vector image format for two-dimensional graphics with support for interactivity and animation. The SVG specification is an open standard developed by the World Wide Web Consortium (W3C) since 1999. SVG images and their behaviors are defined in XML text files. -->
-					<a href="./home.html"><img src="/sources/Airbnb icon navbar.png" alt="" style="height: 50px; width: 100px;"></a>
-					<!-- End of SVG -->
-					<ul class="navbar-nav d-flex flex-row">
-						<li class="nav-item"><a class="nav-link" href="./home.html">Inicio</a></li>
-						<li class="nav-item"><a class="nav-link" href="#booking">Reservas</a></li>
-						<li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
-						<li class="nav-item"><a class="nav-link" href="#suggestions">Sugerencias</a></li>
-						<li class="nav-item"><a class="nav-link" href="#aboutus">Sobre Nosotros</a></li>
-					</ul>
- 
-					<ul class="navbar-nav ml-auto">
-						<li class="btn_flashy" class="nav-item"><a class="nav-link" href="#host">Hazte Anfitri&oacuten</a></li>
-						<li class="btn_flashy" class="nav-item"><a class="nav-link" href="./registrarse-correo.html">Registrarse</a></li>
-						<li class="btn_flashy" class="nav-item"><a class="nav-link" href="./login.html">Iniciar Sesi&oacuten</a></li>
-					</ul>
-				</div>
-			</nav>
-
-			<!-- End of NavBar -->
-
         <div class="container">
             <div class="row">
                 <div class="col-md-5 mx-auto">
@@ -49,18 +21,17 @@
                         <div class="myform form ">
                             <div class="logo mb-3">
                                 <div class="col-md-12 text-center">
-                                    <h1 class="font_title">Iniciar sesi&oacuten o registrarse</h1>
-                                    <p><strong>Te damos la bienvenida a Airbnb</strong></p>
+                                    <h1>Iniciar sesión</h1>
                                 </div>
                             </div>
                             <form action="" method="post" name="login">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1"><strong>Correo electrónico / Nombre de Usuario</strong></label>
+                                    <label for="exampleInputEmail1">Correo electrónico / Nombre de Usuario</label>
                                     <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Digite correo electrónico o nombre de usuario">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1"><strong>Contraseña</strong></label>
-                                    <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Digite su contraseña">
+                                    <label for="exampleInputEmail1">Contraseña</label>
+                                    <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Digite contraseña">
                                 </div>
                                 <div class="form-group">
                                     <p class="text-center">Al ingresar, acepta nuestros terminos de uso <a href="#">Terms Of Use</a></p>
@@ -71,10 +42,10 @@
                                 <div class="col-md-12 ">
                                     <div class="login-or">
                                         <hr class="hr-or">
-                                        <span class="span-or">o</span>
+                                        <span class="span-or">or</span>
                                     </div>
                                 </div>
-                                    <p class="text-center">¿Tienes una cuenta? <a href="registrarse-numero.html" id="signup">Registrate</a></p>
+                                    <p class="text-center">¿Tienes una cuenta? <a href="/register" id="signup">Registrate</a></p>
                                 </div>
                             </form>
                         </div>

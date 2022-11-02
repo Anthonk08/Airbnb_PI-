@@ -9,6 +9,7 @@ router.post('/login', ctrlLogin.logIn);
 router.post('/logout', ctrlLogin.logOut);
 router.get('/register', ctrlLogin.getRegisterEmail);
 router.get('/register-phone', ctrlLogin.getRegisterPhone);
+router.get('/register-property', ctrlLogin.getRegisterProperty);
 
 router.get('/home', ctrlHome.home);
 
