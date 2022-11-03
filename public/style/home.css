@@ -2,6 +2,7 @@
 
 /* Element Selector */
 .background_img{
+	background:#FFFFFF;
 	background-image: url(/sources/wallpapers/image8.jpg);
 	background-repeat: no-repeat;
 	background-size: 100vw 100vh;
@@ -19,7 +20,7 @@
 }
 
 .navbar.navbar-expand-lg.navbar-light li a:hover {
-	color: rgb(255, 255, 255);
+	color: rgba(255, 255, 255, 0.618);
 }
 
 .checked {
@@ -33,9 +34,13 @@
 }
 
 .btn_flashy {
-	background-color: #F91942;
+	background-color: #FF5A5F;
 	border-radius: 15px;
 	margin: 5px;
+}
+
+.change_line {
+	border: 0.5px solid #FF5A5F;
 }
 
 .container li a {
