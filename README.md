@@ -35,3 +35,9 @@ ___
 npm install
 ~~~
 
+## **Iniciar APP**
+
+___
+~~~
+npm start
+~~~
