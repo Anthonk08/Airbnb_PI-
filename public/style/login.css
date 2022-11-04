@@ -119,3 +119,29 @@ form .error {
 .btn.btn-outline-primary.rounded.nohover {
 	pointer-events: none;
 }
+
+.navbar_move {
+	position: relative;
+	right: 125px;
+}
+
+.menu_property {
+	background-color: #FF5A5F;
+	border-radius: 15px;
+	margin: 5px;
+}
+
+.dropdown_father {
+	background-color: #FF5A5F !important;
+}
+
+.dropdown_children {
+	color: white !important;
+	border-radius: 15px !important;
+	margin: 5px !important;
+	width: auto !important;
+}
+
+.dropdown_children:hover{
+	background-color: #FF5A5F !important;
+}
