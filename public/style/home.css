@@ -57,3 +57,29 @@
 	font-size: 12px;
 	padding: 1px 4px;
 }
+
+.navbar_move {
+	position: relative;
+	right: 125px;
+}
+
+.menu_property {
+	background-color: #FF5A5F;
+	border-radius: 15px;
+	margin: 5px;
+}
+
+.dropdown_father {
+	background-color: #FF5A5F;
+}
+
+.dropdown_children {
+	color: white;
+	border-radius: 15px;
+	margin: 5px;
+	width: auto;
+}
+
+.dropdown_children:hover{
+	background-color: #FF5A5F;
+}
