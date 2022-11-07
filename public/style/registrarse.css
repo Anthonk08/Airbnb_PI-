@@ -12,6 +12,7 @@ a{
    text-decoration:none !important;
 }
 
+
 .myform{
    position: relative;
    display: -ms-flexbox;
@@ -173,3 +174,4 @@ form .error {
 .btn.btn-outline-primary.rounded.nohover {
    pointer-events: none;
 }
+

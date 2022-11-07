@@ -44,6 +44,8 @@ app.use(
     resave: true,
   }));
 
+
+
   // Configuracion de rutas.
 
 app.use("/", indexRouter);
@@ -53,11 +55,13 @@ connect.connect(error => error ? logService.error("❌ Error conexion airbnb. ER
 // Manejadores de URls no disponibles.
 
 app.get("*", async function (req, res) {
-    res.status(404).render("view_error_404");
+    
+    res.redirect('/home');
 });
   
 app.post("*", function (req, res) {
-    res.status(404).render("view_error_404");
+    
+    res.redirect('/home');
 });
 
 // Inicio del servicio en desarrollo.

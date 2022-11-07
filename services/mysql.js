@@ -4,6 +4,22 @@ const config = require("../config");
 
 const connection = mysql.createConnection(config.dbConecction);
 
+
+const localQuery = (query) => new Promise((resolve, reject) => {
+  connection.query(query, (err, rows) => {
+      if (err) {
+          reject(err);
+          return;
+      }
+      if (rows.length == 0) {
+          reject("Dato no encontrado.");
+          return;
+      }
+
+      resolve(rows);
+  });
+});
+
 // /**
 //  * 
 //  * Obtenemos los permisos de un usuario
@@ -94,8 +110,76 @@ const getUserInfo = (userName) =>
     });
   });
 
+/**
+ * Registra el usuario como cliente
+ * @param {string} email 
+ * @param {string} name 
+ * @param {string} lastName 
+ * @param {string} pass 
+ * @returns 
+ */
+ const registerUser = (email,name,lastName,pass) =>
+   new Promise((resolve, reject) => {
+    const query = `insert into user (email,name,lastname,pass) values (${email},${name},${lastName},${pass})`;
+    connection.query(query, (err, rows) => { 
+      if (err) {
+        reject(err);
+        return;
+      }
 
+      try {
+        resolve(rows[0]);
+      } catch (ex) {
+        reject(ex.message);
+      }
+   });
+ });
 
+ const registerUserProperty = (id_user,address,address2,id_city,price,itbis,rooms,adults,kids,geo) =>
+  new Promise((resolve, reject) => {
+  
+    if(address2==undefined) address2='';
+
+    // si el itbis no es seleccionado, su valor sera false
+    if(itbis==undefined) itbis=0;
+
+    const query = `insert into property (id_user,address,address2,id_city,price,itbis,rooms,adults,kids,geo) values 
+    (${id_user},${address},${address2},${id_city},${price},${itbis},${rooms},${adults},${kids},${geo})`;
+
+    connection.query(query, (err, rows) => { 
+      if (err) {
+        reject(err);
+        return;
+      }
+
+      try {
+        resolve(rows[0]);
+      } catch (ex) {
+        reject(ex.message);
+      }
+  });
+ });
+
+/**
+ * Devuelve el listado de las ciudades, actualmente solo [Rep.Dom]
+ * @returns 
+ */
+const getCity = () =>
+new Promise((resolve, reject) => {
+  const query = `select * from city;`;
+  connection.query(query, (err, rows) => {
+    if (err) {
+      reject(err);
+      return;
+    }
+
+    try {
+      resolve(rows[0]);
+    } catch (ex) {
+      reject(ex.message);
+    }
+  });
+});
 
 
 /**
@@ -183,6 +267,9 @@ const getUserInfo = (userName) =>
 module.exports = {
   connection,
   // cargarUsuario,
-  getUserInfo,
   // updateUser_vs_grupo_accesos,
+  getUserInfo,
+  registerUser,
+  registerUserProperty,
+  getCity
 };

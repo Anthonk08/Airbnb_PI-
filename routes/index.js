@@ -1,16 +1,21 @@
 const router = require("express").Router();
-
 // Controladores
 const ctrlHome = require("../controller/home");
 const ctrlLogin = require("../controller/login");
-// rutas de los controladores
-router.get('/', ctrlLogin.loadIndex); // ruta raiz de todo el proyecto
-router.post('/login', ctrlLogin.logIn);
-router.post('/logout', ctrlLogin.logOut);
-router.get('/register', ctrlLogin.getRegisterEmail);
-router.get('/register-phone', ctrlLogin.getRegisterPhone);
-router.get('/register-property', ctrlLogin.getRegisterProperty);
+const ctrlRegister = require("../controller/register");
 
-router.get('/home', ctrlHome.home);
+// rutas de los controladores
+router.get('/home', ctrlHome.loadIndex); // ruta raiz de todo el proyecto
+router.post('/logout', ctrlHome.setVariables);
+
+//CONTROLES DEL LOGIN
+router.post('/login', ctrlLogin.logIn);
+router.get('/login', ctrlLogin.getLogIn);
+
+//CONTROLES DE REGISTROS
+router.post('/register', ctrlRegister.registerPost);
+router.get('/register', ctrlRegister.getRegisterEmail);
+router.get('/register-phone', ctrlRegister.getRegisterPhone);
+router.get('/register-property', ctrlRegister.getRegisterProperty);
 
 module.exports = router;
