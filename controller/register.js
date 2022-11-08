@@ -5,51 +5,59 @@ const config = require("../config");
 const geolocation = require("geolocation");
 
 //POST---------------
-const registerPost = async (req, res) => {
+const registerUser = async (req, res) => {
     const {email,name,lastname,pass} = req.body;
 
+    // VALIDACIONES DE CAMPOS
     if(email!=undefined || email==''){
         req.sessionError = 'Debe digitar un correo';
         res.redirect('/register',{
-            sessionError
+            sessionError:req.sessionError
         });
     }
+
     if(name!=undefined || name==''){
         req.sessionError = 'Debe digitar su nombre';
         res.redirect('/register',{
-            sessionError
+            sessionError:req.sessionError
         });
     }
+
     if(lastname!=undefined || lastname==''){
         req.sessionError = 'Debe digitar su apellido';
         res.redirect('/register',{
-            sessionError
+            sessionError:req.sessionError
         });
     }
+
     if(pass!=undefined || pass==''){
         req.sessionError = 'Debe digitar una contrasña';
         res.redirect('/register',{
-            sessionError
+            sessionError:req.sessionError
         });
     }else if(pass.length<8){
         req.sessionError = 'La contraseña debe tener mas de 8 caracteres';
         res.redirect('/register',{
-            sessionError
+            sessionError:req.sessionError
         });
     }
+
+    // SE PORCEDE A REGISTRAR AL USUARIO
     try {
         await mysqlService.registerUser(email,name,lastname,pass);
     } catch (error) {
         req.sessionError = 'Error al procesar el registro, intentelo mas tarde.';
         console.error('ERROR: ',error);
         res.redirect('/register',{
-            sessionError
+            sessionError:req.sessionError
         });
     }
+    // Si el registro fue exitoso, redirect a la pantalla de registro y mostrar al usuario que se ha registrado
     req.sessionSucces = true;
-    res.render("register", {
+    res.redirect('/register',{
         sessionSuccess:req.sessionSuccess
     });
+
 }
 const registerPropertyPost = async (req, res) => {
     // Si el usuario no tiene una session activa, sera devuelto a la pantalla principal
@@ -120,12 +128,12 @@ const registerPropertyPost = async (req, res) => {
         });
     }
     try {
-        await mysqlService.registerUser(email,name,lastname,pass);
+        await mysqlService.registerUserProperty(req.user_id,address,address2,id_city,price,itbis,rooms,adults,kids,currentPosition);
     } catch (error) {
         req.sessionError = 'Error al procesar el registro, intentelo mas tarde.';
         console.error('ERROR: ',error);
         res.redirect('/register',{
-            sessionError
+            sessionError:req.sessionError
         });
     }
 
@@ -134,7 +142,6 @@ const registerPropertyPost = async (req, res) => {
         sessionSuccess:req.sessionSuccess
     });
 }
-
 
 //GET---------------
 const getRegisterEmail = (req, res) => {
@@ -186,7 +193,7 @@ const getRegisterProperty = (req, res) => {
 }
 
 module.exports={
-    registerPost,
+    registerUser,
     getRegisterEmail,
     getRegisterPhone,
     getRegisterProperty,

@@ -1,27 +1,8 @@
 const logService = require("../services/log");
 const mysqlService = require("../services/mysql");
-const config = require("../config");
+// const config = require("../config");
 
-const loadIndex = (req, res) => {
-    logService.info("Estado de la sesion: " + req.state);
-
-    // Al acceder a la ruta raiz:
-
-    // Si el estado es [done] el usuario ya inicio sesion correctamente por lo que se envia al dashboard
-
-    if (req.state == "done") {
-        logService.info("Estado del usuario: done");
-        res.redirect("/");
-        return;
-    }
-
-    // Si el estado es [password] el usuario ha ingresado una contrasena incorrecta
-
-    // Si el estado es [nouser] el usuario no ha sido encontrado en la base de datos
-
-    // Si el estado esta [invalid]  ha ocurrido un error fatal
-
-    // Si el estado esta [undefined] se inicializan las variables de sesion y se renderiza el index
+const loadIndex = async(req, res) => {
 
     if (req.state == "password" || req.state == "nouser" || req.state == "invalid" || req.state == undefined || req.state == "") {
 
@@ -60,15 +41,22 @@ const loadIndex = (req, res) => {
                 break;
         }
 
-        homeCtrl.setVariables(req, undefined);
-        mysqlService.getUserInfo('joshue_10@hotmail.es');
-        res.render("home", {
-            login_val: mensajeError,
-            sessionError,
-        });
+        try {
+            homeCtrl.setVariables(req, undefined);
+            var user = await mysqlService.getUserInfo('joshue_10@hotmail.es');
+            var allProperty = await mysqlService.getAllProperties();
 
+            res.render("home", {
+                user,
+                allProperty
+            });
+        } catch (error) {
+            res.render("home", {
+                login_val: mensajeError,
+                sessionError,
+            });
+        }
     }
-
 }
 
 
