@@ -21,6 +21,76 @@ const getLoginView = (req, res) => {
     });
 }
 
+const getMessagesGuest = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("messages-guest", {});
+}
+
+const getFavoritesGuest = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("favorites-guest", {});
+}
+
+const getNotificationGuest = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("notification-guest", {});
+}
+
+const getAccount = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("account", {});
+}
+
+const getHelp = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("help", {});
+}
+
 // POST
 const logIn = async (req, res) => {
 
@@ -103,5 +173,13 @@ const logIn = async (req, res) => {
 
 module.exports = {
     logIn,
-    getLoginView
+    logOut,
+    getRegisterEmail,
+    getRegisterPhone,
+    getRegisterProperty,
+    getMessagesGuest,
+    getFavoritesGuest,
+    getNotificationGuest,
+    getAccount,
+    getHelp
 }

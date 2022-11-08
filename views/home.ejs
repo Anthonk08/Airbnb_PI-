@@ -65,13 +65,24 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
 						<li class="nav-item btn_flashy"><a class="nav-link" href="#host">Hazte Anfitri&oacuten</a></li>
 						
 						<li class="nav-item dropdown">
-							<a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								<span class="material-symbols-outlined menu_property fa-1x">menu</span>
+							<a class="nav-link menu_property" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<span class="material-symbols-outlined setting-menu">menu</span>
+								<img class="rounded-circle" src="/sources/person-icon.png" alt="" style="width: 40px; height: 40px;">
 							</a>
 	
 							<ul class="dropdown-menu dropdown_father">
 								<li><a class="dropdown-item dropdown_children" href="./">Iniciar Sesi&oacuten</a></li>
 								<li><a class="dropdown-item dropdown_children" href="./register">Registrarse</a></li>
+								<hr class="change_line_navbar">
+								<li><a class="dropdown-item dropdown_children" href="/messages-guest">Mensajes</a></li>
+								<li><a class="dropdown-item dropdown_children" href="/notification-guest">Notificaciones</a></li>
+								<li><a class="dropdown-item dropdown_children" href="/favorites-guest">Lista de Favoritos</a></li>
+								<hr class="change_line_navbar">
+								<li><a class="dropdown-item dropdown_children" href="#host">Recibe hu&eacutespedes</a></li>
+								<li><a class="dropdown-item dropdown_children" href="/account">Cuenta</a></li>
+								<hr class="change_line_navbar">
+								<li><a class="dropdown-item dropdown_children" href="/help">Ayuda</a></li>
+								<li><a class="dropdown-item dropdown_children" href="#">Cerrar Sesi&oacuten</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -289,7 +300,7 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
 					<section>
 						<h6 style="margin-left: 40px;">Airbnb</h6>
 						<ul style="list-style: none;">
-							<li><a href="#">Ayuda</a></li>
+							<li><a href="/help">Ayuda</a></li>
 							<li><a href="#">Pol&iacuteticas</a></li>
 							<li><a href="#">T&eacuterminos</a></li>
 							<li><a href="#">Privacidad</a></li>

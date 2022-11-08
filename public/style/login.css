@@ -109,7 +109,7 @@ form .error {
 .btn_flashy {
 	background-color: #FF5A5F;
 	border-radius: 15px;
-	margin: 5px;
+	margin: auto;
 }
 
 .container li a {
@@ -144,4 +144,13 @@ form .error {
 
 .dropdown_children:hover{
 	background-color: #FF5A5F !important;
+}
+
+.setting-menu {
+	position: relative;
+	bottom: -8px;
+}
+
+.change_line_navbar {
+	border: 0.2px solid #000000;
 }
