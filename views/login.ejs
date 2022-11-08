@@ -7,6 +7,7 @@
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <link rel="stylesheet" href="/style/login.css">
 
         <!-- Bootstrap link -->
@@ -44,7 +45,6 @@
 
 					<ul class="navbar-nav ml-auto navbar_move">
 						<li class="nav-item btn_flashy"><a class="nav-link" href="#host">Hazte Anfitri&oacuten</a></li>
-						
 						<li class="nav-item dropdown">
 							<a class="nav-link menu_property" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								<span class="material-symbols-outlined setting-menu">menu</span>
@@ -78,7 +78,7 @@
                                     <p><strong>Te damos la bienvenida a Airbnb</strong></p>
                                 </div>
                             </div>
-                            <form action="" method="post" name="login">
+                            <form action="/login" method="post" name="login">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1"><strong>Correo electrónico / Nombre de Usuario</strong></label>
                                     <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Digite correo electrónico o nombre de usuario">
@@ -91,7 +91,9 @@
                                     <p class="text-center">Al ingresar, acepta nuestros terminos de uso <a href="#">Terms Of Use</a></p>
                                 </div>
                                 <div class="col-md-12 text-center ">
-                                    <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Entrar</button>
+                                    <button type="button" class=" btn btn-block mybtn btn-primary tx-tfm">Entrar</button>
+                                    
+                                   
                                 </div>
                                 <div class="col-md-12 ">
                                     <div class="login-or">
@@ -106,6 +108,10 @@
                     </div>
                 </div>
             </div>
-          </div>
+        </div>
+
+        <!--Modal view-->
+       
+       
     </body>
 </html>

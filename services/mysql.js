@@ -4,73 +4,21 @@ const config = require("../config");
 
 const connection = mysql.createConnection(config.dbConecction);
 
-// /**
-//  * 
-//  * Obtenemos los permisos de un usuario
-//  * 
-//  * @param {*} user_name nombre del usuario
-//  * @returns 
-//  */
-// const cargarPermisosUsuario = (user_name) => new Promise((resolve, reject) => {
-//   const query = `SELECT
-//     u.user_id,
-//     u.user_name,
-//     ga.nombre_grupo_acceso,
-//     p.id_permiso,
-//     p.nombre_permiso,
-//     a.nombre_area
-//   FROM 
-//     user u
-//   INNER JOIN 
-//     user_vs_grupo_accesos uvga ON u.user_id = uvga.user_id
-//   INNER JOIN 
-//     grupo_accesos ga ON uvga.id_grupo_acceso = ga.id_grupo_acceso  
-//   INNER JOIN
-//     grupo_accesos_vs_permisos gavp ON ga.id_grupo_acceso = gavp.id_grupo_acceso
-//   INNER JOIN
-//     permisos p ON gavp.id_permiso = p.id_permiso 
-//   INNER JOIN 
-//     areas a ON p.id_permiso = a.id_area
-//   WHERE
-//     u.user_name  = ${connection.escape(user_name)};`;
 
-//   connection.query(query, (err, rows, fields) => {
-//     if (err) {
-//       reject(err);
-//       return;
-//     }
-//     if (rows.length > 0) {
-//       resolve(rows);
-//     } else {
-//       reject("No hubo resultados.");
-//     }
-//   });
-// });
+const localQuery = (query) => new Promise((resolve, reject) => {
+  connection.query(query, (err, rows) => {
+      if (err) {
+          reject(err);
+          return;
+      }
+      if (rows.length == 0) {
+          reject("Dato no encontrado.");
+          return;
+      }
 
-// /**
-//  * 
-//  * Obtenemos todos los permisos
-//  * 
-//  * @param {*} user_name nombre del usuario
-//  * @returns 
-//  */
-// const cargarListaPermisos = () => new Promise((resolve, reject) => {
-//   const query = `SELECT * FROM permisos;`;
-
-//   connection.query(query, (err, rows, fields) => {
-//     if (err) {
-//       reject(err);
-//       return;
-//     }
-//     if (rows.length > 0) {
-//       resolve(rows);
-//     } else {
-//       reject("No hubo resultados.");
-//     }
-//   });
-// });
-
-
+      resolve(rows);
+  });
+});
 
 /**
  * Obtiene la información del usuario especificado.
@@ -94,95 +42,193 @@ const getUserInfo = (userName) =>
     });
   });
 
+/**
+ * Registra el usuario como cliente
+ * @param {string} email 
+ * @param {string} name 
+ * @param {string} lastName 
+ * @param {string} pass 
+ * @returns 
+ */
+ const createUser = (email,name,lastName,pass) =>
+   new Promise((resolve, reject) => {
+    const query = `insert into user (email,name,lastname,pass) values (${email},${name},${lastName},${pass})`;
+    connection.query(query, (err, rows) => { 
+      if (err) {
+        reject(err);
+        return;
+      }
 
+      try {
+        resolve(rows[0]);
+      } catch (ex) {
+        reject(ex.message);
+      }
+   });
+ });
 
+ const registerUserProperty = (id_user,address,address2,id_city,price,itbis,rooms,adults,kids,geo) =>
+  new Promise((resolve, reject) => {
+  
+    if(address2==undefined) address2='';
 
+    // si el itbis no es seleccionado, su valor sera false
+    if(itbis==undefined) itbis=0;
+
+    const query = `insert into property (id_user,address,address2,id_city,price,itbis,rooms,adults,kids,geo) values 
+    (${id_user},${address},${address2},${id_city},${price},${itbis},${rooms},${adults},${kids},${geo})`;
+
+    connection.query(query, (err, rows) => { 
+      if (err) {
+        reject(err);
+        return;
+      }
+
+      try {
+        resolve(rows[0]);
+      } catch (ex) {
+        reject(ex.message);
+      }
+  });
+ });
 
 /**
- * registra la relacion mucho vs mucho entre company y receipt_type
- * 
- * @param {*} idUser id de la empresa en la tabla company
- * @param {*} gruposAccesosCheck array de los id de los gurpos de acceso en la tabla grupo_accesos
- * @returns {Promise} retorna una promesa con un mensaje de estado
+ * Devuelve el listado de las ciudades, actualmente solo [Rep.Dom]
+ * @returns 
  */
-// const updateUser_vs_grupo_accesos = async (idUser, gruposAccesosCheck) => {
+const getCity = () =>
+new Promise((resolve, reject) => {
+  const query = `select * from city;`;
+  connection.query(query, (err, rows) => {
+    if (err) {
+      reject(err);
+      return;
+    }
 
-//   // Antes de actualizar o insertar eliminamos los registros que tengan este idUser
-//   // en la tabla user_vs_grupo_accesos.
-//   try {
-//     await deleteUser_vs_grupo_accesos(idUser);
-//   } catch (err) {
-//     throw new Error(err.message);
-//   }
-
-//   // Si gruposAccesosCheck no trae valores se omite el registro.
-//   if (gruposAccesosCheck === undefined || gruposAccesosCheck === null || gruposAccesosCheck === '')
-//     return;
-
-//   // Se realiza el registro de las relaciones
-//   for (let i = 0; i < gruposAccesosCheck.length; i++) {
-
-//     let query = `CALL updateUser_vs_grupo_accesos(${idUser}, ${gruposAccesosCheck[i]})`;
-//     try {
-//       await localQuery(query);
-//     } catch (err) {
-//       throw new Error(err.message);
-//     }
-
-//   }
-
-// }
-
-/*ADMINISTRADOR*/
+    try {
+      resolve(rows[0]);
+    } catch (ex) {
+      reject(ex.message);
+    }
+  });
+});
 
 /**
- * Actualiza informacion de usuario.
- * @param {*} user_id
- * @param {*} user_name
- * @param {*} user_password
- * @param {*} user_email
- * @param {*} user_phone
- * @returns
+ * Devuelve el historial de las reservaciones de un usuario
+ * @returns 
  */
-// function updateUser(
-//   user_id,
-//   user_name,
-//   user_password,
-//   user_email
-// ) {
-//   return new Promise(function (resolve, reject) {
-//     var newPassword = "";
+ const getRentalHistory = (idUser) =>
+ new Promise((resolve, reject) => {
+   const query = `select * from rental r inner join payment p on r.id = p.id_rental where r.id_user = ${idUser}`;
+   connection.query(query, (err, rows) => {
+     if (err) {
+       reject(err);
+       return;
+     }
+ 
+     try {
+       resolve(rows[0]);
+     } catch (ex) {
+       reject(ex.message);
+     }
+   });
+ });
+ 
+/**
+ * Devuelve la informacion de las propiedades de un usuario.
+ * @returns 
+ */
+ const getPropertyInfo = (idUser) =>
+ new Promise((resolve, reject) => {
+   const query = `select * from property where id_user = ${idUser};`;
+   connection.query(query, (err, rows) => {
+     if (err) {
+       reject(err);
+       return;
+     }
+ 
+     try {
+       resolve(rows[0]);
+     } catch (ex) {
+       reject(ex.message);
+     }
+   });
+ });
 
-//     // if (user_password !== "" && user_password !== undefined) {
-//     //   newPassword = crypto.createHash("sha256").update(user_password).digest("hex");
-//     // }
+/**
+ * Devuelve la informacion de todas las propiedads en orden descendiente.
+ * @returns 
+ */
+ const getAllProperties = () =>
+ new Promise((resolve, reject) => {
+   const query = `select * from property where state = 1 order by id desc;`;
+   connection.query(query, (err, rows) => {
+     if (err) {
+       reject(err);
+       return;
+     }
+ 
+     try {
+       resolve(rows[0]);
+     } catch (ex) {
+       reject(ex.message);
+     }
+   });
+ });
 
-//     let query = `call updateUser(${user_id},'${user_name}','${newPassword}','${user_email}','${user_phone}',${point_amount});`;
+ /**
+ * Devuelve el listado de las ciudades, actualmente solo [Rep.Dom]
+ * @returns 
+ */
+  const getPropertyHistory = (idProperty) =>
+  new Promise((resolve, reject) => {
+    const query = `select * from rental where id_property = ${idProperty};`;
+    connection.query(query, (err, rows) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+  
+      try {
+        resolve(rows[0]);
+      } catch (ex) {
+        reject(ex.message);
+      }
+    });
+  });
 
-//     connection.query(query, function (error, rows) {
-//       if (error) {
-//         reject(error);
-//         return;
-//       }
+ /**
+ * Devuelve el historial de pagos de un usuario
+ * @returns 
+ */
+  const getPaymentHistory = (idUser) =>
+  new Promise((resolve, reject) => {
+    const query = `select p.*, r.id_property, r.rental_date ,r.return_date  from payment p INNER JOIN rental r on p.id_rental =r.id where p.id_user =${idUser};`;
+    connection.query(query, (err, rows) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+  
+      try {
+        resolve(rows[0]);
+      } catch (ex) {
+        reject(ex.message);
+      }
+    });
+  });
 
-//       let response = null;
-
-//       try {
-//         response = rows[0][0];
-//       } catch (ex) {
-//         reject(ex.message);
-//         return;
-//       }
-
-//       resolve(response);
-//     });
-//   });
-// }
 
 
 module.exports = {
   connection,
-  // cargarUsuario,
   getUserInfo,
-  // updateUser_vs_grupo_accesos,
+  createUser,
+  registerUserProperty,
+  getRentalHistory,
+  getPropertyHistory,
+  getPropertyInfo,
+  getPaymentHistory,
+  getAllProperties,
+  getCity
 };

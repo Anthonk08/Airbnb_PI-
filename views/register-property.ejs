@@ -16,7 +16,7 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
 <html>
 
 <!-- The name between <title> tag defines the title of the document. -->
-    <title>Alquiler de alojamientos vacacionales, casas, apartamentos y experiencias</title>
+    <title>Registro de propiedad</title>
 
     <!-- Bootstrap 4 is designed to be responsive to mobile devices. Mobile-first styles are part of the core framework.
 
@@ -34,7 +34,7 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
 
         <!-- The Styles used has been stored and saved in another file named "style.css" and linked through <link> tag as shown below: -->	
 
-        <link rel="stylesheet" href="/style/home.css">
+        <link rel="stylesheet" href="/style/register-property.css">
         <link rel="shortcut icon" type="image/x-icon" href="/sources/Airbnb icon.ico"/>
     </head>
     <body class="background_img">
@@ -50,7 +50,7 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
                 <a href="/views/home.html"><img src="/sources/Airbnb icon navbar.png" alt="" style="height: 50px; width: 100px;"></a>
                 <!-- End of SVG -->
                 <ul class="navbar-nav d-flex flex-row">
-                    <li class="nav-item"><a class="nav-link" href="/views/home.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./home">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#booking">Reservas</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link" href="#suggestions">Sugerencias</a></li>
@@ -59,8 +59,7 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
 
                 <ul class="navbar-nav ml-auto">
                     <!-- <li class="btn_flashy" class="nav-item"><a class="nav-link" href="#host">Hazte Anfitri&oacuten</a></li> -->
-                    <li class="btn_flashy" class="nav-item"><a class="nav-link" href="#signup">Registrarse</a></li>
-                    <li class="btn_flashy" class="nav-item"><a class="nav-link" href="#login">Iniciar Sesi&oacuten</a></li>
+                    <li class="btn_flashy" class="nav-item"><a class="nav-link" href="./my-profile">Mi Perfil</a></li>
                 </ul>
             </div>
         </nav>
@@ -71,7 +70,7 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
             <div class="row">
                 <div class="col-md-5 mx-auto">
                   <div id="first">
-                     <div class="myform form ">
+                     <div class="myform form">
                            <div class="logo mb-3">
                               <div class="col-md-12 text-center">
                                  <h1 align="center">Registrarse</h1>
@@ -88,11 +87,15 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
                                 <input type="text" name="tipo_espacio"  class="form-control" id="tipo_espacio" placeholder="Lugar completo, Habitacion">
                                 <p></p>
                              </div>
+
                              <div class="form-group">
                                 <label>Direccion</label>
-                                <input type="text" name="direccion"  class="form-control" id="direccion" placeholder="Lugar completo, Habitacion">
+                                <!--<input type="text" class="form-control" id="search_input" placeholder="Escribe tu direccion"/>
+                                <p></p>-->
+                                <div id="map"></div>
                                 <p></p>
                              </div>
+
                              <div class="form-group">
                                 <label>Cantidad de personas</label>
                                 <input type="number" name="cant_personas"  class="form-control" id="cant_personas" placeholder="1, 2, 3, ...">
@@ -123,15 +126,11 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
                                 <input type="number" name="precio"  class="form-control" id="precio" placeholder="$86">
                                 <p></p>
                              </div>
-
-
-
-
-                              <div class="form-group">
+                              <!--<div class="form-group">
                                  <input type="checkbox" id="descuento" name="descuentoinicial" value="descuento">
                                  <label > Ofrecer un 20% de descuento a los 3 primeros huespedes.</label>
                                  <p></p>
-                              </div>
+                              </div>-->
                               <div class="col-md-12 text-center ">
                                  <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Finalizar</button>
                               </div>
@@ -142,4 +141,44 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
             </div>
           </div>
     </body>
+
+    <style>
+      #map{
+         height:400px;
+         width:100%;
+      }
+    </style>
+
+    <!--<script>
+      var searchInput = 'search_input';
+
+      $(document).ready(function() {
+         var autocomplete;
+         autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+            types: ['geocode'],
+         })
+
+         google.maps.event.addListener(autocomplete, 'placed_changed', function() {
+            var near_place = autocomplete.getPlace();
+         })
+      })
+
+    </script>-->
+    
+   
+    <script>
+      function initMap(){
+         var options = {
+            zoom:8,
+            center:{lat:19.470800,lng:-70.692039}
+         }
+         var map = new google.maps.Map(document.getElementById('map'), options);
+      }
+    </script>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHsslCSYUI-iRV_i5LrAtIu0545GWd7GU&callback=initMap"
+      defer
+    ></script>
+
 </html>
