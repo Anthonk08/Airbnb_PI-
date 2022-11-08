@@ -1,13 +1,11 @@
-/* An external style sheet can be written in any text editor. The file should not contain any html tags. The style sheet file must be saved with a .css extension. */
-
 /* Element Selector */
 .background_img{
 	background:#FFFFFF;
-	background-image: url(/sources/wallpapers/image8.jpg);
 	background-repeat: no-repeat;
 	background-size: 100vw 100vh;
 	margin-top: 10px;
 	margin-bottom: 50px;
+	margin: 0;
 	position: relative;
 }
 
@@ -23,16 +21,6 @@
 	color: rgba(255, 255, 255, 0.618);
 }
 
-.checked {
-    color: rgb(0,132,137)
-}
-
-.btn-primary.btn-lg {
-	background-color: rgb(255,90,95);
-	border-color: rgb(255,90,95);
-	font-size: 16px;
-}
-
 .btn_flashy {
 	background-color: #FF5A5F;
 	border-radius: 15px;
@@ -40,32 +28,16 @@
 }
 
 .change_line {
-	border: 0.5px solid #FF5A5F;
-}
-
-.change_line_navbar {
-	border: 0.2px solid #000000;
-}
-
-
-.container li a {
-	color: #767676;
+	border: 0.5px solid #000000;
 }
 
 .btn.btn-outline-primary.rounded.nohover {
 	pointer-events: none;
 }
 
-.btn.btn-primary.new {
-	background-color: rgb(0, 106, 112);
-	border: none;
-	font-size: 12px;
-	padding: 1px 4px;
-}
-
 .navbar_move {
 	position: relative;
-	right: 125px;
+	right: 90px;
 }
 
 .menu_property {
@@ -94,3 +66,69 @@
 	bottom: -8px;
 }
 
+.container-father {
+	height: auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 5px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.container-father div {
+	padding: 2px;
+}
+
+.content-center {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	width: 70vw;
+}
+
+.title-box_div {
+	margin: 10px;
+	padding: 10px;
+	font-size: 22px;
+}
+
+.position-title {
+	position: relative;
+	text-align: center;
+	margin: 4px;
+	font-size: 40px;
+}
+
+p {
+	font-size: 15px;
+	text-align: justify;
+	width: 650px;
+}
+
+.container li a {
+	color: black;
+}
+
+.btn.btn-primary.new {
+	background-color: rgb(0, 106, 112);
+	border: none;
+	font-size: 12px;
+	padding: 1px 4px;
+}
+
+/*
+	MEDIA QUERY.
+	Son utilizados para una determinada resolucion
+	hacer algo en este caso
+*/
+
+@media (min-height: 801px) {
+	.container-father{
+		min-height: 85vh;
+	}
+}
+
+@media (max-height: 800px) {
+	.container-father{
+		min-height: 610px;
+	}
+}

@@ -10,7 +10,11 @@ router.post('/logout', ctrlLogin.logOut);
 router.get('/register', ctrlLogin.getRegisterEmail);
 router.get('/register-phone', ctrlLogin.getRegisterPhone);
 router.get('/register-property', ctrlLogin.getRegisterProperty);
-//router.get('/panel-guest', ctrlLogin.getPanelGuest); //No me funciono
+router.get('/messages-guest', ctrlLogin.getMessagesGuest);
+router.get('/favorites-guest', ctrlLogin.getFavoritesGuest);
+router.get('/notification-guest', ctrlLogin.getNotificationGuest);
+router.get('/account', ctrlLogin.getAccount);
+router.get('/help', ctrlLogin.getHelp);
 
 router.get('/home', ctrlHome.home);
 
