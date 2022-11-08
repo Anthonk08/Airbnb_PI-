@@ -23,10 +23,52 @@
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
     <body>
+      <div class="container">
+         <!-- Modal -->
+         <div class="modal fade" id="myModal" role="dialog">
+           <div class="modal-dialog">
+             <!-- Modal content-->
+             <div class="modal-content">
+               <form action="/register" method="post" name="register">
+               <div class="modal-header">
+                  <h4 class="modal-title">Registro</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+               </div>
+               <div class="modal-body">
+                  <div class="form-group">
+                     <label for="exampleInputEmail1">Correo eléctronico</label>
+                     <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp">
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputEmail1">Nombre</label>
+                     <input type="text" name="name"  class="form-control"  >
+                  </div>
+
+                  <div class="form-group">
+                     <label for="exampleInputEmail1">Apellido</label>
+                     <input type="text" name="lastname"  class="form-control"  >
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputEmail1">Contraseña</label>
+                     <input type="password" name="pass"  class="form-control"   >
+                  </div>
+
+               </div>
+               <div class="modal-footer">
+                  <button type="submit" class="btn btn-block mybtn btn-primary tx-tfm">Registrarse</button>
+               </div>
+               </form>
+             </div>
+             
+           </div>
+         </div>
+         
+       </div>
          <!-- This is to display the Navbar of the website. -->
 
+<<<<<<< HEAD
 				<nav class="navbar navbar-expand-lg navbar-light">
 					<div class="collapse navbar-collapse">
 
@@ -61,6 +103,17 @@
             <hr class="change_line">
 
 			<!-- End of NavBar -->
+=======
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item btn_flashy"><a class="nav-link" href="#host">Hazte Anfitri&oacuten</a></li>
+                  <li class="nav-item btn_flashy"><a class="nav-link" href="./register">Registrarse</a></li>
+                  <li class="nav-item btn_flashy"><a class="nav-link" href="./login">Iniciar Sesi&oacuten</a></li>
+               </ul>
+            </div>
+      </nav>
+      <hr class="change_line">
+      <!--End navbar-->
+>>>>>>> 23102d3890d5a7edbd65c4d1d15117e569ddf399
 
         <div class="container">
             <div class="row">
@@ -72,16 +125,16 @@
                                  <h1>Reg&iacutestrate</h1>
                               </div>
                            </div>
-                        <form action="" method="post" name="login">
+                        <form action="/register" method="post" name="register">
                               <div class="form-group">
                                  <label for="exampleInputEmail1">Correo eléctronico</label>
-                                 <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Digite correo electrónico">
+                                 <input type="email" name="email"  class="form-control" id="emailHolder" aria-describedby="emailHelp" placeholder="Digite correo electrónico">
                               </div>
                               <div class="form-group">
                                  <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>
                               </div>
                               <div class="col-md-12 text-center ">
-                                 <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Continuar</button>
+                                 <button type="button" id="form" value="true" class=" btn btn-block mybtn btn-primary tx-tfm" data-toggle="modal" data-target="#myModal">Continuar</button>
                               </div>
                               <div class="col-md-12 ">
                                  <div class="login-or">
@@ -123,5 +176,19 @@
                 </div>
             </div>
           </div>
-    </body>
+
+          <!-- Button trigger modal -->
+         <script>
+            $(document).ready(function() {
+               $("#form").click(function(){
+                  $("#email").val($("#emailHolder").val());
+               }); 
+            });
+         </script>
+         <% if(sessionSuccess==true){%>
+            <script>
+               $("#modal-message").modal();
+            </script>
+         <%}%>
+</body>
 </html>
