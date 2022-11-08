@@ -5,7 +5,7 @@ const mysqlService = require("../services/mysql");
 const config = require("../config");
 const homeCtrl = require("../controller/home");
 
-const getLogIn = (req, res) => {
+const getLoginView = (req, res) => {
     logService.info("Estado de la sesion: " + req.state);
 
     // Al acceder a la ruta raiz:
@@ -103,9 +103,5 @@ const logIn = async (req, res) => {
 
 module.exports = {
     logIn,
-    getLogIn,
-    loadIndex,
-    getRegisterEmail,
-    getRegisterPhone,
-    getRegisterProperty
+    getLoginView
 }
