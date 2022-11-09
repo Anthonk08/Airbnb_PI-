@@ -9,9 +9,7 @@ const loadRentalHistory = async (req,res)=>{
 
     if(id_user!=undefined || isNaN(id_user)){
         req.sessionError = 'El id de usuario no esta definido o no es un tipo integer';
-        res.redirect('/home',{
-            sessionError:req.sessionError
-        });
+        res.redirect('/home');
     }
 
     try {

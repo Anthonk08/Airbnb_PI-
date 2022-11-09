@@ -11,10 +11,10 @@ router.post('/logout', ctrlHome.setVariables);
 
 //ENDPOINT DEL LOGIN
 router.post('/login', ctrlLogin.logIn);
-router.post('/logout', ctrlLogin.logOut);
-router.get('/register', ctrlLogin.getRegisterEmail);
-router.get('/register-phone', ctrlLogin.getRegisterPhone);
-router.get('/register-property', ctrlLogin.getRegisterProperty);
+router.post('/logout', ctrlHome.setVariables);
+router.get('/register', ctrlRegister.getRegisterEmail);
+router.get('/register-phone', ctrlRegister.getRegisterPhone);
+router.get('/register-property', ctrlRegister.getRegisterProperty);
 router.get('/messages-guest', ctrlLogin.getMessagesGuest);
 router.get('/favorites-guest', ctrlLogin.getFavoritesGuest);
 router.get('/notification-guest', ctrlLogin.getNotificationGuest);
@@ -23,8 +23,8 @@ router.get('/help', ctrlLogin.getHelp);
 
 //ENDPOINT DEL PERFIL DE USUARIO
 // TODO: definir ruta de la pantalla de perfil de usuario
-router.get('/', ctrlProfile.loadRentalHistory);
-router.get('/', ctrlProfile.loadPropertyHistory);
-router.get('/', ctrlProfile.loadPaymentHistory);
+router.get('/profile-history', ctrlProfile.loadRentalHistory);
+router.get('/profile-history', ctrlProfile.loadPropertyHistory);
+router.get('/profile-history', ctrlProfile.loadPaymentHistory);
 
 module.exports = router;
