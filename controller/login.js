@@ -91,6 +91,48 @@ const getHelp = (req, res) => {
     res.render("help", {});
 }
 
+const getHostPage = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("/host-page", {});
+}
+
+const getMessagesHost = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("/messages-host", {});
+}
+
+const getNotificationHost = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("/notification-host", {});
+}
+
 // POST
 const logIn = async (req, res) => {
 
@@ -177,5 +219,8 @@ module.exports = {
     getFavoritesGuest,
     getNotificationGuest,
     getAccount,
-    getHelp
+    getHelp,
+    getHostPage,
+    getMessagesHost,
+    getNotificationHost
 }
