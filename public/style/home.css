@@ -94,3 +94,15 @@
 	bottom: -8px;
 }
 
+@media (min-height: 801px) {
+	.form_line {
+		height: 130px;
+	}
+}
+
+@media (max-height: 800px) {
+	.form_line {
+		visibility: hidden;
+		display: none;
+	}
+}
