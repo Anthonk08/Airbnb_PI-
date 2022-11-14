@@ -23,6 +23,8 @@ router.get('/help', ctrlLogin.getHelp);
 router.get('/host-page', ctrlLogin.getHostPage);
 router.get('/messages-host', ctrlLogin.getMessagesHost);
 router.get('/notification-host', ctrlLogin.getNotificationHost);
+router.get('/resume-host', ctrlLogin.getResumeHost);
+router.get('/lodging', ctrlLogin.getLodgingHost);
 
 //ENDPOINT DEL PERFIL DE USUARIO
 // TODO: definir ruta de la pantalla de perfil de usuario

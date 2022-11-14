@@ -102,7 +102,7 @@ const getHostPage = (req, res) => {
         return;
     }
 
-    res.render("/host-page", {});
+    res.render("host-page", {});
 }
 
 const getMessagesHost = (req, res) => {
@@ -116,7 +116,7 @@ const getMessagesHost = (req, res) => {
         return;
     }
 
-    res.render("/messages-host", {});
+    res.render("messages-host", {});
 }
 
 const getNotificationHost = (req, res) => {
@@ -130,7 +130,35 @@ const getNotificationHost = (req, res) => {
         return;
     }
 
-    res.render("/notification-host", {});
+    res.render("notification-host", {});
+}
+
+const getResumeHost = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("resume-host", {});
+}
+
+const getLodgingHost = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("lodging", {});
 }
 
 // POST
@@ -222,5 +250,7 @@ module.exports = {
     getHelp,
     getHostPage,
     getMessagesHost,
-    getNotificationHost
+    getNotificationHost,
+    getResumeHost,
+    getLodgingHost
 }
