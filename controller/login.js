@@ -173,10 +173,7 @@ const logIn = async (req, res) => {
 
 module.exports = {
     logIn,
-    logOut,
-    getRegisterEmail,
-    getRegisterPhone,
-    getRegisterProperty,
+    getLoginView,
     getMessagesGuest,
     getFavoritesGuest,
     getNotificationGuest,
