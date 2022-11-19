@@ -25,6 +25,12 @@ router.get('/messages-host', ctrlLogin.getMessagesHost);
 router.get('/notification-host', ctrlLogin.getNotificationHost);
 router.get('/resume-host', ctrlLogin.getResumeHost);
 router.get('/lodging', ctrlLogin.getLodgingHost);
+router.get('/dashboard-abandoned-reservations', ctrlLogin.getDashboardAbandonedReservations);
+router.get('/dashboard-bookings', ctrlLogin.getDashboardBookings);
+router.get('/dashboard-desactivated-accounts', ctrlLogin.getDashboardDesactivatedAccounts);
+router.get('/dashboard-home', ctrlLogin.getDashboardHome);
+router.get('/dashboard-profit', ctrlLogin.getDashboardProfit);
+router.get('/dashboard-users', ctrlLogin.getDashboardUsers);
 
 //ENDPOINT DEL PERFIL DE USUARIO
 // TODO: definir ruta de la pantalla de perfil de usuario
