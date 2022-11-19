@@ -88,11 +88,11 @@
 .dropdown_children:hover{
 	background-color: #FF5A5F;
 }
-
 .setting-menu {
 	position: relative;
 	bottom: -8px;
 }
+
 
 @media (min-height: 801px) {
 	.form_line {

@@ -161,6 +161,90 @@ const getLodgingHost = (req, res) => {
     res.render("lodging", {});
 }
 
+const getDashboardAbandonedReservations = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("dashboard-abandoned-reservations", {});
+}
+
+const getDashboardBookings = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("dashboard-bookings", {});
+}
+
+const getDashboardDesactivatedAccounts = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("dashboard-desactivated-accounts", {});
+}
+
+const getDashboardHome = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("dashboard-home", {});
+}
+
+const getDashboardProfit = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("dashboard-profit", {});
+}
+
+const getDashboardUsers = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("dashboard-users", {});
+}
+
 // POST
 const logIn = async (req, res) => {
 
@@ -252,5 +336,11 @@ module.exports = {
     getMessagesHost,
     getNotificationHost,
     getResumeHost,
-    getLodgingHost
+    getLodgingHost,
+    getDashboardAbandonedReservations,
+    getDashboardBookings,
+    getDashboardDesactivatedAccounts,
+    getDashboardHome,
+    getDashboardProfit,
+    getDashboardUsers
 }
