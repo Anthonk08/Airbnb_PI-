@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Confirmación de Hospedaje</title>
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="/style/booking-confirmation.css">
+	</head>
+
+	<body>
+		<div class="container">
+			
+			<div class="row align-self-stretch ">
+				<div class="col-md-12 titulo rounded">
+					<h1>Confirmación de reserva</h1>
+				</div>
+
+				<!--llenado de informacion-->
+				<div class="col-md-8 justify-content" id="informacion">
+					<h3>Detalles Personales</h3>
+					<hr>
+					<div class="row">
+						<div class="form-group col-md-6"> <label class="text-left detalles">Nombre</label> <input type="text" class="form-control" id="first-name" placeholder="Digité su nombre"> </div>
+						<div class="form-group col-md-6"> <label class="text-left detalles">Apellido</label> <input type="tel" class="form-control" id="last-name" placeholder="Digite su Apellido"> </div>
+						<div class="form-group col-md-6"> <label class="text-left detalles">Correo electrónico</label> <input type="email" class="form-control" id="Company-Name" placeholder="Digite su correo electrónico"> </div>
+						<div class="form-group col-md-6"> <label class="text-left detalles">Número de teléfono</label> <input type="tel" class="form-control" id="Mobile-Number" placeholder="Digite su Numero de telefono"> </div>
+						<div class="text-left col-md-12" style="margin-bottom: 5px;"> 
+							<label class="text-left  detalles">Mensaje</label> 
+							<textarea class="form-control rounded" rows="8" placeholder="Digite su Mensaje"></textarea>
+						</div>
+						<div class="col-md-4"><button type="button" class="btn btn-block" style="margin-bottom: 5px;"><small class="font-weight-bold">Confirmar y reservar</small></button> </div>
+					</div>
+				</div>
+				<!--Fin llenado de información-->
+				<!--Resumen propiedad-->
+				<div class="col-md-4 rounded" id="resumen">
+					<!--imagen y datos sobre ella-->
+					<div class="form-group col-md-12" style="padding-right: 0%; padding-left: 0%;">                                
+						<div class="contenedor">
+							<img class="imagen-casa" src="https://s2.glbimg.com/S68qSscRNuEDNZ2vavmrtyUWfA8=/512x320/smart/e.glbimg.com/og/ed/f/original/2018/12/10/apartamento-pequeno-doob-arquitetura09.jpg" alt="" style="width: 100%; height: 200px;">
+							<div class="puntuacion-casa">5.0</div>
+							<div class="nombre-casa">Amanda Villa</div>
+							<div class="ubicacion-casa">Santo Domingo</div>
+						</div>
+					</div>
+					<!--Fin imagen y datos sobre ella-->
+					
+					
+					<div class="form-group col-md-12 titulo-resumen-reserva" id="subtitulos">
+						<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-calendar-check-fill" viewBox="0 0 16 16">
+							<path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-5.146-5.146-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+						</svg>
+						<label class="text-left" id="subtitulos"><h5>&nbspResumen de reserva</h5>
+						</label>
+					</div>
+					
+					<hr>
+					<!--Capacidad casa-->
+					<div class="form-group col-md-12" id="capacidad-casa">
+						<div class="row justify-content-center">
+							<div class="form-group">
+								<label class="text-left" id="fecha">Fecha</label>
+							</div>
+							<div class="form-group ml-auto">
+								<label class="text-left respuesta-datos" id="respues-fecha">23-11-2022</label>
+							</div>
+						</div>
+						<div class="row justify-content-center">
+							<div class="form-group">
+								<label class="text-left" id="huespedes">Huéspedes</label> 
+							</div>
+							<div class="form-group ml-auto">
+								<label class="text-left respuesta-datos" id="respuesta-huespedes">3</label> 
+							</div>
+						</div>
+					</div>
+					<!--Fin capacidad casa-->
+					<hr>
+					<!--Servicios adicionales-->
+					<div class="form-group col-md-12">
+						<label class="text-left" id="subtitulos"><h5>Servicios Adicionales</h5></label> 
+						<div class="row justify-content-center">
+							<div class="form-group">
+								<label class="text-left">Piscina</label>
+							</div>
+							<div class="form-group ml-auto">
+								<label class="text-left" id="respuesta-adicionales">$20.00</label>
+							</div>
+						</div>
+					</div>
+					<!--Fin servicios adicionales-->
+					<hr>
+					<!--Tienes un cupon-->
+					<div class="form-group col-md-12">
+						<label class="text-left" id="subtitulos"><h5>¿Tienes un cupón?</h5></label>
+                        <input type="tel" class="form-control" id="cupon" placeholder="Digite su Código">
+                        <button type="button" class="btn btn-block"><small class="font-weight-bold">Entrar</small></button>
+					</div>
+					<!--Fin tienes un cupon-->
+					<hr>
+					<!--Total General-->
+					<div class="form-group col-md-12">
+						<div class="row justify-content-center">
+							<div class="form-group">
+								<label class="text-left" id="subtitulos"><h5>Total General</h5></label> 
+							</div>
+							<div class="form-group ml-auto">
+								<label class="text-left" id="respuesta-total-general"><h5>$20.00</h5></label>
+							</div>
+						</div>
+					</div>
+					<!--Fin Total General-->
+				</div>
+				<!--Fin resumen propiedad-->
+			</div>
+		</div>
+	</body>
+
+</html>
