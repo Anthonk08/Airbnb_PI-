@@ -245,6 +245,59 @@ const getDashboardUsers = (req, res) => {
     res.render("dashboard-users", {});
 }
 
+const getBookings = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("bookings", {});
+}
+const getContact = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("contact", {});
+}
+const getSuggestions = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("suggestions", {});
+}
+const getAboutUs = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("about-us", {});
+}
+
 // POST
 const logIn = async (req, res) => {
 
@@ -342,5 +395,9 @@ module.exports = {
     getDashboardDesactivatedAccounts,
     getDashboardHome,
     getDashboardProfit,
-    getDashboardUsers
+    getDashboardUsers,
+    getBookings,
+    getContact,
+    getSuggestions,
+    getAboutUs
 }

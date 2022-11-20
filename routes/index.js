@@ -31,6 +31,10 @@ router.get('/dashboard-desactivated-accounts', ctrlLogin.getDashboardDesactivate
 router.get('/dashboard-home', ctrlLogin.getDashboardHome);
 router.get('/dashboard-profit', ctrlLogin.getDashboardProfit);
 router.get('/dashboard-users', ctrlLogin.getDashboardUsers);
+router.get('/bookings', ctrlLogin.getBookings);
+router.get('/contact', ctrlLogin.getContact);
+router.get('/suggestions', ctrlLogin.getSuggestions);
+router.get('/about-us', ctrlLogin.getAboutUs);
 
 //ENDPOINT DEL PERFIL DE USUARIO
 // TODO: definir ruta de la pantalla de perfil de usuario
