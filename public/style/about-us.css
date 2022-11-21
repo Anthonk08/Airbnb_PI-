@@ -3,7 +3,7 @@
 /* Element Selector */
 .background_img{
 	background:#FFFFFF;
-	background-image: url(/sources/wallpapers/image8.jpg);
+	background-image: url(/sources/wallpapers/image7.jpg);
 	background-repeat: no-repeat;
 	background-size: 100vw 100vh;
 	margin-top: 10px;
@@ -93,11 +93,85 @@
 	bottom: -8px;
 }
 
+.photo-div, .presentation-photo {
+	margin: 0 auto;
+	height: 600px;
+	width: 1200px;
+	border-radius: 15px;
+	margin-bottom: 20px;
+}
+
+.principal-container {
+	background:#FFFFFF;
+	margin: 0 auto;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	height: auto;
+	width: 50%;
+	border-radius: 25px;
+}
+
+.pool-container {
+	background: #ccc9c9;
+}
+
+.secundary-title-container {
+	padding: 25px;
+	position: relative;
+	left: 10px;
+}
+
+.secundary-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	gap: 2px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.sub-secundary-container {
+	background: #ffffff;
+	min-height: 100px;
+	height: auto;
+	width: 340px;
+	margin: 5px;
+	padding: 10px;
+	position:relative;
+	border: 0.5px solid black;
+	border-radius: 10px;
+	font-size: 18px;
+}
+
+.presentation-events {
+	height: 550px;
+	width: 650px;
+	border: 0.5px solid black;
+	border-radius: 15px;
+	margin-bottom: 25px;
+}
+
+.presentation-events, h4, p {
+	margin: 15px;
+}
+
+.photo-presentation-events {
+	height: 400px;
+	width: 650px;
+	border-radius: 15px;
+}
+
 
 @media (min-height: 801px) {
 	.form_line {
 		height: 130px;
 	}
+
+	.container, .footer-container {
+		position: relative;
+		top: 214px;
+	}
+
 }
 
 @media (max-height: 800px) {

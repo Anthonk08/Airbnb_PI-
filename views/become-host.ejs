@@ -1,0 +1,198 @@
+<!-- Airbnb clone using Bootstrap 4 and Custom CSS -->
+
+<!-- Bootstrap 4 is the newest version of Bootstrap, which is the most popular HTML, CSS, and JavaScript framework for developing responsive, mobile-first websites.
+
+Bootstrap 4 is completely free to download and use! -->
+
+<!-- What is Bootstrap?  -->
+
+<!-- Bootstrap is a free front-end framework for faster and easier web development.
+
+Bootstrap includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins.
+
+Bootstrap also gives you the ability to easily create responsive designs. -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- The name between <title> tag defines the title of the document. -->
+		<title>Alquiler de alojamientos vacacionales, casas, apartamentos y experiencias</title>
+
+		<!-- Bootstrap 4 is designed to be responsive to mobile devices. Mobile-first styles are part of the core framework.
+
+		To ensure proper rendering and touch zooming, add the following <meta> tag inside the <head> element: -->
+
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+
+			<!-- Bootstrap link -->
+
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+			<!-- Font selection link -->
+
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+			<!-- The Styles used has been stored and saved in another file named "style.css" and linked through <link> tag as shown below: -->	
+
+			<link rel="stylesheet" href="/style/become-host.css">
+			<!--Airbnb icon-->
+			<link rel="shortcut icon" type="image/x-icon" href="/sources/Airbnb icon.ico"/>
+		</head>
+		<body class="background_img">
+			<!-- This is to display the Navbar of the website. -->
+			<header>
+				<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="collapse navbar-collapse">
+
+					<!-- SVG for Logo -->
+					<a href="./home"><img src="/sources/Airbnb icon navbar.png" alt="" style="height: 50px; width: 100px;"></a>
+					<!-- End of SVG -->
+					<ul class="navbar-nav d-flex flex-row">
+						<li class="nav-item"><a class="nav-link" href="./home">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" href="bookings">Reservas</a></li>
+						<li class="nav-item"><a class="nav-link" href="contact">Contacto</a></li>
+						<li class="nav-item"><a class="nav-link" href="suggestions">Sugerencias</a></li>
+						<li class="nav-item"><a class="nav-link" href="about-us">Sobre Nosotros</a></li>
+					</ul>
+
+
+					<ul class="navbar-nav ml-auto navbar_move">
+						<li class="nav-item dropdown">
+							<a class="nav-link menu_property" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<span class="material-symbols-outlined setting-menu">menu</span>
+								<img class="rounded-circle" src="/sources/person-icon.png" alt="" style="width: 40px; height: 40px;">
+							</a>
+
+							<ul class="dropdown-menu dropdown_father">
+								<li><a class="dropdown-item dropdown_children" href="/">Iniciar Sesi&oacuten</a></li>
+								<li><a class="dropdown-item dropdown_children" href="/register">Registrarse</a></li>
+								<hr class="change_line_navbar">
+								<li><a class="dropdown-item dropdown_children" href="/messages-guest">Mensajes</a></li>
+								<li><a class="dropdown-item dropdown_children" href="/notification-guest">Notificaciones</a></li>
+								<li><a class="dropdown-item dropdown_children" href="/favorites-guest">Lista de Favoritos</a></li>
+								<hr class="change_line_navbar">
+								<li><a class="dropdown-item dropdown_children" href="/host-page">Anfitri&oacuten</a></li>
+								<hr class="change_line_navbar">
+								<li><a class="dropdown-item dropdown_children" href="/receives-guest">Recibe hu&eacutespedes</a></li>
+								<li><a class="dropdown-item dropdown_children" href="/account">Cuenta</a></li>
+								<hr class="change_line_navbar">
+								<li><a class="dropdown-item dropdown_children" href="/dashboard-home">Administrador</a></li>
+								<hr class="change_line_navbar">
+								<li><a class="dropdown-item dropdown_children" href="/help">Ayuda</a></li>
+								<li><a class="dropdown-item dropdown_children" href="#">Cerrar Sesi&oacuten</a></li>
+							</ul>
+						</li>
+					</ul>
+
+				</div>
+			</nav>
+			<hr class="change_line">
+			</header>
+		<!-- End of NavBar -->
+		
+		<!-- Body -->
+		<div class="principal-container">
+			<h4>Ponlo en Airbnb.</h4>
+			<h4>Orientación personalizada de un Superanfitrión</h4>
+			<p>Te pondremos en contacto con un Superanfitrión de tu zona, quien te guiará desde tu primera pregunta hasta tu primer huésped, por teléfono, videollamada o chat.</p>
+		</div>
+
+		<div class="principal-container">
+			<h4>Un huésped experimentado para tu primera reservación</h4>
+			<p>Para tu primera reservación, puedes optar por recibir a un huésped experimentado que haya completado al menos tres estadías y que tenga un buen historial en Airbnb.</p>
+		</div>
+
+		<div class="principal-container">
+			<h4>Asistencia especializada de Airbnb</h4>
+			<p>Los anfitriones nuevos tienen acceso a agentes de soporte de la comunidad especialmente capacitados que pueden ayudar con todo, desde problemas con la cuenta hasta temas relacionados con la facturación.</p>
+		</div>
+
+		<div class="principal-container">
+			<div class="presentation-events">
+				<h4>¿Mi espacio es adecuado para Airbnb?</h4>
+				<p>A los huéspedes en Airbnb les interesan todo tipo de lugares. Tenemos anuncios de minicasas, cabañas, casas del árbol y mucho más. Incluso una habitación que tengas libre en tu casa puede ser un excelente lugar para quedarse.</p>
+			</div>
+
+			<div class="presentation-events">
+				<h4>¿Tengo que compartir mi espacio todo el tiempo?</h4>
+				<p>Para nada: tú controlas el calendario. Puedes brindar servicios de anfitrión una vez al año, algunas noches al mes o con una frecuencia mayor.</p>
+			</div>
+
+			<div class="presentation-events">
+				<h4>¿Cuánto debería interactuar con los huéspedes?</h4>
+				<p>¡Tú decides! Hay algunos anfitriones que prefieren enviarles mensajes a los huéspedes solo en momentos clave, como una breve nota al momento del check-in, mientras que otros prefieren conocerlos en persona. Encontrarás un estilo que funcione para ti y tus huéspedes.</p>
+			</div>
+
+			<div class="presentation-events">
+				<h4>¿Algún consejo para ser un buen anfitrión en Airbnb?</h4>
+				<p>Lo más importante es que entiendas lo básico. Mantén tu espacio limpio, respóndele rápido a los huéspedes y ofréceles los servicios que necesitan, como toallas limpias. A algunos anfitriones les gusta agregar un toque personal, como poner flores frescas o compartir una lista de lugares para explorar en la zona, pero nada de esto es obligatorio.</p>
+				<p>No importa cuáles sean tus objetivos, brindar servicios de anfitrión en Airbnb ofrece una forma divertida y flexible de cumplirlos. Puedes recibir huéspedes en cualquier tipo de espacio, en cualquier parte del mundo, con la frecuencia que quieras.</p>
+				<p>El dinero que ganas puede ayudarte a hacer cosas como pagar las facturas del hogar, ahorrar para un gran evento de la vida o cubrir los costos de tus próximas vacaciones. Además de recibir algo de dinero extra, abrir las puertas te da la oportunidad de conectarte con viajeros de todo el mundo y apoyar a tu comunidad local.</p>
+			</div>
+
+			<div class="presentation-events">
+				<h4>¿Cuáles son las tarifas de Airbnb?</h4>
+				<p>Airbnb suele cobrar una tarifa por servicio fija del 3 % del subtotal de la reservación cuando recibes el pago. También les cobramos una tarifa a los huéspedes cuando hacen la reservación. En muchas zonas, Airbnb recauda automáticamente los impuestos sobre las ventas y el turismo, y los paga en tu nombre.</p>
+				<p>¿Sabías que puedes hospedar en una yurta en Airbnb? ¿O una casa en un árbol, una casa flotante o incluso una cúpula geodésica? Miles de personas ya están hospedando en espacios únicos, como una papa gigante y un molino de viento reformado, a través de Airbnb.</p>
+				<p>Estas propiedades únicas son mucho más que un lugar donde dormir. En muchas ocasiones, el destino es el propio alojamiento y es en lo que se centran los huéspedes al planear sus viajes.</p>
+				<p>Nuestros espacios únicos más populares incluyen casas del árbol, minicasas, tiendas de campaña, casas rodantes o cámpers fijos, y granjas. El número de personas que buscaron espacios únicos en Airbnb en todo el mundo se duplicó con creces entre los primeros 10 meses de 2020 y el mismo periodo de 2018.</p>
+			</div>
+
+		</div>
+
+		<!--Footer container-->
+		<hr class="footer-container">
+		<div class="container" style="margin-top: 70px;">
+			<div class="row">
+				<div class="col-md-3">
+					<section>
+						<h6 style="margin-left: 40px;">Airbnb</h6>
+						<ul style="list-style: none;">
+							<li><a href="/help">Ayuda</a></li>
+							<li><a href="#">Pol&iacuteticas</a></li>
+							<li><a href="#">T&eacuterminos</a></li>
+							<li><a href="#">Privacidad</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-md-3">
+					<section>
+						<h6 style="margin-left: 40px;">Descubrir</h6>
+						<ul style="list-style: none;">
+							<li><a href="#">Confianza y seguridad</a></li>
+							<li><a href="#">Mapa del sitio</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-md-3">
+					<section>
+						<h6 style="margin-left: 40px;">Alojamiento</h6>
+						<ul style="list-style: none;">
+							<li><a href="#">Por qu&eacute anfitri&oacuten/a</a></li>
+							<li><a href="#">Alojamiento Responsable</a></li>
+							<li><a href="#">Casas abiertas</a>&emsp;<a href="#"><button type="button" class="btn btn-primary new">New</button></a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-md-3">
+					<section>
+						<h5 style="margin-left: 40px;">
+						<a href="https://es-la.facebook.com/airbnb/" target="_blank" style="color: #3B5998;"><i class="fa fa-facebook" style="padding-right: 20px;"></i></a>
+						<a href="https://twitter.com/airbnb" target="_blank" style="color: #00ACEE;"><i class="fa fa-twitter" style="padding-right: 20px;"></i></a>
+						<a href="https://www.instagram.com/airbnb/" target="_blank" style="color: #d6249f;"><i class="fa fa-instagram" style="padding-right: 20px;"></i></a>
+						</h5>
+						<ul style="list-style: none;">
+							<li><a href="#">Reseñas</a></li>
+							<li><a href="#">Sugerencias</a></li>
+							<li><a href="#">Contacto</a></li>
+						</ul>
+					</section>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

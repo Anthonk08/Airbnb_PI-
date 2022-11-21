@@ -115,6 +115,27 @@ p {
 	padding: 1px 4px;
 }
 
+.content-table {
+	border: 2px solid #000000;
+	border-radius: 15px;
+	width: 380px;
+	margin-bottom: 30px;
+}
+
+.content-table tr td {
+	margin: 15px;
+	padding: 15px;
+	font-weight: bold;
+}
+
+.content-table ol li a {
+	bottom: 10px;
+	padding: 5px;
+	margin: 5px;
+	color: black;
+	text-decoration:none;
+}
+
 /*
 	MEDIA QUERY.
 	Son utilizados para una determinada resolucion
