@@ -1,118 +1,168 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- The name between <title> tag defines the title of the document. -->
-		<title>Alquiler de alojamientos vacacionales, casas, apartamentos y experiencias</title>
+  <head>
+    <!-- The name between <title> tag defines the title of the document. -->
+    <title>
+      Alquiler de alojamientos vacacionales, casas, apartamentos y experiencias
+    </title>
 
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="/style/registrarse.css">
-        <!--Airbnb icon-->
-        <link rel="shortcut icon" type="image/x-icon" href="/sources/Airbnb icon.ico"/>
-        <!------ Include the above in your HEAD tag ---------->
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/style/registrarse.css" />
+    <!--Airbnb icon-->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/sources/Airbnb icon.ico"
+    />
+    <!------ Include the above in your HEAD tag ---------->
+  </head>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css?family=Kaushan+Script"
+    rel="stylesheet"
+  />
+  <link
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous"
+  />
 
-        
-    </head>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <body>
+    <!-- This is to display the Navbar of the website. -->
 
-    <body>
-        <!-- This is to display the Navbar of the website. -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="collapse navbar-collapse">
+        <!-- SVG for Logo -->
+        <a href="./home"
+          ><img
+            src="/sources/Airbnb icon navbar.png"
+            alt=""
+            style="height: 50px; width: 100px"
+        /></a>
+        <!-- End of SVG -->
+        <ul class="navbar-nav d-flex flex-row">
+          <li class="nav-item"><a class="nav-link" href="./home">Inicio</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#booking">Reservas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#suggestions">Sugerencias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aboutus">Sobre Nosotros</a>
+          </li>
+        </ul>
 
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="collapse navbar-collapse">
-                <!-- SVG for Logo -->
-                <a href="./home"><img src="/sources/Airbnb icon navbar.png" alt="" style="height: 50px; width: 100px;"></a>
-                <!-- End of SVG -->
-                <ul class="navbar-nav d-flex flex-row">
-                    <li class="nav-item"><a class="nav-link" href="./home">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#booking">Reservas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#suggestions">Sugerencias</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#aboutus">Sobre Nosotros</a></li>
-                </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item btn_flashy">
+            <a class="nav-link" href="#host">Hazte Anfitri&oacuten</a>
+          </li>
+          <li class="nav-item btn_flashy">
+            <a class="nav-link" href="./register">Registrarse</a>
+          </li>
+          <li class="nav-item btn_flashy">
+            <a class="nav-link" href="./login">Iniciar Sesi&oacuten</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <hr class="change_line" />
+    <!--End navbar-->
 
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item btn_flashy"><a class="nav-link" href="#host">Hazte Anfitri&oacuten</a></li>
-                    <li class="nav-item btn_flashy"><a class="nav-link" href="./register">Registrarse</a></li>
-                    <li class="nav-item btn_flashy"><a class="nav-link" href="./login">Iniciar Sesi&oacuten</a></li>
-                </ul>
-            </div>
-        </nav>
-        <hr class="change_line">
-        <!--End navbar-->
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5 mx-auto">
-                    <div id="first">
-                        <div class="myform form ">
-                            <div class="logo mb-3">
-                                <div class="col-md-12 text-center">
-                                    <h1>Reg&iacutestrate v&iacutea Celular</h1>
-                                </div>
-                            </div>
-                            <form action="" method="post" name="login">
-                                <div class="form-group">
-                                    <label for="inputName">Pais</label>
-                                    <select id="inputState" class="form-control" required="">
-                                        <option selected="">Elige tu país</option>
-                                        <option>República Dominicana</option>
-                                        <option>Estados Unidos</option>
-                                        <option>Cánada</option>
-                                        <option>Alemania</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Digite número telefónico">
-                                </div>
-                                <div class="form-group">
-                                    <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>
-                                </div>
-                                <div class="col-md-12 text-center ">
-                                    <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Continuar</button>
-                                </div>
-                                <div class="col-md-12 ">
-                                    <div class="login-or">
-                                        <hr class="hr-or">
-                                        <span class="span-or">o</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 mb-3">
-                                    <p class="text-center">
-                                        <a href="javascript:void();" class="google btn mybtn2"><i class="fa fa-google">
-                                        </i> Continuar con Google
-                                        </a>
-                                    </p>
-                                </div>
-                                <div class="col-md-12 mb-3">
-                                    <p class="text-center">
-                                        <a href="javascript:void();" class="facebook btn mybtn2"><i class="fa fa-facebook">
-                                            </i> Continuar con Facebook
-                                        </a>
-                                    </p>
-                                </div>
-                                <div class="col-md-12 mb-3">
-                                    <p class="text-center">
-                                        <a href="javascript:void();" class="apple btn mybtn2"><i class="fa fa-apple">
-                                            </i> Continuar con Apple
-                                        </a>
-                                    </p>
-                                </div>
-                                <div class="col-md-12 mb-3">
-                                    <p class="text-center">
-                                        <a href="/register" class="correo btn mybtn2"><i class="fa fa-envelope-o">
-                                            </i> Continuar con Correo electrónico
-                                        </a>
-                                    </p>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 mx-auto">
+          <div id="first">
+            <div class="myform form">
+              <div class="logo mb-3">
+                <div class="col-md-12 text-center">
+                  <h1>Reg&iacutestrate v&iacutea Celular</h1>
                 </div>
+              </div>
+              <form action="" method="post" name="login">
+                <div class="form-group">
+                  <label for="inputName">Pais</label>
+                  <select id="inputState" class="form-control" required="">
+                    <option selected="">Elige tu país</option>
+                    <option>República Dominicana</option>
+                    <option>Estados Unidos</option>
+                    <option>Cánada</option>
+                    <option>Alemania</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    id="email"
+                    aria-describedby="emailHelp"
+                    placeholder="Digite número telefónico"
+                  />
+                </div>
+                <div class="form-group">
+                  <p class="text-center">
+                    By signing up you accept our <a href="#">Terms Of Use</a>
+                  </p>
+                </div>
+                <div class="col-md-12 text-center">
+                  <button
+                    type="submit"
+                    class="btn btn-block mybtn btn-primary tx-tfm"
+                  >
+                    Continuar
+                  </button>
+                </div>
+                <div class="col-md-12">
+                  <div class="login-or">
+                    <hr class="hr-or" />
+                    <span class="span-or">o</span>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <p class="text-center">
+                    <a href="javascript:void();" class="google btn mybtn2"
+                      ><i class="fa fa-google"> </i> Continuar con Google
+                    </a>
+                  </p>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <p class="text-center">
+                    <a href="javascript:void();" class="facebook btn mybtn2"
+                      ><i class="fa fa-facebook"> </i> Continuar con Facebook
+                    </a>
+                  </p>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <p class="text-center">
+                    <a href="javascript:void();" class="apple btn mybtn2"
+                      ><i class="fa fa-apple"> </i> Continuar con Apple
+                    </a>
+                  </p>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <p class="text-center">
+                    <a href="/register" class="correo btn mybtn2"
+                      ><i class="fa fa-envelope-o"> </i> Continuar con Correo
+                      electrónico
+                    </a>
+                  </p>
+                </div>
+              </form>
             </div>
           </div>
-    </body>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
