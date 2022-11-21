@@ -35,6 +35,8 @@ router.get('/bookings', ctrlLogin.getBookings);
 router.get('/contact', ctrlLogin.getContact);
 router.get('/suggestions', ctrlLogin.getSuggestions);
 router.get('/about-us', ctrlLogin.getAboutUs);
+router.get('/become-host', ctrlLogin.getBecomeHost);
+router.get('/receives-guest', ctrlLogin.getReceivesGuest);
 
 //ENDPOINT DEL PERFIL DE USUARIO
 // TODO: definir ruta de la pantalla de perfil de usuario

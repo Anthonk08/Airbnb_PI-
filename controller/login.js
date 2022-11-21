@@ -298,6 +298,34 @@ const getAboutUs = (req, res) => {
     res.render("about-us", {});
 }
 
+const getBecomeHost = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("become-host", {});
+}
+
+const getReceivesGuest = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("receives-guest", {});
+}
+
 // POST
 const logIn = async (req, res) => {
 
@@ -399,5 +427,7 @@ module.exports = {
     getBookings,
     getContact,
     getSuggestions,
-    getAboutUs
+    getAboutUs,
+    getBecomeHost,
+    getReceivesGuest
 }
