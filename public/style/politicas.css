@@ -1,21 +1,6 @@
 /* An external style sheet can be written in any text editor. The file should not contain any html tags. The style sheet file must be saved with a .css extension. */
 
-
-
-#first{
-	border-style: solid;
-	background-color: white;
-	padding: 5%;
-}
-
-#map{
-    height:400px;
-    width:100%;
-}
-
-
-
-.background_img{
+/*.background_img{
 	background:#FFFFFF;
 	background-image: url(/sources/wallpapers/image5.jpg);
 	background-repeat: no-repeat;
@@ -23,7 +8,7 @@
 	margin-top: 10px;
 	margin-bottom: 50px;
 	position: relative;
-}
+}*/
 
 /* For styling NavBar */
 .navbar.navbar-expand-lg.navbar-light li a{
