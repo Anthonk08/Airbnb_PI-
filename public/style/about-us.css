@@ -79,7 +79,7 @@
 }
 
 .dropdown_children {
-	color: white;
+	color: rgb(255, 255, 255);
 	border-radius: 15px;
 	margin: 5px;
 	width: auto;
@@ -112,7 +112,7 @@
 }
 
 .pool-container {
-	background: #ccc9c9;
+	background: #abdfe8;
 }
 
 .secundary-title-container {
