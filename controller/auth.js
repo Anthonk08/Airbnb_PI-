@@ -319,6 +319,48 @@ const getReceivesGuest = (req, res) => {
   res.render("receives-guest", {});
 };
 
+const getSearchBookings = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+
+  res.render("search-bookings", {});
+};
+
+const getLodgingprofile = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+
+  res.render("lodging-profile", {});
+};
+
+const getLodgingBooking = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+
+  res.render("lodging-booking", {});
+};
+
 /**
  * POST para iniciar sesion
  * al iniciar sesion, mantendra el usuario en los request para que las demas pantallas validen que haya una sesion activa.
@@ -429,4 +471,7 @@ module.exports = {
   getAboutUs,
   getBecomeHost,
   getReceivesGuest,
+  getSearchBookings,
+  getLodgingprofile,
+  getLodgingBooking,
 };

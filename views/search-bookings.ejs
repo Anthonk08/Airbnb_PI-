@@ -1,0 +1,223 @@
+<!-- Airbnb clone using Bootstrap 4 and Custom CSS -->
+
+<!-- Bootstrap 4 is the newest version of Bootstrap, which is the most popular HTML, CSS, and JavaScript framework for developing responsive, mobile-first websites.
+
+Bootstrap 4 is completely free to download and use! -->
+
+<!-- What is Bootstrap?  -->
+
+<!-- Bootstrap is a free front-end framework for faster and easier web development.
+
+Bootstrap includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins.
+
+Bootstrap also gives you the ability to easily create responsive designs. -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- The name between <title> tag defines the title of the document. -->
+		<title>Alquiler de alojamientos vacacionales, casas, apartamentos y experiencias</title>
+
+		<!-- Bootstrap 4 is designed to be responsive to mobile devices. Mobile-first styles are part of the core framework.
+
+		To ensure proper rendering and touch zooming, add the following <meta> tag inside the <head> element: -->
+
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+
+			<!-- Bootstrap link -->
+
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+			<!-- Font icons -->
+			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+			<!-- Font selection link -->
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+			<!-- The Styles used has been stored and saved in another file named "style.css" and linked through <link> tag as shown below: -->	
+			<link rel="stylesheet" href="/style/search-bookings.css">
+
+			<!--Airbnb icon-->
+			<link rel="shortcut icon" type="image/x-icon" href="/sources/Airbnb icon.ico"/>
+		</head>
+		<body class="background_img">
+
+				<!-- This is to display the Navbar of the website. -->
+
+				<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="collapse navbar-collapse">
+
+					<!-- SVG for Logo -->
+					<a href="./home"><img src="/sources/Airbnb icon navbar.png" alt="" style="height: 50px; width: 100px;"></a>
+					<!-- End of SVG -->
+					<ul class="navbar-nav d-flex flex-row">
+						<li class="nav-item"><a class="nav-link" href="./home">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" href="bookings">Reservas</a></li>
+						<li class="nav-item"><a class="nav-link" href="contact">Contacto</a></li>
+						<li class="nav-item"><a class="nav-link" href="suggestions">Sugerencias</a></li>
+						<li class="nav-item"><a class="nav-link" href="about-us">Sobre Nosotros</a></li>
+					</ul>
+
+
+					<ul class="navbar-nav ml-auto navbar_move">
+						<li class="nav-item btn_flashy"><a class="nav-link" href="become-host">Hazte Anfitri&oacuten</a></li>
+						
+						<li class="nav-item dropdown">
+							<a class="nav-link menu_property" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<span class="material-symbols-outlined setting-menu">menu</span>
+								<img class="rounded-circle" src="/sources/person-icon.png" alt="" style="width: 40px; height: 40px;">
+							</a>
+	
+							<ul class="dropdown-menu dropdown_father">
+								<li><a class="dropdown-item dropdown_children" href="/">Iniciar Sesi&oacuten</a></li>
+								<li><a class="dropdown-item dropdown_children" href="/register">Registrarse</a></li>
+								<hr class="change_line_navbar">
+								<li><a class="dropdown-item dropdown_children" href="/messages-guest">Mensajes</a></li>
+								<li><a class="dropdown-item dropdown_children" href="/notification-guest">Notificaciones</a></li>
+								<li><a class="dropdown-item dropdown_children" href="/favorites-guest">Lista de Favoritos</a></li>
+								<hr class="change_line_navbar">
+								<li><a class="dropdown-item dropdown_children" href="/host-page">Anfitri&oacuten</a></li>
+								<hr class="change_line_navbar">
+								<li><a class="dropdown-item dropdown_children" href="/receives-guest">Recibe hu&eacutespedes</a></li>
+								<li><a class="dropdown-item dropdown_children" href="/account">Cuenta</a></li>
+								<hr class="change_line_navbar">
+								<li><a class="dropdown-item dropdown_children" href="/dashboard-home">Administrador</a></li>
+								<hr class="change_line_navbar">
+								<li><a class="dropdown-item dropdown_children" href="/help">Ayuda</a></li>
+								<li><a class="dropdown-item dropdown_children" href="#">Cerrar Sesi&oacuten</a></li>
+							</ul>
+						</li>
+					</ul>
+
+				</div>
+			</nav>
+            <hr class="change_line">
+
+			<!-- End of NavBar -->
+			<!-- Body -->
+		<div class="principal-container">
+			<!--Ejemplo-->
+
+			<div class="hosting-profile-container">
+				<a class="hosting-profile-link" href="lodging-profile">
+					<!--<span class="material-icons">favorite_border</span>-->
+					<img class="img-hosting-profile" src="/sources/lodging-examples/hospedajes1.jpg" alt="">
+					<h4 class="letter-profile-container">Bavaro, Rep&uacuteblica Dominicana</h4>
+					<p class="letter-profile-container">En la playa</p>
+					<p class="letter-profile-container">22 - 27 de enero</p>
+					<p class="letter-profile-container"><strong>$224 USD</strong> noche</p>
+				</a>
+			</div>
+
+			<div class="hosting-profile-container">
+				<a class="hosting-profile-link" href="lodging-profile">
+					<!--<span class="material-icons">favorite_border</span>-->
+					<img class="img-hosting-profile" src="/sources/lodging-examples/hospedajes2.jpg" alt="">
+					<h4 class="letter-profile-container">Palmar de Ocoa, Rep&uacuteblica Dominicana</h4>
+					<p class="letter-profile-container">En la playa</p>
+					<p class="letter-profile-container">1 - 6 de diciembre</p>
+					<p class="letter-profile-container"><strong>$241 USD</strong> noche</p>
+				</a>
+			</div>
+
+			<div class="hosting-profile-container">
+				<a class="hosting-profile-link" href="lodging-profile">
+					<!--<span class="material-icons">favorite_border</span>-->
+					<img class="img-hosting-profile" src="/sources/lodging-examples/hospedajes3.jpg" alt="">
+					<h4 class="letter-profile-container">Ban&iacute, Rep&uacuteblica Dominicana</h4>
+					<p class="letter-profile-container">Playa de Catalina</p>
+					<p class="letter-profile-container">1 - 6 de diciembre</p>
+					<p class="letter-profile-container"><strong>$399 USD</strong> noche</p>
+				</a>
+			</div>
+
+			<div class="hosting-profile-container">
+				<a class="hosting-profile-link" href="lodging-profile">
+					<!--<span class="material-icons">favorite_border</span>-->
+					<img class="img-hosting-profile" src="/sources/lodging-examples/hospedajes4.jpg" alt="">
+					<h4 class="letter-profile-container">Las Terrenas, Rep&uacuteblica Dominicana</h4>
+					<p class="letter-profile-container">Playa Bonita</p>
+					<p class="letter-profile-container">12 - 17 de diciembre</p>
+					<p class="letter-profile-container"><strong>$208 USD</strong> noche</p>
+				</a>
+			</div>
+
+			<div class="hosting-profile-container">
+				<a class="hosting-profile-link" href="lodging-profile">
+					<!--<span class="material-icons">favorite_border</span>-->
+					<img class="img-hosting-profile" src="/sources/lodging-examples/hospedajes5.jpg" alt="">
+					<h4 class="letter-profile-container">Cabarete, Rep&uacuteblica Dominicana</h4>
+					<p class="letter-profile-container">Kite Beach</p>
+					<p class="letter-profile-container">1 - 6 de diciembre</p>
+					<p class="letter-profile-container"><strong>$120 USD</strong> noche</p>
+				</a>
+			</div>
+
+			<div class="hosting-profile-container">
+				<a class="hosting-profile-link" href="lodging-profile">
+					<!--<span class="material-icons">favorite_border</span>-->
+					<img class="img-hosting-profile" src="/sources/lodging-examples/hospedajes6.jpg" alt="">
+					<h4 class="letter-profile-container">Juan Dolio, Rep&uacuteblica Dominicana</h4>
+					<p class="letter-profile-container">Playa Juan Dolio</p>
+					<p class="letter-profile-container">1 - 6 de diciembre</p>
+					<p class="letter-profile-container"><strong>$117 USD</strong> noche</p>
+				</a>
+			</div>
+		</div>
+
+		<!--Footer-->
+		<hr class="footer-container">
+		<div class="container" style="margin-top: 70px;">
+			<div class="row">
+				<div class="col-md-3">
+					<section>
+						<h6 style="margin-left: 40px;">Airbnb</h6>
+						<ul style="list-style: none;">
+							<li><a href="/help">Ayuda</a></li>
+							<li><a href="#">Pol&iacuteticas</a></li>
+							<li><a href="#">T&eacuterminos</a></li>
+							<li><a href="#">Privacidad</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-md-3">
+					<section>
+						<h6 style="margin-left: 40px;">Descubrir</h6>
+						<ul style="list-style: none;">
+							<li><a href="#">Confianza y seguridad</a></li>
+							<li><a href="#">Mapa del sitio</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-md-3">
+					<section>
+						<h6 style="margin-left: 40px;">Alojamiento</h6>
+						<ul style="list-style: none;">
+							<li><a href="#">Por qu&eacute anfitri&oacuten/a</a></li>
+							<li><a href="#">Alojamiento Responsable</a></li>
+							<li><a href="#">Casas abiertas</a>&emsp;<a href="#"><button type="button" class="btn btn-primary new">New</button></a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-md-3">
+					<section>
+						<h5 style="margin-left: 40px;">
+						<a href="https://es-la.facebook.com/airbnb/" target="_blank" style="color: #3B5998;"><i class="fa fa-facebook" style="padding-right: 20px;"></i></a>
+						<a href="https://twitter.com/airbnb" target="_blank" style="color: #00ACEE;"><i class="fa fa-twitter" style="padding-right: 20px;"></i></a>
+						<a href="https://www.instagram.com/airbnb/" target="_blank" style="color: #d6249f;"><i class="fa fa-instagram" style="padding-right: 20px;"></i></a>
+						</h5>
+						<ul style="list-style: none;">
+							<li><a href="#">Reseñas</a></li>
+							<li><a href="#">Sugerencias</a></li>
+							<li><a href="#">Contacto</a></li>
+						</ul>
+					</section>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
