@@ -33,12 +33,14 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
 			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 			
 			<!-- Font selection link -->
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+			<!-- Font selection link -->
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 			<!-- The Styles used has been stored and saved in another file named "style.css" and linked through <link> tag as shown below: -->	
 
-			<link rel="stylesheet" href="/style/bookings.css">
+			<link rel="stylesheet" href="/style/lodging-profile.css">
 			<!--Airbnb icon-->
 			<link rel="shortcut icon" type="image/x-icon" href="/sources/Airbnb icon.ico"/>
 		</head>
@@ -96,10 +98,123 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
             <hr class="change_line">
 
 			<!-- End of NavBar -->
-			<!-- Body -->
+		
+		<!-- Body -->
 		<div class="principal-container">
+			<h4 class="principal-text-profile">Villa Alice</h4>
+			<img class="principal-img-profile" src="/sources/lodging-examples/hospedajes1.jpg" alt="">
+			<div class="information-profile">
+				<!--First column-->
+				<div class="details-profile">
+					<h4>Villa entero - Anfitrión: Steven</h4>
+					<ul class="list-description">
+						<li>15 huéspedes</li>
+						<li>4 habitaciones</li>
+						<li>8 camas</li>
+						<li>5 baños</li>
+					</ul>
+					<hr style="border-top: 2px solid #000000;">
+					<ul>
+						<li class="letter-details-profile">
+							<h4 class="letter-details-profile"><span class="material-symbols-outlined">meeting_room</span> Acceso sin restricción de horario</h4>
+							<p class="letter-details-profile">Realiza la llegada fácilmente con ayuda del portero.</p>
+						</li>
+						<li class="letter-details-profile">
+							<h4 class="letter-details-profile"><span class="material-symbols-outlined">workspace_premium</span> Steven tiene la categoría de Superanfitrión</h4>
+							<p class="letter-details-profile">Los Superanfitriones tienen mucha experiencia, cuentan con valoraciones excelentes y se esfuerzan al máximo para ofrecerles a los huéspedes estadías maravillosas.</p>
+						</li>
+						<li class="letter-details-profile">
+							<h4 class="letter-details-profile"><span class="material-symbols-outlined">location_on</span> Ubicación fantástica</h4>
+							<p class="letter-details-profile">La mayoria de los últimos huéspedes han valorado a favor del hospedaje</p>
+						</li>
+					</ul>
+					<hr style="border-top: 2px solid #000000;">
+					<h4>¿Dónde vas a dormir?</h4>
+					<div class="photo-place">
+						<div>
+							<img src="/sources/lodging-examples/hospedajes1.1.jpg" class="img-place" alt="">
+							<h4>Habitacion 1</h4>
+							<p>1 cama king</p>
+						</div>
+						<div>
+							<img src="/sources/lodging-examples/hospedajes1.2.jpg" class="img-place" alt="">
+							<h4>Habitacion 2</h4>
+							<p>1 cama king</p>
+						</div>
+					</div>
+					<hr style="border-top: 2px solid #000000;">
+					<h4>Lo que este lugar ofrece</h4>
+					<ul>
+						<li class="letter-details-profile">
+							<h4 class="letter-details-profile"><span class="material-symbols-outlined">water</span> Vista al mar</h4>
+						</li>
+						<li class="letter-details-profile">
+							<h4 class="letter-details-profile"><span class="material-symbols-outlined">sailing</span> Acceso a playa Privado - Frente a la playa</h4>
+						</li>
+						<li class="letter-details-profile">
+							<h4 class="letter-details-profile"><span class="material-symbols-outlined">wifi</span> Wifi</h4>
+						</li>
+						<li class="letter-details-profile">
+							<h4 class="letter-details-profile"><span class="material-symbols-outlined">pool</span> Piscina Privado, exterior: disponible, abierto las 24 horas</h4>
+						</li>
+						<li class="letter-details-profile">
+							<h4 class="letter-details-profile"><span class="material-symbols-outlined">panorama</span> Vista al océano</h4>
+						</li>
+						<li class="letter-details-profile">
+							<h4 class="letter-details-profile"><span class="material-symbols-outlined">directions_car</span> Estacionamiento gratuito en las instalaciones</h4>
+						</li>
+					</ul>
+				</div>
 
+				<!--Second column-->
+				<div class="reservation-details">
+					<p style="padding: 25px; position: relative; left: 15px;"><strong>$350 USD</strong> noche</p>
+					<!--Formulario-->
+					<form class=" mt-3 rounded form-details" style="max-width: 420px; padding: 30px 30px 60px 30px; background-color: white; font-family: Helvetica; font-weight: 600; color: #484848;">
+						<div class="input-group-prepend" style=" font-size: small;">
+							<label>Llegada</label> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+							<label>Salida</label><br>
+						</div>
+						<div class="input-group" style=" font-size: small;">
+							<input class="form-control" type="date" placeholder="dd-mm-yyyy" name="checkin" />
+							<input class="form-control" type="date" placeholder="dd-mm-yyyy" name="checkout" />
+						</div>
+						<br>
+						<div class="form-group" style=" font-size: small;">
+							<label>Hu&eacutespedes</label><br>
+							<select class="custom-select mt-1">
+								<option selected>Seleccione la cantidad de hu&eacutespedes</option>
+								<option value="one">1</option>
+								<option value="two">2</option>
+								<option value="three">3</option>
+								<option value="four">4</option>
+								<option value="five">5</option>
+								<option value="more1">More...</option>
+							</select><br>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary btn-lg"> <a href="#">Reserva</a></button>
+						</div>
+					</form>
+					<p class="form-details advise-details">No se hará ningún cargo por el momento</p>
+					<div class="div-price">
+						<p class="result-price"><u>$350 USD x 5 noches</u></p>
+						<p class="result-price">$1,750 USD</p>
+					</div>
+					<div class="div-price">
+						<p class="result-price"><u>Tarifa por servicio</u></p>
+						<p class="result-price">$247 USD</p>
+					</div>
+					<hr class="result-price" style="border-top: 2px solid #000000; width: 400px; margin: 0 auto;">
+					<div class="div-price">
+						<p class="result-price"><strong>Total sin incluir impuestos</strong></p>
+						<p class="result-price"><strong>$1,997 USD</strong></p>
+					</div>
+				</div>
+			</div>
 		</div>
+
+		<!--Footer-->
 		<hr class="footer-container">
 		<div class="container" style="margin-top: 70px;">
 			<div class="row">

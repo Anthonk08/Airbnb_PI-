@@ -3,7 +3,6 @@
 /* Element Selector */
 .background_img{
 	background:#FFFFFF;
-	background-image: url(/sources/wallpapers/image6.jpg);
 	background-repeat: no-repeat;
 	background-size: 100vw 100vh;
 	margin-top: 10px;
@@ -13,14 +12,14 @@
 
 /* For styling NavBar */
 .navbar.navbar-expand-lg.navbar-light li a{
-	color: white;
+	color: rgb(0, 0, 0);
     padding: 8px 8px;
     font-size: 15px;
     font-weight: 500;
 }
 
 .navbar.navbar-expand-lg.navbar-light li a:hover {
-	color: rgba(255, 255, 255, 0.618);
+	color: rgba(85, 77, 77, 0.618);
 }
 
 .checked {
@@ -31,6 +30,18 @@
 	background-color: rgb(255,90,95);
 	border-color: rgb(255,90,95);
 	font-size: 16px;
+	width: 360px;
+}
+
+.btn-primary.btn-lg, a {
+	color: rgb(255, 255, 255); 
+	text-decoration: none;
+	margin: 0 auto;
+}
+
+.btn-primary.btn-lg, a:hover {
+	color: rgba(85, 77, 77, 0.618);
+	text-decoration: none;
 }
 
 .btn_flashy {
@@ -57,7 +68,6 @@
 }
 
 .btn.btn-primary.new {
-	background-color: rgb(0, 106, 112);
 	border: none;
 	font-size: 12px;
 	padding: 1px 4px;
@@ -98,10 +108,90 @@
 	margin: 0 auto;
 	min-height: 603px;
 	height: auto;
-	width: 90%;
-	border-radius: 25px;
+	width: 70%;
 }
 
+.principal-text-profile {
+	position: relative;
+	left: 15px;
+}
+
+.principal-img-profile {
+	height: 400px;
+	width: 600px;
+	position: relative;
+	left: 15px;
+	border-radius: 15px;
+}
+
+.information-profile {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(1, 1fr);
+	gap: 9px;
+	box-sizing: border-box;
+	padding: 5px;
+	margin: 5px;
+}
+
+.list-description, li {
+	display:inline;
+    padding-left:3px;
+    padding-right:3px;
+}
+
+.letter-details-profile {
+	font-size: 16px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	left: -10px;
+}
+
+.img-place {
+	height: 245px;
+	width: 245px;
+	border-radius: 15px;
+}
+
+.photo-place {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(1, 1fr);
+	gap: 9px;
+	box-sizing: border-box;
+}
+
+.reservation-details {
+	border: #000000 solid 0.5px;
+	border-radius: 15px;
+	height: 490px;
+	width: 450px;
+	margin: 0 auto;
+}
+
+.form-details {
+	position: relative;
+	top: -45px;
+	margin: 0 auto;
+}
+
+.advise-details {
+	position: relative;
+	top: -100px;
+	left: 18%;
+}
+
+.div-price {
+	display: flex;
+	justify-content: space-around;
+}
+
+.result-price {
+	position: relative;
+	top: -80px;
+}
 
 @media (min-height: 801px) {
 	.form_line {
