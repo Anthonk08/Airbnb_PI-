@@ -326,6 +326,20 @@ const getReceivesGuest = (req, res) => {
     res.render("receives-guest", {});
 }
 
+const getpolicies = (req, res) => {
+    logService.info("Estado de la sesion: " + req.state);
+
+    // Al acceder a la ruta raiz:
+
+    if (req.state == "done") {
+        logService.info("Estado del usuario: done");
+        res.redirect("/dashboard");
+        return;
+    }
+
+    res.render("policies", {});
+}
+
 // POST
 const logIn = async (req, res) => {
 
@@ -429,5 +443,6 @@ module.exports = {
     getSuggestions,
     getAboutUs,
     getBecomeHost,
-    getReceivesGuest
+    getReceivesGuest,
+    getpolicies
 }
