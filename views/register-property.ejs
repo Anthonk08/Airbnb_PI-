@@ -125,6 +125,19 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
                                 <p></p>-->
                                 <div id="map"></div>
                                 
+                                <script>
+                                 let map = L.map('map').setView([19.470800,-70.692039],8)
+
+                                 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                                 }).addTo(map);
+
+                                 var marker = new L.marker([19.4792,-70.6931],{
+                                    draggable: true,
+                                    autoPan: true
+                                 }).addTo(map);
+                                </script>
+                                
                                 <p></p>
                              </div>
 
@@ -155,7 +168,7 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
                              </div>
                              <div class="form-group">
                                 <label>Precio por noche</label>
-                                <input type="number" name="precio"  class="form-control" id="precio" placeholder="$86">
+                                <input type="number" name="precio"  class="form-control" id="precio" placeholder="US $86">
                                 <p></p>
                              </div>
                               <!--<div class="form-group">
