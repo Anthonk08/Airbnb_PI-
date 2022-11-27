@@ -361,7 +361,7 @@ const getLodgingBooking = (req, res) => {
   res.render("lodging-booking", {});
 };
 
-const getAlojamientoResponsable = (req, res) => {
+const getResponsibleHosting = (req, res) => {
   logService.info("Estado de la sesion: " + req.state);
 
   // Al acceder a la ruta raiz:
@@ -375,7 +375,7 @@ const getAlojamientoResponsable = (req, res) => {
   res.render("alojamiento-responsable", {});
 };
 
-const getPorQueAnfitrion = (req, res) => {
+const getWhyHost = (req, res) => {
   logService.info("Estado de la sesion: " + req.state);
 
   // Al acceder a la ruta raiz:
@@ -389,7 +389,7 @@ const getPorQueAnfitrion = (req, res) => {
   res.render("por-que-anfitrion", {});
 };
 
-const getTerminos = (req, res) => {
+const getServiceTerms = (req, res) => {
   logService.info("Estado de la sesion: " + req.state);
 
   // Al acceder a la ruta raiz:
@@ -403,7 +403,7 @@ const getTerminos = (req, res) => {
   res.render("terminos", {});
 };
 
-const getPoliticasPrivacidad = (req, res) => {
+const getPrivacyPolicy = (req, res) => {
   logService.info("Estado de la sesion: " + req.state);
 
   // Al acceder a la ruta raiz:
@@ -530,8 +530,8 @@ module.exports = {
   getSearchBookings,
   getLodgingprofile,
   getLodgingBooking,
-  getAlojamientoResponsable,
-  getPorQueAnfitrion,
-  getTerminos,
-  getPoliticasPrivacidad,
+  getResponsibleHosting,
+  getWhyHost,
+  getServiceTerms,
+  getPrivacyPolicy,
 };
