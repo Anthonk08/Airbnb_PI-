@@ -44,6 +44,8 @@ router.get("/receives-guest", ctrlLogin.getReceivesGuest);
 router.get("/search-bookings", ctrlLogin.getSearchBookings);
 router.get("/lodging-profile", ctrlLogin.getLodgingprofile);
 router.get("/lodging-booking", ctrlLogin.getLodgingBooking);
+router.get("/cancellation-policies", ctrlLogin.getcancellationpolicies);
+router.get("/criterios-de-confianza", ctrlLogin.getcriteriosconfianza);
 
 //ENDPOINT DEL PERFIL DE USUARIO
 // TODO: definir ruta de la pantalla de perfil de usuario

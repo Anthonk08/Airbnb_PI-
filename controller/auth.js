@@ -361,6 +361,34 @@ const getLodgingBooking = (req, res) => {
   res.render("lodging-booking", {});
 };
 
+const getcancellationpolicies = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+
+  res.render("cancellation-policies", {});
+};
+
+const getcriteriosconfianza = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+
+  res.render("criterios-de-confianza", {});
+};
+
 /**
  * POST para iniciar sesion
  * al iniciar sesion, mantendra el usuario en los request para que las demas pantallas validen que haya una sesion activa.
@@ -474,4 +502,6 @@ module.exports = {
   getSearchBookings,
   getLodgingprofile,
   getLodgingBooking,
+  getcancellationpolicies,
+  getcriteriosconfianza,
 };

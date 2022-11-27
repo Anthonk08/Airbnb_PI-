@@ -135,21 +135,3 @@ p {
 	color: black;
 	text-decoration:none;
 }
-
-/*
-	MEDIA QUERY.
-	Son utilizados para una determinada resolucion
-	hacer algo en este caso
-*/
-
-@media (min-height: 801px) {
-	.container-father{
-		min-height: 85vh;
-	}
-}
-
-@media (max-height: 800px) {
-	.container-father{
-		min-height: 610px;
-	}
-}
