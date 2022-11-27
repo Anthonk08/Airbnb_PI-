@@ -361,6 +361,62 @@ const getLodgingBooking = (req, res) => {
   res.render("lodging-booking", {});
 };
 
+const getAlojamientoResponsable = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+
+  res.render("alojamiento-responsable", {});
+};
+
+const getPorQueAnfitrion = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+
+  res.render("por-que-anfitrion", {});
+};
+
+const getTerminos = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+
+  res.render("terminos", {});
+};
+
+const getPoliticasPrivacidad = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+
+  res.render("politicas-privacidad", {});
+};
+
 /**
  * POST para iniciar sesion
  * al iniciar sesion, mantendra el usuario en los request para que las demas pantallas validen que haya una sesion activa.
@@ -474,4 +530,8 @@ module.exports = {
   getSearchBookings,
   getLodgingprofile,
   getLodgingBooking,
+  getAlojamientoResponsable,
+  getPorQueAnfitrion,
+  getTerminos,
+  getPoliticasPrivacidad,
 };
