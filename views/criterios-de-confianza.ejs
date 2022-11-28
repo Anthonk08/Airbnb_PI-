@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criterios de confianza</title>
+    <!-- The name between <title> tag defines the title of the docvument. -->
+        <title>Criterios de confianza</title>
+
+        <!-- Bootstrap 4 is designed to be responsive to mobile devices. Mobile-first styles are part of the core framework.
+    
+        To ensure proper rendering and touch zooming, add the following <meta> tag inside the <head> element: -->
+    
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+          <!-- Bootstrap link -->
+    
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+          
+          <!-- Font selection link -->
+    
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+          <!-- The Styles used has been stored and saved in another file named "style.css" and linked through <link> tag as shown below: -->	
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+           integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+           crossorigin=""/>
+          <link rel="stylesheet" href="/style/policies.css">
+          <!--Airbnb icon-->
+          <link rel="shortcut icon" type="image/x-icon" href="/sources/Airbnb icon.ico"/>
+       </head>
+       <body class="background_img">
+    
+             <!-- This is to display the Navbar of the website. -->
+    
+             <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="collapse navbar-collapse">
+    
+                <!-- SVG for Logo -->
+                <a href="./home"><img src="/sources/Airbnb icon navbar.png" alt="" style="height: 50px; width: 100px;"></a>
+                <!-- End of SVG -->
+                <ul class="navbar-nav d-flex flex-row">
+                   <li class="nav-item"><a class="nav-link" href="./home">Inicio</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/bookings">Reservas</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/contact">Contacto</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/suggestions">Sugerencias</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/about-us">Sobre Nosotros</a></li>
+                </ul>
+    
+    
+                <ul class="navbar-nav ml-auto navbar_move">
+                   
+                   <li class="nav-item dropdown">
+                      <a class="nav-link menu_property" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                         <span class="material-symbols-outlined setting-menu">menu</span>
+                         <img class="rounded-circle" src="/sources/person-icon.png" alt="" style="width: 40px; height: 40px;">
+                      </a>
+    
+                      <ul class="dropdown-menu dropdown_father">
+                         <li><a class="dropdown-item dropdown_children" href="./">Iniciar Sesi&oacuten</a></li>
+                         <li><a class="dropdown-item dropdown_children" href="./register">Registrarse</a></li>
+                         <hr class="change_line_navbar">
+                         <li><a class="dropdown-item dropdown_children" href="/messages-guest">Mensajes</a></li>
+                         <li><a class="dropdown-item dropdown_children" href="/notification-guest">Notificaciones</a></li>
+                         <li><a class="dropdown-item dropdown_children" href="/favorites-guest">Lista de Favoritos</a></li>
+                         <hr class="change_line_navbar">
+                         <li><a class="dropdown-item dropdown_children" href="/host-page">Anfitri&oacuten</a></li>
+                         <hr class="change_line_navbar">
+                         <li><a class="dropdown-item dropdown_children" href="#host">Recibe hu&eacutespedes</a></li>
+                         <li><a class="dropdown-item dropdown_children" href="/account">Cuenta</a></li>
+                         <hr class="change_line_navbar">
+                         <li><a class="dropdown-item dropdown_children" href="/help">Ayuda</a></li>
+                         <li><a class="dropdown-item dropdown_children" href="#">Cerrar Sesi&oacuten</a></li>
+                      </ul>
+                   </li>
+                </ul>
+    
+             </div>
+          </nav>
+             <hr class="change_line">
+            <!-- End of NavBar -->
+</head>
+<body>
+
+    <!-- This is to display the message box of the panel guest in the website. -->
+
+   <div class="container-father">
+    <div class="content-center select-box_div">
+       <h2 class="title-box_div position-title">Criterios de confianza</h2>
+       <hr class="change_line">
+       <div>
+          <div class="content-table">
+             <table>
+                <tr>
+                   <td>
+                      
+                      <ol>
+                         <li>
+                            <a href="#title1">Criterios de confianza para anfitriones</a>
+                         </li>
+
+                         <li>
+                            <a href="#title2">Normas de Airbnb para los huéspedes</a>
+
+                            <ol>
+                              <li><a href="#title21">Compromiso</a></li>
+                              <li><a href="#title22">Limpieza del alojamiento</a></li>
+                              <li><a href="#title23">Veracidad del anuncio</a></li>  
+                              <li><a href="#title24">Buena comunicación</a></li>  
+                            </ol>
+                         </li>
+
+                         <li>
+                            <a href="#title3">Denunciar una infracción</a>
+                         </li>
+
+                         <li>
+                            <a href="#title4">Cómo garantizamos que los anfitriones cumplan estos estándares</a>
+                         </li>
+                      </ol>
+                   </td>
+                </tr>
+             </table>
+          </div>
+
+          <!--Titulo 1-->
+
+          <h4 id="title1">Criterios de confianza para anfitriones</h4>
+          <p>Además de respetar nuestras normas de la comunidad, algo que tienen que hacer todos los miembros 
+          de la plataforma, los anfitriones de alojamientos deben cumplir los siguientes estándares para garantizar la calidad:</p>
+
+          <ol type="A">
+             <li><p>Compromiso</p></li>
+             <li><p>Limpieza del alojamiento</p></li>
+             <li><p>Veracidad del anuncio</p></li>
+             <li><p>Buena comunicación</p></li>
+          </ol>
+
+          <p>Nuestro objetivo es que estas normas queden claras y que las medidas que tomemos cuando alguien se 
+            las salte sean proporcionales a la gravedad y la frecuencia del incumplimiento.</p>
+
+          
+          <hr style="height: 25px; visibility: hidden;">
+
+          <!--Titulo 2-->
+
+          <h4 id="title2">Normas de Airbnb para los huéspedes</h4>
+          <hr style="height: 1px; visibility: hidden;">
+          
+          <h5 id="#title21">Compromiso</h5>
+          <p>La experiencia de viaje para los huéspedes en Airbnb empieza con la reserva. Para garantizar que los 
+            viajeros se sientan seguros a la hora de planear un viaje, los anfitriones deben respetar las reservas 
+            que aceptan, en la medida de lo posible. Las cancelaciones pueden ser un gran inconveniente para los 
+            huéspedes, especialmente cuando ocurren cerca de la fecha de llegada, porque cuentan con menos tiempo 
+            para gestionar cambios en el viaje.</p>
+
+            <ol type="A">
+               <li><p>Cancelaciones: los anfitriones no deberían cancelar reservas, a menos que se deba a causas de fuerza mayor 
+                  o tengan pruebas de que el huésped incumple alguna norma de la casa o política de Airbnb. Si el 
+                  anfitrión tiene que cancelar, debe hacerlo lo antes posible, y ponerse en contacto con Airbnb 
+                  si necesita ayuda para gestionar la cancelación.</p></li>
+               <li><p>Llegada: los anfitriones deben asegurarse de que los huéspedes disponen de la información necesaria 
+                  para acceder al alojamiento en el momento de la llegada (p. ej., deben proporcionarles indicaciones 
+                  correctas, actualizar el código de acceso, etc.).</p></li>
+            </ol>
+            <hr style="height: 1px; visibility: hidden;">
+
+          <h5 id="#title22">Limpieza del alojamiento</h5>
+          <p>Para que los huéspedes se sientan realmente como en casa, todo debe estar limpio. Encontrarse un espacio 
+            sucio no solo afecta a la experiencia de los viajeros, sino que puede suponer un riesgo para su salud y la 
+            de sus acompañantes. Para garantizar la seguridad, la satisfacción y la comodidad de los huéspedes, Airbnb 
+            exige que todos los anfitriones de alojamientos deben cumplir un estándar mínimo de limpieza y ofrecer una 
+            solución a los huéspedes que se hayan encontrado con un espacio que no cumpla con ese mínimo al llegar.</p>
+
+            <ol type="A">
+               <li><p>Salud y seguridad: los alojamientos no pueden contener nada que suponga un riesgo para la salud 
+                  (p. ej., humedades o plagas).</p></li>
+               <li><p>Limpieza: los anfitriones deben ofrecer alojamientos con un nivel de limpieza alto (que no haya 
+                  moho en la ducha ni polvo o pelo de animal en las superficies, etc.).</p></li>
+               <li><p>Limpieza entre reservas: los anfitriones deben limpiar después de cada estancia (es decir, cambiar 
+                  las sábanas y toallas, tirar la basura, aspirar o barrer el suelo, limpiar las superficies, etc.).</p></li>
+            </ol>
+            <hr style="height: 1px; visibility: hidden;">
+
+          <h5 id="#title23">Veracidad del anuncio</h5>
+          <p>Los anfitriones tienen total libertad para establecer la categoría y características de sus anuncios, así como 
+            sobre los servicios que quieren ofrecer a los huéspedes. Sin embargo, cuando los alojamientos no cuentan con lo 
+            que han prometido en sus anuncios, la experiencia de los viajeros puede verse afectada y esto puede repercutir 
+            en su confianza en Airbnb. Por este motivo, Airbnb requiere que la clasificación, las características y los servicios 
+            que estén especificados en el anuncio en el momento de la reserva deben corresponderse con las que el huésped encontrará 
+            en el alojamiento durante su estancia, desde la llegada hasta la salida.</p>
+
+            <ol type="A">
+               <li><p>Detalles de la reserva: el anfitrión solo podrá modificar la reserva con el consentimiento del huésped 
+                  (como cambiar las fechas de la estancia, el precio, et.).</p></li>
+               <li><p>Ubicación: la información sobre dónde se encuentra el alojamiento debe ser precisa.</p></li>
+               <li><p>Tipo de alojamiento: la información sobre el tipo de alojamiento, sus características y la privacidad 
+                  que ofrece debe coincidir con la realidad. Es decir, que debes asegurarte de que, por ejemplo, no anuncias 
+                  un alojamiento entero si ofreces una habitación privada; no has indicado un número incorrecto de dormitorios 
+                  o te olvidas de mencionar que el gestor de la propiedad estará presente.</p></li>
+               <li><p>Servicios: el anfitrión debe indicar con exactitud en el anuncio los servicios y artículos disponibles 
+                  en su alojamiento (p. ej., aunque cuente con una bañera de hidromasaje, no debe incluirse si no funciona).</p></li>
+               <li><p>Propiedad: el anuncio de la reserva debe ser el que se ofrezca al huésped. Los anfitriones podrán cambiar 
+                  el alojamiento únicamente con el consentimiento previo del huésped.</p></li>
+            </ol>
+            <hr style="height: 1px; visibility: hidden;">
+
+          <h5 id="#title24">Veracidad del anuncio</h5>
+          <p>Esperamos que los anfitriones o coanfitriones proporcionen a los viajeros datos de contacto actualizados y que 
+            estén disponibles para atender a las consultas o los problemas inesperados que les puedan surgir.</p>
+
+            <ol type="A">
+               <li><p>Responder a las preguntas: los anfitriones deben estar disponibles para responder con rapidez a las dudas 
+                  que se les plantean a los huéspedes y colaborar en caso de que se haya incumplido alguna norma en el anuncio.</p></li>
+               <li><p>Resolver cualquier problema: los anfitriones deben estar disponibles para tratar de solucionar los problemas 
+                  que surjan o completar las acciones necesarias que le indique Airbnb para subsanar el incumplimiento de los estándares para anfitriones.</p></li>
+            </ol>
+
+
+          
+          <hr style="height: 25px; visibility: hidden;">
+
+          <!--Titulo 3-->
+
+          <h4 id="title3">Denunciar una infracción</h4>
+          <p>Si tu anfitrión ha incumplido estos estándares de hospitalidad durante tu estancia, te pedimos que realices 
+            lo siguiente:</p>
+
+          <ol type="A">
+             <li><p>Habla con el anfitrión, ya que es la persona que puede ofrecerte una solución más rápidamente.</p></li>
+             <li><p>Deja constancia de lo ocurrido a través del hilo de mensajes de Airbnb, fotos, etc.</p></li>
+             <li><p>Consulta la Política de Reembolso al Huésped para saber cuáles son los requisitos que debes cumplir.</p></li>
+             <li><p>Contacta con nosotros directamente para comunicarnos cualquier problema o solicitar un reembolso a través del Centro de resoluciones.</p></li>
+             <li><p>Escribe una evaluación sincera con comentarios constructivos para que el anfitrión pueda mejorar de cara a futuras reservas.</p></li>
+          </ol>
+
+          
+          <hr style="height: 25px; visibility: hidden;">
+
+          <!--Titulo 4-->
+
+          <h4 id="title4">Cómo garantizamos que los anfitriones cumplan estos estándares</h4>
+          <p>Existen diferentes penalizaciones por cancelar reservas en caso de que no se deba a un motivo de causa mayor o el anfitrión 
+            no tenga pruebas de que el huésped ha incumplido una norma de la casa o política de Airbnb.</p>
+
+
+          <p>Cada vez que un huésped notifica que se ha incumplido alguno de los estándares para anfitriones, Airbnb evalúa el informe 
+            y determina si realmente se ha cometido una infracción. Dependiendo de lo grave que sea, Airbnb puede enviar un reembolso 
+            al huésped de la cantidad que pagó, suspender el anuncio hasta que el anfitrión complete las medidas necesarias o ambas 
+            opciones. Por ejemplo:</p>
+
+            <ol type="A">
+               <li><p>Si se ha informado de que hay un problema con la limpieza, Airbnb puede suspender el anuncio hasta que el 
+                  anfitrión proporcione documentación para demostrar que se ha realizado una limpieza a fondo o una inspección 
+                  profesional en el espacio y procurar, así, que la salud de los futuros huéspedes no corra ningún riesgo.</p></li>
+               <li><p>En el caso de que haya algún aspecto del alojamiento que no se corresponda con lo especificado en el anuncio, 
+                  Airbnb puede suspenderlo hasta que el anfitrión confirme que lo ha corregido en la información del anuncio, o 
+                  hasta que haya arreglado o reemplazado el servicio que faltaba.</p></li>
+            </ol>
+
+          <p>Si un usuario informa de que se ha incumplido alguno de estos estándares, Airbnb evaluará la situación y se tendrán 
+            en cuenta las infracciones que el anfitrión haya cometido en el pasado para aplicar las medidas pertinentes, así como 
+            su gravedad y frecuencia.</p>
+
+          <p>En función de lo que se saque en claro, puede que el anfitrión tenga que devolver cobros recibidos, que se suspenda 
+            su anuncio o que se elimine de forma permanente su anuncio o su cuenta.</p>
+
+          <hr style="height: 25px; visibility: hidden;">
+       </div>
+    </div>
+ </div>
+
+
+    <!--Footer-->
+    <hr>
+          <div class="container" style="margin-top: 70px;">
+            <div class="row">
+               <div class="col-md-3">
+                  <section>
+                     <h6 style="margin-left: 40px;">Airbnb</h6>
+                     <ul style="list-style: none;">
+                        <li><a href="/help">Ayuda</a></li>
+                        <li><a href="/cancellation-policies">Pol&iacuteticas</a></li>
+                        <li><a href="#">T&eacuterminos</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                     </ul>
+                  </section>
+               </div>
+               <div class="col-md-3">
+                  <section>
+                     <h6 style="margin-left: 40px;">Descubrir</h6>
+                     <ul style="list-style: none;">
+                        <li><a href="/criterios-de-confianza">Confianza y seguridad</a></li>
+                        <li><a href="#">Mapa del sitio</a></li>
+                     </ul>
+                  </section>
+               </div>
+               <div class="col-md-3">
+                  <section>
+                     <h6 style="margin-left: 40px;">Alojamiento</h6>
+                     <ul style="list-style: none;">
+                        <li><a href="#">Por qu&eacute anfitri&oacuten/a</a></li>
+                        <li><a href="#">Alojamiento Responsable</a></li>
+                        <li><a href="#">Casas abiertas</a>&emsp;<a href="#"><button type="button" class="btn btn-primary new">New</button></a></li>
+                     </ul>
+                  </section>
+               </div>
+               <div class="col-md-3">
+                  <section>
+                     <h5 style="margin-left: 40px;">
+                     <a href="https://es-la.facebook.com/airbnb/" target="_blank" style="color: #3B5998;"><i class="fa fa-facebook" style="padding-right: 20px;"></i></a>
+                     <a href="https://twitter.com/airbnb" target="_blank" style="color: #00ACEE;"><i class="fa fa-twitter" style="padding-right: 20px;"></i></a>
+                     <a href="https://www.instagram.com/airbnb/" target="_blank" style="color: #d6249f;"><i class="fa fa-instagram" style="padding-right: 20px;"></i></a>
+                     </h5>
+                     <ul style="list-style: none;">
+                        <li><a href="#">Reseñas</a></li>
+                        <li><a href="/suggestions">Sugerencias</a></li>
+                        <li><a href="/contact">Contacto</a></li>
+                     </ul>
+                  </section>
+               </div>
+            </div>
+         </div>    
+</body>
+</html>

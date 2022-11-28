@@ -361,7 +361,9 @@ const getLodgingBooking = (req, res) => {
   res.render("lodging-booking", {});
 };
 
-const getResponsibleHosting = (req, res) => {
+
+const getcancellationpolicies = (req, res) => {
+
   logService.info("Estado de la sesion: " + req.state);
 
   // Al acceder a la ruta raiz:
@@ -372,10 +374,12 @@ const getResponsibleHosting = (req, res) => {
     return;
   }
 
-  res.render("alojamiento-responsable", {});
+
+  res.render("cancellation-policies", {});
 };
 
-const getWhyHost = (req, res) => {
+const getcriteriosconfianza = (req, res) => {
+
   logService.info("Estado de la sesion: " + req.state);
 
   // Al acceder a la ruta raiz:
@@ -385,36 +389,7 @@ const getWhyHost = (req, res) => {
     res.redirect("/dashboard");
     return;
   }
-
-  res.render("por-que-anfitrion", {});
-};
-
-const getServiceTerms = (req, res) => {
-  logService.info("Estado de la sesion: " + req.state);
-
-  // Al acceder a la ruta raiz:
-
-  if (req.state == "done") {
-    logService.info("Estado del usuario: done");
-    res.redirect("/dashboard");
-    return;
-  }
-
-  res.render("terminos", {});
-};
-
-const getPrivacyPolicy = (req, res) => {
-  logService.info("Estado de la sesion: " + req.state);
-
-  // Al acceder a la ruta raiz:
-
-  if (req.state == "done") {
-    logService.info("Estado del usuario: done");
-    res.redirect("/dashboard");
-    return;
-  }
-
-  res.render("politicas-privacidad", {});
+  res.render("criterios-de-confianza", {});
 };
 
 /**
@@ -534,4 +509,6 @@ module.exports = {
   getWhyHost,
   getServiceTerms,
   getPrivacyPolicy,
+  getcancellationpolicies,
+  getcriteriosconfianza,
 };

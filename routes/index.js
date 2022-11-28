@@ -48,6 +48,8 @@ router.get("/alojamiento-responsable", ctrlLogin.getResponsibleHosting);
 router.get("/por-que-anfitrion", ctrlLogin.getWhyHost);
 router.get("/terminos", ctrlLogin.getServiceTerms);
 router.get("/politicas-privacidad", ctrlLogin.getPrivacyPolicy);
+router.get("/cancellation-policies", ctrlLogin.getcancellationpolicies);
+router.get("/criterios-de-confianza", ctrlLogin.getcriteriosconfianza);
 
 //ENDPOINT DEL PERFIL DE USUARIO
 // TODO: definir ruta de la pantalla de perfil de usuario
