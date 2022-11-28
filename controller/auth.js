@@ -1,5 +1,4 @@
 const crypto = require("crypto");
-
 const logService = require("../services/log");
 const mysqlService = require("../services/mysql");
 const config = require("../config");
@@ -67,7 +66,7 @@ const getAccount = (req, res) => {
     return;
   }
 
-  res.render("account", {});
+  res.render("account-pages/account", {});
 };
 
 const getHelp = (req, res) => {
