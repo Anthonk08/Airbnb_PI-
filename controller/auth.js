@@ -69,6 +69,76 @@ const getAccount = (req, res) => {
   res.render("account-pages/account", {});
 };
 
+const getProfileAccount = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+
+  res.render("account-pages/profile-account", {});
+};
+
+const getPersonalInformation = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+
+  res.render("account-pages/personal-information", {});
+};
+
+const getLoginSecurity = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+
+  res.render("account-pages/login-security", {});
+};
+
+const getPaymentsCollections = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+
+  res.render("account-pages/payments-collections", {});
+};
+
+const getNotifications = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+
+  res.render("account-pages/notifications", {});
+};
+
 const getHelp = (req, res) => {
   logService.info("Estado de la sesion: " + req.state);
 
@@ -473,4 +543,9 @@ module.exports = {
   getSearchBookings,
   getLodgingprofile,
   getLodgingBooking,
+  getProfileAccount,
+  getPersonalInformation,
+  getLoginSecurity,
+  getPaymentsCollections,
+  getNotifications,
 };

@@ -28,7 +28,7 @@
 
 			<!-- The Styles used has been stored and saved in another file named "style.css" and linked through <link> tag as shown below: -->	
 
-			<link rel="stylesheet" href="/style/account-pages/account.css">
+			<link rel="stylesheet" href="/style/account-pages/personal-information.css">
 			<!--Airbnb icon-->
 			<link rel="shortcut icon" type="image/x-icon" href="/sources/Airbnb icon.ico"/>
 		</head>
@@ -72,43 +72,82 @@
 			<!-- End of NavBar -->
 
 			<!-- This is to display the message box of the panel guest in the website. -->
-			
+
 			<div class="container-father">
 				<div class="content-center select-box_div">
-					<h4 class="title-box_div position-title">Cuenta</h4>
-					<h5 class="account-information_p"><strong>Antonio Montana,</strong> antoniomontana@gmail.com <strong><span class="underlined_span"><a href="/profile-account" style="text-decoration: none; color: black;">Ir al perfil</a></span></strong></h5>
+					<h4 class="title-box_div position-title">Informaci&oacuten personal</h4>
 					<div class="father-accounts_div">
 						<!-- <a href="#" style="text-decoration: none; color: rgb(0, 0, 0);"></a> -->
 						<div class="accounts_div">
-							<a href="personal-information" style="text-decoration: none; color: rgb(0, 0, 0);">
-								<p><span class="material-symbols-outlined">remember_me</span></p>
-								<p><strong>Datos personales</strong></p>
-								<p>Proporciona tus datos personales e ind&iacutecanos c&oacutemo podemos ponernos en contacto contigo</p>
-							</a>
+							<!--Nombre-->
+							<div>
+								<p class="title_p">Nombre legal</p>
+								<p>Ana Lucia Perez</p>
+								<p><a href="#">Editar</a></p>
+							</div>
+							<hr>
+							<!--Genero-->
+							<div>
+								<p class="title_p">G&eacutenero</p>
+								<p>Sin especificar</p>
+								<p><a href="#">Editar</a></p>
+							</div>
+							<hr>
+							<!--email-->
+							<div>
+								<p class="title_p">Direcci&oacuten de correo electr&oacutenico</p>
+								<p>an****@gmail.com</p>
+								<p><a href="#">Editar</a></p>
+							</div>
+							<hr>
+							<!--celular-->
+							<div>
+								<p class="title_p">N&uacutemero de tel&eacutefono</p>
+								<p>+1 (***) ***-1308</p>
+								<p><a href="#">Editar</a></p>
+							</div>
+							<hr>
+							<!--ID-->
+							<div>
+								<p class="title_p">Documento oficial de identidad</p>
+								<p>No proporcionado</p>
+								<p><a href="#">Editar</a></p>
+							</div>
+							<hr>
+							<!--Direccion-->
+							<div>
+								<p class="title_p">Direcci&oacuten</p>
+								<p>No proporcionado</p>
+								<p><a href="#">Editar</a></p>
+							</div>
+							<hr>
+							<!--Emergency contact-->
+							<div>
+								<p class="title_p">Contacto en caso de emergencia</p>
+								<p>No proporcionado</p>
+								<p><a href="#">Editar</a></p>
+							</div>
+							<hr>
 						</div>
 
-						<div class="accounts_div">
-							<a href="login-security" style="text-decoration: none; color: rgb(0, 0, 0);">
-								<p><span class="material-symbols-outlined">security</span></p>
-								<p><strong>Inicio de sesi&oacuten y seguridad</strong></p>
-								<p>Actualiza la contraseña y protege tu cuenta</p>
-							</a>
-						</div>
-
-						<div class="accounts_div">
-							<a href="payments-collections" style="text-decoration: none; color: rgb(0, 0, 0);">
-								<p><span class="material-symbols-outlined">payments</span></p>
-								<p><strong>Pagos y cobros</strong></p>
-								<p>Revisar pagos, cobros, cupones, tarjetas de regalo e impuestos</p>
-							</a>
-						</div>
-
-						<div class="accounts_div">
-							<a href="notifications" style="text-decoration: none; color: rgb(0, 0, 0);">
-								<p><span class="material-symbols-outlined">campaign</span></p>
-								<p><strong>Notificaciones</strong></p>
-								<p>Elige las preferencias de notificaci&oacuten y tu forma de contacto</p>
-							</a>
+						<div class="accounts_div2">
+							<div>
+								<span class="material-symbols-outlined">lock</span>
+								<h4>¿Por qué no aparece mi información aquí?</h4>
+								<p>Ocultamos algunos datos de la cuenta para proteger tu identidad.</p>
+								<hr>
+							</div>
+							<div>
+								<span class="material-symbols-outlined">security</span>
+								<h4>¿Qué datos se pueden editar?</h4>
+								<p>No se pueden modificar los datos que Airbnb utiliza para verificar tu identidad. Puedes modificar tus datos personales y de contacto, pero podríamos pedirte que verifiques tu identidad la próxima vez que hagas una reservación o crees un anuncio.</p>
+								<hr>
+							</div>
+							<div>
+								<span class="material-symbols-outlined">visibility</span>
+								<h4>¿Qué información se comparte con los demás?</h4>
+								<p>Airbnb solo proporciona los datos de contacto de los anfitriones y los huéspedes una vez que la reservación se haya confirmado.</p>
+							</div>
 						</div>
 					</div>
 				</div>

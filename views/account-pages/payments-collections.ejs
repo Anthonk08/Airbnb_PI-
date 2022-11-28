@@ -28,7 +28,8 @@
 
 			<!-- The Styles used has been stored and saved in another file named "style.css" and linked through <link> tag as shown below: -->	
 
-			<link rel="stylesheet" href="/style/account-pages/account.css">
+			<link rel="stylesheet" href="/style/account-pages/payments-collections.css">
+
 			<!--Airbnb icon-->
 			<link rel="shortcut icon" type="image/x-icon" href="/sources/Airbnb icon.ico"/>
 		</head>
@@ -72,43 +73,53 @@
 			<!-- End of NavBar -->
 
 			<!-- This is to display the message box of the panel guest in the website. -->
-			
+
 			<div class="container-father">
 				<div class="content-center select-box_div">
-					<h4 class="title-box_div position-title">Cuenta</h4>
-					<h5 class="account-information_p"><strong>Antonio Montana,</strong> antoniomontana@gmail.com <strong><span class="underlined_span"><a href="/profile-account" style="text-decoration: none; color: black;">Ir al perfil</a></span></strong></h5>
+					<h4 class="title-box_div position-title">Pagos y cobros</h4>
 					<div class="father-accounts_div">
 						<!-- <a href="#" style="text-decoration: none; color: rgb(0, 0, 0);"></a> -->
 						<div class="accounts_div">
-							<a href="personal-information" style="text-decoration: none; color: rgb(0, 0, 0);">
-								<p><span class="material-symbols-outlined">remember_me</span></p>
-								<p><strong>Datos personales</strong></p>
-								<p>Proporciona tus datos personales e ind&iacutecanos c&oacutemo podemos ponernos en contacto contigo</p>
-							</a>
+							<!--Tus pagos-->
+							<div>
+								<p class="title_p">Tus pagos</p>
+								<p>Lleva un registro de todos los pagos y reembolsos.</p>
+								<button class="button_btn">Gestionar pagos</button>
+								<br>
+								<p class="title_p">Formas de pago</p>
+								<p>Agrega una forma de pago a través de nuestro sistema de pago seguro y empieza a planear tu próximo viaje.</p>
+								<hr>
+								<button class="button_btn">Agregar forma de pago</button>
+								<br>
+							</div>
+							<!--Crédito de regalo de Airbnb-->
+							<div>
+								<p class="title_p">Crédito de regalo de Airbnb</p>
+								<p>Canjea una tarjeta de regalo y consulta el saldo de crédito.</p>
+								<hr>
+								<p>Saldo actual del credito</p>
+								<p>$0.00</p>
+								<hr>
+								<button class="button_btn">Agregar una tarjeta de regalo</button>
+							</div>
+							<br>
+							<!--Crédito de regalo de Airbnb-->
+							<div>
+								<p class="title_p">Cupones</p>
+								<p>Agrega un cupón y ahorra en el siguiente viaje.</p>
+								<hr>
+								<p>Tus cupones</p>
+								<p>0</p>
+								<button class="button_btn">Agregar un cup&oacuten</button>
+							</div>
 						</div>
 
-						<div class="accounts_div">
-							<a href="login-security" style="text-decoration: none; color: rgb(0, 0, 0);">
-								<p><span class="material-symbols-outlined">security</span></p>
-								<p><strong>Inicio de sesi&oacuten y seguridad</strong></p>
-								<p>Actualiza la contraseña y protege tu cuenta</p>
-							</a>
-						</div>
-
-						<div class="accounts_div">
-							<a href="payments-collections" style="text-decoration: none; color: rgb(0, 0, 0);">
-								<p><span class="material-symbols-outlined">payments</span></p>
-								<p><strong>Pagos y cobros</strong></p>
-								<p>Revisar pagos, cobros, cupones, tarjetas de regalo e impuestos</p>
-							</a>
-						</div>
-
-						<div class="accounts_div">
-							<a href="notifications" style="text-decoration: none; color: rgb(0, 0, 0);">
-								<p><span class="material-symbols-outlined">campaign</span></p>
-								<p><strong>Notificaciones</strong></p>
-								<p>Elige las preferencias de notificaci&oacuten y tu forma de contacto</p>
-							</a>
+						<div class="accounts_div2">
+							<div>
+								<span class="material-symbols-outlined">savings</span>
+								<h4>Realiza todos los pagos a través de Airbnb</h4>
+								<p>Si realizas pagos y te comunicas a través de Airbnb, podrás acogerte a las medidas de protección contempladas en nuestros Términos de Servicio y nuestros Términos de Pago del Servicio, cancelaciones y otras medidas. Más información</p>
+							</div>
 						</div>
 					</div>
 				</div>
