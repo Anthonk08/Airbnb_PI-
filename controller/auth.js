@@ -361,7 +361,9 @@ const getLodgingBooking = (req, res) => {
   res.render("lodging-booking", {});
 };
 
+
 const getcancellationpolicies = (req, res) => {
+
   logService.info("Estado de la sesion: " + req.state);
 
   // Al acceder a la ruta raiz:
@@ -371,11 +373,13 @@ const getcancellationpolicies = (req, res) => {
     res.redirect("/dashboard");
     return;
   }
+
 
   res.render("cancellation-policies", {});
 };
 
 const getcriteriosconfianza = (req, res) => {
+
   logService.info("Estado de la sesion: " + req.state);
 
   // Al acceder a la ruta raiz:
@@ -385,7 +389,6 @@ const getcriteriosconfianza = (req, res) => {
     res.redirect("/dashboard");
     return;
   }
-
   res.render("criterios-de-confianza", {});
 };
 
@@ -502,6 +505,10 @@ module.exports = {
   getSearchBookings,
   getLodgingprofile,
   getLodgingBooking,
+  getResponsibleHosting,
+  getWhyHost,
+  getServiceTerms,
+  getPrivacyPolicy,
   getcancellationpolicies,
   getcriteriosconfianza,
 };

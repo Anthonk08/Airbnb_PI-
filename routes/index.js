@@ -44,6 +44,10 @@ router.get("/receives-guest", ctrlLogin.getReceivesGuest);
 router.get("/search-bookings", ctrlLogin.getSearchBookings);
 router.get("/lodging-profile", ctrlLogin.getLodgingprofile);
 router.get("/lodging-booking", ctrlLogin.getLodgingBooking);
+router.get("/alojamiento-responsable", ctrlLogin.getResponsibleHosting);
+router.get("/por-que-anfitrion", ctrlLogin.getWhyHost);
+router.get("/terminos", ctrlLogin.getServiceTerms);
+router.get("/politicas-privacidad", ctrlLogin.getPrivacyPolicy);
 router.get("/cancellation-policies", ctrlLogin.getcancellationpolicies);
 router.get("/criterios-de-confianza", ctrlLogin.getcriteriosconfianza);
 
