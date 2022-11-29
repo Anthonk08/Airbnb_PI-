@@ -125,6 +125,15 @@
             
             </script>
         <%}%>
+        <%if(sessionSuccess != ''){%>
+            <script>
+                $(document).ready(function () {
+                    var message = '<%=sessionSuccess%>';
+                    alert(message);
+                });
+            
+            </script>
+        <%}%>
         <!--Modal view-->
       
     </body>

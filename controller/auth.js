@@ -3,10 +3,11 @@ const mysqlService = require("../services/mysql");
 
 const getLoginView = (req, res) => {
   console.log(req.session.sessionError);
-  if (req.session.user_id != undefined) {
+  if (req.session.user_id != "") {
     res.redirect("/home");
     return;
   }
+
   if (req.session.sessionError != "") {
     res.render("login", {
       sessionError: req.session.sessionError,

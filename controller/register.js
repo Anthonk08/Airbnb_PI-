@@ -181,13 +181,13 @@ const registerPropertyPost = async (req, res) => {
 //GET-----------------------------------
 const getRegisterEmail = (req, res) => {
   logService.info("Estado de la sesion: " + req.state);
-  if (req.session.sessionError != undefined) {
+  if (req.session.sessionError != "") {
     console.log(req.session.sessionError);
   }
 
   // Al acceder a la ruta raiz:
 
-  if (req.session.user_id != undefined) {
+  if (req.session.user_id != "") {
     res.redirect("/home");
     return;
   }
@@ -195,8 +195,8 @@ const getRegisterEmail = (req, res) => {
   success = req.session.sessionSucces;
   error = req.session.sessionError;
 
-  req.session.sessionSuccess = undefined;
-  req.session.sessionError = undefined;
+  req.session.sessionSuccess = "";
+  req.session.sessionError = "";
   res.render("register", {
     error,
     success,
