@@ -203,50 +203,42 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
 			<!-- End of NavBar -->
 			<!-- Body -->
 		<div class="principal-container">
+     
       <div class="dash-content">
         <div class="activity">
+        
             <div class="title">
                 <i class="uil uil-clock-three"></i>
                 <span class="text">Reservaciones</span>
             </div>
-
-            <div class="activity-data">
-                <div class="data joined">
-                    <span class="data-title">Fecha de reservacion</span>
-                    <%if(currentRent!=''){%>
-                      <% currentRent.forEach(function(rent){ %>
-                      <span class="data-list"><%=rent.rental_date%></span>
-                      <%})%>
-                    <%}%>
-                </div>
-
-                <div class="data joined">
-                    <span class="data-title">Fecha de retorno</span>
-                    <%if(currentRent!=''){%>
-                      <% currentRent.forEach(function(rent){ %>
-                      <span class="data-list"><%=rent.return_date%></span>
-                      <%})%>
-                    <%}%>
-                </div>
-
-                <div class="data joined">
-                    <span class="data-title">Alojamiento</span>
-                    <%if(currentRent!=''){%>
-                      <% currentRent.forEach(function(rent){ %>
-                      <a class="data-list" href="/lodging-profile?id=<%=rent.id_property%>">Ver alojamiento</a>
-                      <%})%>
-                    <%}%>
-                </div>
-
-                <div class="data names">
-                    <span class="data-title">Monto pagado</span>
-                    <%if(currentRent!=''){%>
-                      <% currentRent.forEach(function(rent){ %>
-                        <span class="data-list">$<%=rent.amount%>.00</span>
-                      <%})%>
-                    <%}%>
-                </div>
-            </div>
+            <table class="table table-striped">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Fecha de reservacion</th>
+                  <th scope="col">Fecha de retorno</th>
+                  <th scope="col">Alojamiento</th>
+                  <th scope="col">Monto pagado</th>
+                  <th scope="col">Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <%if(currentRent!=''){%>
+                  <% currentRent.forEach(function(rent){ %>
+                    <tr>
+                      <td><%=rent.rental_date%></td>
+                      <td><%=rent.return_date%></td>
+                      <td><a class="data-list" href="/lodging-profile?id=<%=rent.id_property%>">Ver alojamiento</a></td>
+                      <td><strong>$<%=rent.amount%>.00</strong></td>
+                      <%if(rent.state==1){%>
+                      <td><strong>Disponible</strong></td>
+                      <%}else{%>
+                        <td><strong>No disponible</strong></td>
+                        <%}%>
+                    </tr>
+                  <%})%>
+                <%}%>
+              </tbody>
+            </table>
         </div>
     </div>
 		</div>
