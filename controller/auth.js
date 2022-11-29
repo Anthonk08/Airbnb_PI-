@@ -315,6 +315,85 @@ const getReceivesGuest = (req, res) => {
   res.render("receives-guest", {});
 };
 
+const getcancellationpolicies = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+
+  res.render("cancellation-policies", {});
+};
+
+const getcriteriosconfianza = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+  res.render("criterios-de-confianza", {});
+};
+
+const getResponsibleHosting = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+  res.render("alojamiento-responsable", {});
+};
+
+const getWhyHost = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+  res.render("por-que-anfitrion", {});
+};
+
+const getServiceTerms = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+  res.render("terminos", {});
+};
+
+const getPrivacyPolicy = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+  res.render("politicas-privacidad", {});
+};
+
 /**
  * POST para iniciar sesion
  * al iniciar sesion, mantendra el usuario en los request para que las demas pantallas validen que haya una sesion activa.
@@ -423,4 +502,10 @@ module.exports = {
   getAboutUs,
   getBecomeHost,
   getReceivesGuest,
+  getResponsibleHosting,
+  getWhyHost,
+  getServiceTerms,
+  getPrivacyPolicy,
+  getcancellationpolicies,
+  getcriteriosconfianza,
 };
