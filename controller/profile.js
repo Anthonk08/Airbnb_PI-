@@ -104,12 +104,13 @@ const getBookings = async (req, res) => {
     return;
   }
 
-  var currentRent;
+  var currentRent, payments;
   try {
     currentRent = await mysqlService.getCurrentRent(req.session.user_id);
   } catch (error) {
     console.log(error);
   }
+  console.log(currentRent);
 
   res.render("bookings", { currentRent });
 };

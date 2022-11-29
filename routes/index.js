@@ -8,7 +8,7 @@ const ctrlPayment = require("../controller/payment");
 
 // rutas de los controladores
 router.get("/home", ctrlHome.loadIndex); // ruta raiz de todo el proyecto
-router.post("/logout", ctrlHome.setVariables);
+router.get("/logout", ctrlHome.logout);
 
 router.get("/search-bookings", ctrlHome.getSearchBookings);
 router.get("/lodging-profile", ctrlHome.getLodgingProfile);
@@ -45,11 +45,6 @@ router.get("/suggestions", ctrlLogin.getSuggestions);
 router.get("/about-us", ctrlLogin.getAboutUs);
 router.get("/become-host", ctrlLogin.getBecomeHost);
 router.get("/receives-guest", ctrlLogin.getReceivesGuest);
-<<<<<<< HEAD
-=======
-router.get("/search-bookings", ctrlLogin.getSearchBookings);
-router.get("/lodging-profile", ctrlLogin.getLodgingprofile);
-router.get("/lodging-booking", ctrlLogin.getLodgingBooking);
 router.get("/alojamiento-responsable", ctrlLogin.getResponsibleHosting);
 router.get("/por-que-anfitrion", ctrlLogin.getWhyHost);
 router.get("/terminos", ctrlLogin.getServiceTerms);
@@ -57,7 +52,6 @@ router.get("/politicas-privacidad", ctrlLogin.getPrivacyPolicy);
 router.get("/cancellation-policies", ctrlLogin.getcancellationpolicies);
 router.get("/criterios-de-confianza", ctrlLogin.getcriteriosconfianza);
 
->>>>>>> 615b140d43da8b3a09629bb7f4cc8ee2850188c9
 //ENDPOINT DEL PERFIL DE USUARIO
 // TODO: definir ruta de la pantalla de perfil de usuario
 router.get("/profile-history", ctrlProfile.loadRentalHistory);

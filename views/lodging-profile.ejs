@@ -75,130 +75,7 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
   <body class="background_img">
     <!-- This is to display the Navbar of the website. -->
 
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="collapse navbar-collapse">
-        <!-- SVG for Logo -->
-        <a href="./home"
-          ><img
-            src="/sources/Airbnb icon navbar.png"
-            alt=""
-            style="height: 50px; width: 100px"
-        /></a>
-        <!-- End of SVG -->
-        <ul class="navbar-nav d-flex flex-row">
-          <li class="nav-item"><a class="nav-link" href="./home">Inicio</a></li>
-          <li class="nav-item">
-            <a class="nav-link" href="bookings">Reservas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact">Contacto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="suggestions">Sugerencias</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about-us">Sobre Nosotros</a>
-          </li>
-        </ul>
-
-        <ul class="navbar-nav ml-auto navbar_move">
-          <li class="nav-item btn_flashy">
-            <a class="nav-link" href="become-host">Hazte Anfitri&oacuten</a>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link menu_property"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <span class="material-symbols-outlined setting-menu">menu</span>
-              <img
-                class="rounded-circle"
-                src="/sources/person-icon.png"
-                alt=""
-                style="width: 40px; height: 40px"
-              />
-            </a>
-
-            <ul class="dropdown-menu dropdown_father">
-              <li>
-                <a class="dropdown-item dropdown_children" href="/"
-                  >Iniciar Sesi&oacuten</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item dropdown_children" href="/register"
-                  >Registrarse</a
-                >
-              </li>
-              <hr class="change_line_navbar" />
-              <li>
-                <a
-                  class="dropdown-item dropdown_children"
-                  href="/messages-guest"
-                  >Mensajes</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item dropdown_children"
-                  href="/notification-guest"
-                  >Notificaciones</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item dropdown_children"
-                  href="/favorites-guest"
-                  >Lista de Favoritos</a
-                >
-              </li>
-              <hr class="change_line_navbar" />
-              <li>
-                <a class="dropdown-item dropdown_children" href="/host-page"
-                  >Anfitri&oacuten</a
-                >
-              </li>
-              <hr class="change_line_navbar" />
-              <li>
-                <a
-                  class="dropdown-item dropdown_children"
-                  href="/receives-guest"
-                  >Recibe hu&eacutespedes</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item dropdown_children" href="/account"
-                  >Cuenta</a
-                >
-              </li>
-              <hr class="change_line_navbar" />
-              <li>
-                <a
-                  class="dropdown-item dropdown_children"
-                  href="/dashboard-home"
-                  >Administrador</a
-                >
-              </li>
-              <hr class="change_line_navbar" />
-              <li>
-                <a class="dropdown-item dropdown_children" href="/help"
-                  >Ayuda</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item dropdown_children" href="#"
-                  >Cerrar Sesi&oacuten</a
-                >
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <%- include('partials/navbar.ejs')%>
     <hr class="change_line" />
 
     <!-- End of NavBar -->
@@ -246,6 +123,7 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
                 placeholder="dd-mm-yyyy"
                 name="checkin"
                 id="checkin"
+                value=""
               />
               <input
                 class="form-control"
@@ -253,6 +131,7 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
                 placeholder="dd-mm-yyyy"
                 name="checkout"
                 id="checkout"
+                value="00/00/0000"
               />
             </div>
             <br />
@@ -306,10 +185,10 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
             <%=property.lastname%>
           </h4>
           <ul class="list-description">
-            <li>15 huéspedes</li>
-            <li>4 habitaciones</li>
-            <li>8 camas</li>
-            <li>5 baños</li>
+            <li><%=property.adults%> huéspedes</li>
+            <li><%=property.rooms%> habitaciones</li>
+            <li><%=property.beds%> camas</li>
+            <li><%=property.baths%> baños</li>
           </ul>
           <hr style="border-top: 2px solid #000000" />
           <ul>
@@ -413,14 +292,24 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
     <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
 
     <script>
+      document.getElementById("checkin").onchange = () => {
+        var paypalButton = document.getElementById("paypal-button-container");
+        paypalButton.innerHTML = "";
+      };
+
       document.getElementById("checkout").onchange = () => {
         var paypalButton = document.getElementById("paypal-button-container");
+
         var checkout = new Date(document.getElementById("checkout").value);
+
         var checkin = new Date(document.getElementById("checkin").value);
 
         var pricePerNight = document.getElementById("price_per_night");
+
         var totalPrice = document.getElementById("total_price");
+
         var totalPriceNight = document.getElementById("total_price_night");
+
         var fee = document.getElementById("fee");
 
         if (checkin < checkout) {
@@ -432,8 +321,11 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
             (checkout - checkin) / (1000 * 60 * 60 * 24),
             10
           );
+
           var tPriceNightValue = diffDays * `<%=property.price%>`;
+
           var feeValue = parseInt(tPriceNightValue * 0.15, 10);
+
           var totalValue = tPriceNightValue + feeValue;
 
           // precio por noche
@@ -445,54 +337,118 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
 
           totalPrice.innerHTML = `$${totalValue}.00 USD`;
 
-          paypal
-            .Buttons({
-              createOrder: function (data, actions) {
-                const orderJson = { amount: totalValue };
-                return fetch("/api/orders", {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify(orderJson),
-                })
-                  .then((response) => response.json())
-                  .then((response) => {
-                    return response.id;
-                  });
-              },
+          if ("<%=historialRents%>" == "") {
+            console.log("No tiene reservaciones");
+          } else {
+            var historialRents = JSON.parse(
+              `<%-JSON.stringify(historialRents)%>`
+            );
 
-              // Finalize the transaction
-              onApprove: function (data, actions) {
-                const trasacJson = {
-                  propertyId: "<%=property.id%>",
-                  checkinDate: checkin,
-                  checkoutDate: checkout,
-                  amount: totalValue,
-                };
+            if (historialRents["id"] != undefined) {
+            } else {
+              console.log("Tiene multiples reservaciones");
 
-                return fetch(`/api/orders/${data.orderID}/capture`, {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify(trasacJson),
-                });
-              },
-              style: {
-                layout: "horizontal",
-                color: "blue",
-                label: "pay",
-                height: 40,
-              },
-            })
-            .render("#paypal-button-container");
+              var existRent = false;
+
+              var dateExistenceRent = "";
+
+              historialRents.forEach((rent) => {
+                if (!existRent) {
+                  var rentDate = new Date(rent.rental_date);
+                  var returnDate = new Date(rent.return_date);
+
+                  dateExistenceRent = `Existe una reservacion entre el dia ${rentDate.toLocaleDateString(
+                    "do-DO"
+                  )} y ${returnDate.toLocaleDateString("do-DO")}`;
+
+                  var isFree = false;
+
+                  // la fecha de checkin no puede ser antes de la fecha de retorno de otra renta.
+                  if (
+                    checkin.getTime() < rentDate.getTime() &&
+                    checkout.getTime() < rentDate.getTime()
+                  ) {
+                    isFree = true;
+                    return;
+                  }
+                  if (
+                    checkin.getTime() > returnDate.getTime() &&
+                    checkout.getTime() > returnDate.getTime()
+                  ) {
+                    isFree = true;
+                    return;
+                  }
+                  existRent = true;
+                }
+              });
+
+              if (existRent) alert(dateExistenceRent);
+              existRent = false;
+            }
+          }
+          if ("<%=userLogged%>" == "true") {
+            paypal
+              .Buttons({
+                createOrder: function (data, actions) {
+                  const orderJson = { amount: totalValue };
+                  return fetch("/api/orders", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(orderJson),
+                  })
+                    .then((response) => response.json())
+                    .then((response) => {
+                      return response.id;
+                    });
+                },
+
+                // Finalize the transaction
+                onApprove: function (data, actions) {
+                  const trasacJson = {
+                    propertyId: "<%=property.id%>",
+                    checkinDate: checkin,
+                    checkoutDate: checkout,
+                    amount: totalValue,
+                  };
+
+                  return fetch(`/api/orders/${data.orderID}/capture`, {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(trasacJson),
+                  })
+                    .then((response) => response.json())
+                    .then(function (orderData) {
+                      window.location.assign(
+                        "/lodging-profile?id=<%=property.id%>"
+                      );
+                    });
+                },
+                style: {
+                  layout: "horizontal",
+                  color: "blue",
+                  label: "pay",
+                  height: 40,
+                },
+              })
+              .render("#paypal-button-container");
+          } else {
+            alert("Debe tener una sesion iniciada para reservar");
+          }
         } else {
           paypalButton.innerHTML = "";
         }
       };
       //   $("#checkin").change();
     </script>
+    <%if(sessionSuccess!='' && sessionSuccess!=undefined){%>
+    <script>
+      alert("<%=sessionSuccess%>");
+    </script>
+    <%}%>
     <!--Footer-->
     <hr class="footer-container" />
     <div class="container" style="margin-top: 70px">

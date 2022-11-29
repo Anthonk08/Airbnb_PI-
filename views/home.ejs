@@ -79,61 +79,55 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
         Reserva casas, apartamentos y experiencias únicas.
       </h1>
       <div class="form-group" style="font-size: small">
-        <label>D&oacutende</label><br />
-        <input
-          class="form-control"
-          type="text"
-          placeholder="Explora destinos"
-          name="destination"
-        />
+        
+        <select class="custom-select mt-1" name="city">
+          <option value="0" selected>Provincia</option>
+          <% cities.forEach(function(city){ %>
+            <option value="<%=city.id_provincia%>"><%=city.provincia%></option>
+            <%})%></select
+        >
       </div>
-      <div class="input-group-prepend" style="font-size: small">
-        <label>Llegada</label> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-        &emsp; <label>Salida</label><br />
-      </div>
-      <div class="input-group" style="font-size: small">
-        <input
-          class="form-control"
-          type="date"
-          placeholder="dd-mm-yyyy"
-          name="checkin"
-        />
-        <input
-          class="form-control"
-          type="date"
-          placeholder="dd-mm-yyyy"
-          name="checkout"
-        />
-      </div>
-      <br />
+      
       <div class="form-group" style="font-size: small">
-        <label>¿Cu&aacutentos?</label><br />
-        <select class="custom-select mt-1">
-          <option selected>Adultos</option>
-          <option value="one">1</option>
-          <option value="two">2</option>
-          <option value="three">3</option>
-          <option value="four">4</option>
-          <option value="five">5</option>
-          <option value="more1">More...</option></select
+        <label>Filtro</label><br />
+        <select class="custom-select mt-1" name="persons">
+          <option selected value="0">Adultos</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">Mas...</option></select
         ><br />
 
-        <select class="custom-select mt-1">
-          <option selected>Niños</option>
-          <option value="one2">1</option>
-          <option value="two2">2</option>
-          <option value="three2">3</option>
-          <option value="four2">4</option>
-          <option value="five2">5</option>
-          <option value="more2">More...</option></select
+        <select class="custom-select mt-1" name="rooms">
+          <option selected value="0">Habitaciones</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">Mas...</option></select
         ><br />
 
-        <select class="custom-select mt-1">
-          <option selected>Bebes</option>
-          <option value="one3">1</option>
-          <option value="two3">2</option>
-          <option value="three3">3</option>
-          <option value="more3">More...</option></select
+        <select class="custom-select mt-1" name="beds">
+          <option selected value="0">Camas</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">Mas...</option></select
+        ><br />
+
+        <select class="custom-select mt-1" name="baths">
+          <option selected value="0">Baños</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">Mas...</option></select
         ><br />
       </div>
       <div class="form-group">

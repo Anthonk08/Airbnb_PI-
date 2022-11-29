@@ -1,7 +1,5 @@
 const logService = require("../services/log");
 const mysqlService = require("../services/mysql");
-const config = require("../config");
-const homeCtrl = require("./home");
 
 const getLoginView = (req, res) => {
   console.log(req.session.sessionError);
@@ -15,9 +13,11 @@ const getLoginView = (req, res) => {
     });
     return;
   }
-
+  var message = req.session.sessionSuccess;
+  req.session.sessionSuccess = "";
   res.render("login", {
     sessionError: undefined,
+    sessionSuccess: message,
   });
 };
 
@@ -256,7 +256,9 @@ const getContact = (req, res) => {
     return;
   }
 
-  res.render("contact", {});
+  res.render("contact", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 const getSuggestions = (req, res) => {

@@ -135,12 +135,8 @@ const registerUserProperty = (
           reject(err);
           return;
         }
-
-        try {
-          resolve(result);
-        } catch (ex) {
-          reject(ex.message);
-        }
+        // console.log(rows.insertId);
+        resolve(rows.insertId);
       });
     });
   });
@@ -294,7 +290,7 @@ const getPropertyHistory = (idProperty) =>
       }
 
       try {
-        resolve(rows[0]);
+        resolve(rows);
       } catch (ex) {
         reject(ex.message);
       }
@@ -324,14 +320,16 @@ const getPaymentHistory = (idUser) =>
 
 const getCurrentRent = (idUser) =>
   new Promise((resolve, reject) => {
-    const query = `select * from rental r where r.id_user =${idUser} order by r.last_update desc;`;
+    const query = `select r.*,p.amount  from rental r 
+    inner join payment p on p.id_rental =r.id where r.id_user =1 order by r.last_update desc;`;
 
-    connection.query(query, (err, result, rows) => {
+    connection.query(query, (err, rows) => {
       if (err) {
         reject(err);
         return;
       }
-      resolve(result.insertId);
+      if (rows.length == 0) resolve("");
+      else resolve(rows);
     });
   });
 

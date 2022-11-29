@@ -43,7 +43,6 @@ async function capturePayment(orderId) {
       Authorization: `Bearer ${accessToken}`,
     },
   });
-  console.log(response);
   const data = await response.json();
   if (data.status == "COMPLETED") {
     console.log("La transaccion se ha completado");

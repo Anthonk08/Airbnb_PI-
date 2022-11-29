@@ -60,9 +60,10 @@ const registerUser = async (req, res) => {
     await mysqlService.createUser(email, name, lastname, 25, pass);
 
     // Si el registro fue exitoso, redirect a la pantalla de registro y mostrar al usuario que se ha registrado
-    req.session.message = "Se ha registrado correctamente";
-    req.session.sessionSucces = true;
-    res.redirect("/register");
+
+    req.session.sessionSuccess = "Se ha registrado correctamente";
+    res.redirect("/login");
+    return;
   } catch (error) {
     req.session.sessionError =
       "Error al procesar el registro, intentelo mas tarde.";
@@ -152,13 +153,13 @@ const registerPropertyPost = async (req, res) => {
       precio
     );
 
-    logService.info(`Propiedad registrada, id: ${saveProperty.insertId}`);
-    propertyId = saveProperty.insertId;
+    logService.info(`Propiedad registrada, id: ${saveProperty}`);
+    propertyId = saveProperty;
   } catch (error) {
     req.session.sessionError =
       "Error al procesar el registro, intentelo mas tarde.";
     console.error("ERROR: ", error);
-    res.redirect("/register");
+    res.redirect("/register-property");
     return;
   }
 
@@ -169,7 +170,7 @@ const registerPropertyPost = async (req, res) => {
     req.session.sessionError =
       "Error al procesar el registro, intentelo mas tarde.";
     console.error("ERROR: ", error);
-    res.redirect("/register");
+    res.redirect("/register-property");
     return;
   }
 
@@ -182,7 +183,6 @@ const getRegisterEmail = (req, res) => {
   logService.info("Estado de la sesion: " + req.state);
   if (req.session.sessionError != undefined) {
     console.log(req.session.sessionError);
-    req.session.sessionError = "";
   }
 
   // Al acceder a la ruta raiz:
@@ -191,31 +191,46 @@ const getRegisterEmail = (req, res) => {
     res.redirect("/home");
     return;
   }
+  var error, success;
+  success = req.session.sessionSucces;
+  error = req.session.sessionError;
+
+  req.session.sessionSuccess = undefined;
+  req.session.sessionError = undefined;
+  res.render("register", {
+    error,
+    success,
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 
   // si se ha registrado correctamente se le avisa al usuario
-  if (req.session.sessionSuccess) {
-    res.render("register", {
-      sessionSuccess: req.session.sessionSucces,
-      sessionError: false,
-      message: req.session.message,
-    });
-  } else if (req.session.sessionError) {
-    res.render("register", {
-      sessionSuccess: false,
-      sessionError: req.session.sessionError,
-      message: req.session.message,
-    });
-    // carga normal de la pantalla
-  } else {
-    res.render("register", {
-      sessionSuccess: false,
-      sessionError: false,
-      message: "",
-    });
-  }
+  // if (req.session.sessionSuccess) {
+  //   res.render("register", {
+  //     sessionSuccess: req.session.sessionSucces,
+  //     sessionError: "",
+  //     message: req.session.message,
+  //     user_name:
+  //       req.session.user_name == undefined ? "" : req.session.user_name,
+  //   });
+  // } else if (req.session.sessionError) {
+  //   res.render("register", {
+  //     sessionSuccess: "",
+  //     sessionError: req.session.sessionError,
+  //     message: req.session.message,
+  //     user_name:
+  //       req.session.user_name == undefined ? "" : req.session.user_name,
+  //   });
+  //   // carga normal de la pantalla
+  // } else {
+  //   res.render("register", {
+  //     sessionSuccess: false,
+  //     sessionError: false,
+  //     message: "",
+  //     user_name:
+  //       req.session.user_name == undefined ? "" : req.session.user_name,
+  //   });
+  // }
   // se limpian las variables para no mostrarlo en otras pantallas
-  req.session.sessionSucces = false;
-  req.session.sessionError = false;
 };
 
 const getRegisterPhone = (req, res) => {
@@ -266,6 +281,7 @@ const getRegisterProperty = async (req, res) => {
     cities: cities,
     livingTypes: livingTypes,
     message: message,
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
   });
 };
 

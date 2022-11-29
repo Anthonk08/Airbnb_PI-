@@ -29,15 +29,14 @@ const payCancelled = (req, res) => res.send("Cancelled");
 // create a new order
 const makeOrder = async (req, res) => {
   const { amount } = req.body;
-  if (amount > 0) {
-    return;
-  }
+
   const order = await paypal.createOrder(amount);
   res.json(order);
 };
 
 // capture payment & store order information or fullfill order
 const captureOrder = async (req, res) => {
+  req.session.sessionSuccess = "";
   const { orderID } = req.params;
   const { propertyId, checkinDate, checkoutDate, amount } = req.body;
   var captureData, userTransacDB, addPaymentDB;
@@ -71,7 +70,9 @@ const captureOrder = async (req, res) => {
   }
   req.session.sessionSuccess = "Reservacion realizada con exito";
 
-  res.redirect(`/lodging-profile?id=${propertyId}`);
+  // res.redirect(`/lodging-profile?id=${propertyId}`);
+  var message = req.session.sessionSuccess;
+  res.send({ message });
 };
 
 module.exports = {

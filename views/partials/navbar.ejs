@@ -55,7 +55,7 @@
               >Registrarse
             </a>
           </li>
-          <%}%>
+          <%}%> <%if(user_name!=''){ %>
           <hr class="change_line_navbar" />
           <li>
             <a class="dropdown-item dropdown_children" href="/messages-guest"
@@ -74,12 +74,14 @@
               >Lista de Favoritos</a
             >
           </li>
+
           <hr class="change_line_navbar" />
           <li>
             <a class="dropdown-item dropdown_children" href="/host-page"
               >Anfitri&oacuten</a
             >
           </li>
+          <%}%>
           <hr class="change_line_navbar" />
           <li>
             <a class="dropdown-item dropdown_children" href="/receives-guest"
@@ -92,20 +94,21 @@
               >Cuenta
             </a>
           </li>
-          <%}%>
+
           <hr class="change_line_navbar" />
           <li>
             <a class="dropdown-item dropdown_children" href="/dashboard-home"
               >Administrador
             </a>
           </li>
+          <%}%>
           <hr class="change_line_navbar" />
           <li>
             <a class="dropdown-item dropdown_children" href="/help">Ayuda</a>
           </li>
           <%if(user_name!=''){ %>
           <li>
-            <a class="dropdown-item dropdown_children" href="#"
+            <a class="dropdown-item dropdown_children" href="/logout"
               >Cerrar Sesi&oacuten
             </a>
           </li>
