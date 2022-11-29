@@ -164,7 +164,7 @@ const getHostPage = (req, res) => {
     return;
   }
 
-  res.render("host-page", {});
+  res.render("host-page/host-page", {});
 };
 
 const getMessagesHost = (req, res) => {
@@ -178,7 +178,7 @@ const getMessagesHost = (req, res) => {
     return;
   }
 
-  res.render("messages-host", {});
+  res.render("host-page/messages-host", {});
 };
 
 const getNotificationHost = (req, res) => {
@@ -192,7 +192,7 @@ const getNotificationHost = (req, res) => {
     return;
   }
 
-  res.render("notification-host", {});
+  res.render("host-page/notification-host", {});
 };
 
 const getResumeHost = (req, res) => {
@@ -206,7 +206,7 @@ const getResumeHost = (req, res) => {
     return;
   }
 
-  res.render("resume-host", {});
+  res.render("host-page/resume-host", {});
 };
 
 const getLodgingHost = (req, res) => {
@@ -220,7 +220,7 @@ const getLodgingHost = (req, res) => {
     return;
   }
 
-  res.render("lodging", {});
+  res.render("host-page/lodging", {});
 };
 
 const getDashboardAbandonedReservations = (req, res) => {
@@ -234,7 +234,7 @@ const getDashboardAbandonedReservations = (req, res) => {
     return;
   }
 
-  res.render("dashboard-abandoned-reservations", {});
+  res.render("dashboard-pages/dashboard-abandoned-reservations", {});
 };
 
 const getDashboardBookings = (req, res) => {
@@ -248,7 +248,7 @@ const getDashboardBookings = (req, res) => {
     return;
   }
 
-  res.render("dashboard-bookings", {});
+  res.render("dashboard-pages/dashboard-bookings", {});
 };
 
 const getDashboardDesactivatedAccounts = (req, res) => {
@@ -262,7 +262,7 @@ const getDashboardDesactivatedAccounts = (req, res) => {
     return;
   }
 
-  res.render("dashboard-desactivated-accounts", {});
+  res.render("dashboard-pages/dashboard-desactivated-accounts", {});
 };
 
 const getDashboardHome = (req, res) => {
@@ -276,7 +276,7 @@ const getDashboardHome = (req, res) => {
     return;
   }
 
-  res.render("dashboard-home", {});
+  res.render("dashboard-pages/dashboard-home", {});
 };
 
 const getDashboardProfit = (req, res) => {
@@ -290,7 +290,7 @@ const getDashboardProfit = (req, res) => {
     return;
   }
 
-  res.render("dashboard-profit", {});
+  res.render("dashboard-pages/dashboard-profit", {});
 };
 
 const getDashboardUsers = (req, res) => {
@@ -304,7 +304,7 @@ const getDashboardUsers = (req, res) => {
     return;
   }
 
-  res.render("dashboard-users", {});
+  res.render("dashboard-pages/dashboard-users", {});
 };
 
 const getBookings = (req, res) => {
@@ -371,7 +371,7 @@ const getBecomeHost = (req, res) => {
     return;
   }
 
-  res.render("become-host", {});
+  res.render("host-page/become-host", {});
 };
 
 const getReceivesGuest = (req, res) => {
