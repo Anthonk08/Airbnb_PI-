@@ -4,19 +4,21 @@ const config = require("../config");
 const homeCtrl = require("./home");
 
 const getAccount = (req, res) => {
-    logService.info("Estado de la sesion: " + req.state);
+  logService.info("Estado de la sesion: " + req.state);
 
-// Al acceder a la ruta raiz:
+  // Al acceder a la ruta raiz:
 
-if (req.state == "done") {
+  if (req.state == "done") {
     logService.info("Estado del usuario: done");
     res.redirect("/dashboard");
     return;
-}
+  }
 
-res.render("account-pages/account", {});
+  res.render("account-pages/account", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 module.exports = {
-    getAccount
+  getAccount,
 };

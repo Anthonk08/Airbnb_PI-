@@ -112,7 +112,10 @@ const getBookings = async (req, res) => {
   }
   console.log(currentRent);
 
-  res.render("bookings", { currentRent });
+  res.render("bookings", {
+    currentRent,
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 module.exports = {

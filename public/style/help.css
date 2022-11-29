@@ -11,14 +11,14 @@
 
 /* For styling NavBar */
 .navbar.navbar-expand-lg.navbar-light li a{
-	color: white;
+	color: rgb(0, 0, 0);
     padding: 8px 8px;
     font-size: 15px;
     font-weight: 500;
 }
 
 .navbar.navbar-expand-lg.navbar-light li a:hover {
-	color: rgba(255, 255, 255, 0.618);
+	color: rgba(71, 67, 67, 0.618);
 }
 
 .btn_flashy {

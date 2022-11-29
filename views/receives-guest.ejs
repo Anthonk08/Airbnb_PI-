@@ -14,182 +14,270 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
 
 <!DOCTYPE html>
 <html>
-	<head>
+  <head>
+    <!-- The name between <title> tag defines the title of the document. -->
+    <title>
+      Alquiler de alojamientos vacacionales, casas, apartamentos y experiencias
+    </title>
 
-		<!-- The name between <title> tag defines the title of the document. -->
-		<title>Alquiler de alojamientos vacacionales, casas, apartamentos y experiencias</title>
-
-		<!-- Bootstrap 4 is designed to be responsive to mobile devices. Mobile-first styles are part of the core framework.
+    <!-- Bootstrap 4 is designed to be responsive to mobile devices. Mobile-first styles are part of the core framework.
 
 		To ensure proper rendering and touch zooming, add the following <meta> tag inside the <head> element: -->
 
-			<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-			<!-- Bootstrap link -->
+    <!-- Bootstrap link -->
 
-			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
 
-			<!-- Font selection link -->
+    <!-- Font selection link -->
 
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-			<!-- The Styles used has been stored and saved in another file named "style.css" and linked through <link> tag as shown below: -->
+    <!-- The Styles used has been stored and saved in another file named "style.css" and linked through <link> tag as shown below: -->
 
-			<link rel="stylesheet" href="/style/receives-guest.css">
-			<!--Airbnb icon-->
-			<link rel="shortcut icon" type="image/x-icon" href="/sources/Airbnb icon.ico"/>
-		</head>
-		<body class="background_img">
-			<header>
-				<!-- This is to display the Navbar of the website. -->
+    <link rel="stylesheet" href="/style/receives-guest.css" />
+    <!--Airbnb icon-->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/sources/Airbnb icon.ico"
+    />
+  </head>
+  <body class="background_img">
+    <header>
+      <!-- This is to display the Navbar of the website. -->
 
-				<nav class="navbar navbar-expand-lg navbar-light">
-					<div class="collapse navbar-collapse">
+      <%- include('partials/navbar.ejs')%>
+      <hr class="change_line" />
+    </header>
+    <!-- End of NavBar -->
 
-					<!-- SVG for Logo -->
-					<a href="./home"><img src="/sources/Airbnb icon navbar.png" alt="" style="height: 50px; width: 100px;"></a>
-					<!-- End of SVG -->
-					<ul class="navbar-nav d-flex flex-row">
-						<li class="nav-item"><a class="nav-link" href="./home">Inicio</a></li>
-						<li class="nav-item"><a class="nav-link" href="bookings">Reservas</a></li>
-						<li class="nav-item"><a class="nav-link" href="contact">Contacto</a></li>
-						<li class="nav-item"><a class="nav-link" href="suggestions">Sugerencias</a></li>
-						<li class="nav-item"><a class="nav-link" href="about-us">Sobre Nosotros</a></li>
-					</ul>
+    <!-- Body -->
+    <div class="principal-container">
+      <h4></h4>
+      <p></p>
+    </div>
 
+    <div class="principal-container">
+      <h4>Motivos para publicar tu espacio en Airbnb:</h4>
+      <p style="font-weight: 400">
+        Puedes convertir ese espacio que no usas en ingresos adicionales,
+        dondequiera que estés.
+      </p>
+      <p>
+        No importa cuáles sean tus objetivos, brindar servicios de anfitrión en
+        Airbnb ofrece una forma divertida y flexible de cumplirlos. Puedes
+        recibir huéspedes en cualquier tipo de espacio, en cualquier parte del
+        mundo, con la frecuencia que quieras.
+      </p>
+      <p>
+        El dinero que ganas puede ayudarte a hacer cosas como pagar las facturas
+        del hogar, ahorrar para un gran evento de la vida o cubrir los costos de
+        tus próximas vacaciones. Además de recibir algo de dinero extra, abrir
+        las puertas te da la oportunidad de conectarte con viajeros de todo el
+        mundo y apoyar a tu comunidad local.
+      </p>
+    </div>
 
-					<ul class="navbar-nav ml-auto navbar_move">
-						<li class="nav-item btn_flashy"><a class="nav-link" href="become-host">Hazte Anfitri&oacuten</a></li>
-						
-						<li class="nav-item dropdown">
-							<a class="nav-link menu_property" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								<span class="material-symbols-outlined setting-menu">menu</span>
-								<img class="rounded-circle" src="/sources/person-icon.png" alt="" style="width: 40px; height: 40px;">
-							</a>
-	
-							<ul class="dropdown-menu dropdown_father">
-								<li><a class="dropdown-item dropdown_children" href="/">Iniciar Sesi&oacuten</a></li>
-								<li><a class="dropdown-item dropdown_children" href="/register">Registrarse</a></li>
-								<hr class="change_line_navbar">
-								<li><a class="dropdown-item dropdown_children" href="/messages-guest">Mensajes</a></li>
-								<li><a class="dropdown-item dropdown_children" href="/notification-guest">Notificaciones</a></li>
-								<li><a class="dropdown-item dropdown_children" href="/favorites-guest">Lista de Favoritos</a></li>
-								<hr class="change_line_navbar">
-								<li><a class="dropdown-item dropdown_children" href="/host-page">Anfitri&oacuten</a></li>
-								<hr class="change_line_navbar">
-								<li><a class="dropdown-item dropdown_children" href="/account">Cuenta</a></li>
-								<hr class="change_line_navbar">
-								<li><a class="dropdown-item dropdown_children" href="/dashboard-home">Administrador</a></li>
-								<hr class="change_line_navbar">
-								<li><a class="dropdown-item dropdown_children" href="/help">Ayuda</a></li>
-								<li><a class="dropdown-item dropdown_children" href="#">Cerrar Sesi&oacuten</a></li>
-							</ul>
-						</li>
-					</ul>
+    <div class="principal-container">
+      <h4>Ponlo en Airbnb bajo tus propios términos</h4>
+      <p>
+        Cuando brindas servicios de anfitrión en Airbnb, eliges cómo y cuándo
+        recibes a los huéspedes. Puedes ofrecer un espacio compartido o privado,
+        ya sea que estés en casa o fuera.
+      </p>
+      <p>
+        Mientras que algunos anfitriones convierten su hospitalidad en un
+        negocio, otros lo abordan de manera informal. Puedes intentar brindar
+        servicios de anfitrión simplemente para que coincida con un evento
+        especial en tu zona o para mantener tu alojamiento ocupado mientras
+        estás de vacaciones.
+      </p>
+      <p>
+        “Me encanta ser mi propio jefe”, dice Magaly, Superanfitriona en East
+        Wenatchee, Washington. Así tengo la flexibilidad que necesito: el
+        equilibrio perfecto para poder concentrarme principalmente en mis hijos
+        y, al mismo tiempo, dar lo mejor de mí en lo que hago”.
+      </p>
+    </div>
 
-				</div>
-			</nav>
-            <hr class="change_line">
-			</header>
-			<!-- End of NavBar -->
-		
-		<!-- Body -->
-		<div class="principal-container">
-			<h4></h4>
-			<p></p>
-		</div>
+    <div class="principal-container">
+      <h4>Gana dinero extra</h4>
+      <p>
+        En una encuesta reciente, muchos anfitriones dijeron que publicaron su
+        espacio en Airbnb para ganar dinero. Usan el dinero adicional para
+        ayudar a cubrir los crecientes costos de vida, ya sea para pagar
+        facturas o tener dinero extra para gastar.
+      </p>
+      <p>
+        “Empecé a compartir mi espacio cuando me mudé a mi propio hogar”, dice
+        Yuan, Superanfitrión en Singapur. “Los ingresos constantes de anunciar
+        mi habitación extra en Airbnb ayudan a financiar mis gastos diarios, ya
+        que volví a la escuela y ya no tengo un trabajo a tiempo completo”.
+      </p>
+      <p>
+        En 2021, los nuevos anfitriones de todo el mundo ganaron un total
+        combinado de más de 1800 millones de dólares, un aumento de más del 30 %
+        en 2019. El ingreso promedio para los anfitriones de Estados Unidos en
+        2021 fue de $13 800, un aumento del 85 % con respecto a 2019. Y las
+        oportunidades para brindar servicios de anfitrión, desde fines de semana
+        ocasionales hasta durante todo el año, han seguido creciendo en 2022.
+      </p>
+      <p>
+        “Desde el momento en que publicamos nuestro alojamiento en Airbnb, no
+        hemos mirado atrás”, dice Robin, Superanfitrión en Mount Barker,
+        Australia. “Estamos llenos todos los meses y nuestros ingresos como
+        anfitriones, además de nuestras pensiones y otras inversiones, nos
+        permiten tener un estilo de vida muy bueno”.
+      </p>
+    </div>
 
-		<div class="principal-container">
-			<h4>Motivos para publicar tu espacio en Airbnb:</h4>
-			<p style="font-weight: 400;">Puedes convertir ese espacio que no usas en ingresos adicionales, dondequiera que estés.</p>
-			<p>No importa cuáles sean tus objetivos, brindar servicios de anfitrión en Airbnb ofrece una forma divertida y flexible de cumplirlos. Puedes recibir huéspedes en cualquier tipo de espacio, en cualquier parte del mundo, con la frecuencia que quieras.</p>
-			<p>El dinero que ganas puede ayudarte a hacer cosas como pagar las facturas del hogar, ahorrar para un gran evento de la vida o cubrir los costos de tus próximas vacaciones. Además de recibir algo de dinero extra, abrir las puertas te da la oportunidad de conectarte con viajeros de todo el mundo y apoyar a tu comunidad local.</p>
-		</div>
+    <div class="principal-container">
+      <h4>Disfruta de tu comunidad</h4>
+      <p>
+        Las recompensas por compartir tu espacio van más allá de tu cuenta
+        bancaria. Los anfitriones nos cuentan que algunos de los principales
+        beneficios son poder disfrutar y ayudar a las comunidades locales y
+        conectar con personas interesantes que probablemente no habrían conocido
+        de otra forma.
+      </p>
+      <p>
+        James y Roxanne, Superanfitriones en Holetown, Barbados, ofrecen a sus
+        huéspedes artículos locales, como galletas recién horneadas en la mesa
+        de noche, que también venden en una pequeña tienda de la propiedad. “Los
+        huéspedes a menudo compran más de nuestro café Cane Dog después de
+        probarlo en su habitación”, dice James.
+      </p>
+      <p>
+        Brian, un Superanfitrión de Hello House Hostel en Las Palmas de Gran
+        Canaria, España, dice que comenzó a brindar servicios de anfitrión para
+        sentir la experiencia de viajar sin tener que salir de casa. “Los
+        huéspedes que hemos recibido han sido increíbles”, dice, “y disfrutamos
+        mucho sus historias y sus visitas”.
+      </p>
+    </div>
 
-		<div class="principal-container">
-			<h4>Ponlo en Airbnb bajo tus propios términos</h4>
-			<p>Cuando brindas servicios de anfitrión en Airbnb, eliges cómo y cuándo recibes a los huéspedes. Puedes ofrecer un espacio compartido o privado, ya sea que estés en casa o fuera.</p>
-			<p>Mientras que algunos anfitriones convierten su hospitalidad en un negocio, otros lo abordan de manera informal. Puedes intentar brindar servicios de anfitrión simplemente para que coincida con un evento especial en tu zona o para mantener tu alojamiento ocupado mientras estás de vacaciones.</p>
-			<p>“Me encanta ser mi propio jefe”, dice Magaly, Superanfitriona en East Wenatchee, Washington. Así tengo la flexibilidad que necesito: el equilibrio perfecto para poder concentrarme principalmente en mis hijos y, al mismo tiempo, dar lo mejor de mí en lo que hago”.</p>
-		</div>
+    <div class="principal-container">
+      <h4>Prepárate rápidamente</h4>
+      <p>
+        Puedes convertir prácticamente cualquier espacio en un alojamiento
+        Airbnb. Comenzar a brindar servicios de anfitrión es muy sencillo,
+        independientemente del motivo por el que decidas hacerlo.
+      </p>
+      <ul>
+        <li>
+          Descubre lo que podrías ganar en tu ubicación o regístrate para
+          ofrecerle a las personas en situación de crisis un lugar para quedarse
+        </li>
+        <li>
+          Recibe orientación personalizada de un Superanfitrión, la opción de
+          recibir a un huésped experimentado en tu primera reservación y el
+          acceso rápido a un equipo de agentes de asistencia a la comunidad
+          especialmente capacitados a través de la configuración de Airbnb
+        </li>
+        <li>Descubre cómo te protege AirCover para anfitriones</li>
+      </ul>
+      <p>
+        Poner tu espacio en Airbnb puede permitirte cumplir tus objetivos
+        financieros, conectarte con personas de todo el mundo y convertirte en
+        un emprendedor en tus términos. Te ayudaremos en cada fase del proceso
+        cuando estés listo para ofrecer alojamiento a los huéspedes.
+      </p>
+    </div>
 
-		<div class="principal-container">
-			<h4>Gana dinero extra</h4>
-			<p>En una encuesta reciente, muchos anfitriones dijeron que publicaron su espacio en Airbnb para ganar dinero. Usan el dinero adicional para ayudar a cubrir los crecientes costos de vida, ya sea para pagar facturas o tener dinero extra para gastar.</p>
-			<p>“Empecé a compartir mi espacio cuando me mudé a mi propio hogar”, dice Yuan, Superanfitrión en Singapur. “Los ingresos constantes de anunciar mi habitación extra en Airbnb ayudan a financiar mis gastos diarios, ya que volví a la escuela y ya no tengo un trabajo a tiempo completo”.</p>
-			<p>En 2021, los nuevos anfitriones de todo el mundo ganaron un total combinado de más de 1800 millones de dólares, un aumento de más del 30 % en 2019. El ingreso promedio para los anfitriones de Estados Unidos en 2021 fue de $13 800, un aumento del 85 % con respecto a 2019. Y las oportunidades para brindar servicios de anfitrión, desde fines de semana ocasionales hasta durante todo el año, han seguido creciendo en 2022.</p>
-			<p>“Desde el momento en que publicamos nuestro alojamiento en Airbnb, no hemos mirado atrás”, dice Robin, Superanfitrión en Mount Barker, Australia. “Estamos llenos todos los meses y nuestros ingresos como anfitriones, además de nuestras pensiones y otras inversiones, nos permiten tener un estilo de vida muy bueno”.</p>
-		</div>
-
-		<div class="principal-container">
-			<h4>Disfruta de tu comunidad</h4>
-			<p>Las recompensas por compartir tu espacio van más allá de tu cuenta bancaria. Los anfitriones nos cuentan que algunos de los principales beneficios son poder disfrutar y ayudar a las comunidades locales y conectar con personas interesantes que probablemente no habrían conocido de otra forma.</p>
-			<p>James y Roxanne, Superanfitriones en Holetown, Barbados, ofrecen a sus huéspedes artículos locales, como galletas recién horneadas en la mesa de noche, que también venden en una pequeña tienda de la propiedad. “Los huéspedes a menudo compran más de nuestro café Cane Dog después de probarlo en su habitación”, dice James.</p>
-			<p>Brian, un Superanfitrión de Hello House Hostel en Las Palmas de Gran Canaria, España, dice que comenzó a brindar servicios de anfitrión para sentir la experiencia de viajar sin tener que salir de casa. “Los huéspedes que hemos recibido han sido increíbles”, dice, “y disfrutamos mucho sus historias y sus visitas”.</p>
-		</div>
-
-		<div class="principal-container">
-			<h4>Prepárate rápidamente</h4>
-			<p>Puedes convertir prácticamente cualquier espacio en un alojamiento Airbnb. Comenzar a brindar servicios de anfitrión es muy sencillo, independientemente del motivo por el que decidas hacerlo.</p>
-			<ul>
-				<li>Descubre lo que podrías ganar en tu ubicación o regístrate para ofrecerle a las personas en situación de crisis un lugar para quedarse</li>
-				<li>Recibe orientación personalizada de un Superanfitrión, la opción de recibir a un huésped experimentado en tu primera reservación y el acceso rápido a un equipo de agentes de asistencia a la comunidad especialmente capacitados a través de la configuración de Airbnb</li>
-				<li>Descubre cómo te protege AirCover para anfitriones</li>
-			</ul>
-			<p>Poner tu espacio en Airbnb puede permitirte cumplir tus objetivos financieros, conectarte con personas de todo el mundo y convertirte en un emprendedor en tus términos. Te ayudaremos en cada fase del proceso cuando estés listo para ofrecer alojamiento a los huéspedes.</p>
-		</div>
-
-		<!-- FOOTER -->
-		<hr class="footer-container">
-		<div class="container" style="margin-top: 70px;">
-			<div class="row">
-				<div class="col-md-3">
-					<section>
-						<h6 style="margin-left: 40px;">Airbnb</h6>
-						<ul style="list-style: none;">
-							<li><a href="/help">Ayuda</a></li>
-							<li><a href="/cancellation-policies">Pol&iacuteticas</a></li>
-							<li><a href="/terminos">T&eacuterminos</a></li>
-							<li><a href="/politicas-privacidad">Privacidad</a></li>
-						</ul>
-					</section>
-				</div>
-				<div class="col-md-3">
-					<section>
-						<h6 style="margin-left: 40px;">Descubrir</h6>
-						<ul style="list-style: none;">
-							<li><a href="/criterios-de-confianza">Confianza y seguridad</a></li>
-						</ul>
-					</section>
-				</div>
-				<div class="col-md-3">
-					<section>
-						<h6 style="margin-left: 40px;">Alojamiento</h6>
-						<ul style="list-style: none;">
-							<li><a href="/por-que-anfitrion">Por qu&eacute anfitri&oacuten/a</a></li>
-							<li><a href="/alojamiento-responsable">Alojamiento Responsable</a></li>
-						</ul>
-					</section>
-				</div>
-				<div class="col-md-3">
-					<section>
-						<h5 style="margin-left: 40px;">
-						<a href="https://es-la.facebook.com/airbnb/" target="_blank" style="color: #3B5998;"><i class="fa fa-facebook" style="padding-right: 20px;"></i></a>
-						<a href="https://twitter.com/airbnb" target="_blank" style="color: #00ACEE;"><i class="fa fa-twitter" style="padding-right: 20px;"></i></a>
-						<a href="https://www.instagram.com/airbnb/" target="_blank" style="color: #d6249f;"><i class="fa fa-instagram" style="padding-right: 20px;"></i></a>
-						</h5>
-						<ul style="list-style: none;">
-							<li><a href="#">Reseñas</a></li>
-							<li><a href="/suggestions">Sugerencias</a></li>
-							<li><a href="/contact">Contacto</a></li>
-						</ul>
-					</section>
-				</div>
-			</div>
-		</div>
-		<!-- FOOTER -->
-	</body>
+    <!-- FOOTER -->
+    <hr class="footer-container" />
+    <div class="container" style="margin-top: 70px">
+      <div class="row">
+        <div class="col-md-3">
+          <section>
+            <h6 style="margin-left: 40px">Airbnb</h6>
+            <ul style="list-style: none">
+              <li><a href="/help">Ayuda</a></li>
+              <li><a href="/cancellation-policies">Pol&iacuteticas</a></li>
+              <li><a href="/terminos">T&eacuterminos</a></li>
+              <li><a href="/politicas-privacidad">Privacidad</a></li>
+            </ul>
+          </section>
+        </div>
+        <div class="col-md-3">
+          <section>
+            <h6 style="margin-left: 40px">Descubrir</h6>
+            <ul style="list-style: none">
+              <li>
+                <a href="/criterios-de-confianza">Confianza y seguridad</a>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <div class="col-md-3">
+          <section>
+            <h6 style="margin-left: 40px">Alojamiento</h6>
+            <ul style="list-style: none">
+              <li>
+                <a href="/por-que-anfitrion">Por qu&eacute anfitri&oacuten/a</a>
+              </li>
+              <li>
+                <a href="/alojamiento-responsable">Alojamiento Responsable</a>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <div class="col-md-3">
+          <section>
+            <h5 style="margin-left: 40px">
+              <a
+                href="https://es-la.facebook.com/airbnb/"
+                target="_blank"
+                style="color: #3b5998"
+                ><i class="fa fa-facebook" style="padding-right: 20px"></i
+              ></a>
+              <a
+                href="https://twitter.com/airbnb"
+                target="_blank"
+                style="color: #00acee"
+                ><i class="fa fa-twitter" style="padding-right: 20px"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/airbnb/"
+                target="_blank"
+                style="color: #d6249f"
+                ><i class="fa fa-instagram" style="padding-right: 20px"></i
+              ></a>
+            </h5>
+            <ul style="list-style: none">
+              <li><a href="#">Reseñas</a></li>
+              <li><a href="/suggestions">Sugerencias</a></li>
+              <li><a href="/contact">Contacto</a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+    <!-- FOOTER -->
+  </body>
 </html>
