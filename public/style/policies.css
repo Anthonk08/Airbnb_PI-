@@ -1,0 +1,137 @@
+/* Element Selector */
+.background_img{
+	background:#FFFFFF;
+	background-repeat: no-repeat;
+	background-size: 100vw 100vh;
+	margin-top: 10px;
+	margin-bottom: 50px;
+	margin: 0;
+	position: relative;
+}
+
+/* For styling NavBar */
+.navbar.navbar-expand-lg.navbar-light li a{
+	color: rgb(0, 0, 0);
+    padding: 8px 8px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.navbar.navbar-expand-lg.navbar-light li a:hover {
+	color: rgba(255, 255, 255, 0.618);
+}
+
+.btn_flashy {
+	background-color: #FF5A5F;
+	border-radius: 15px;
+	margin: auto;
+}
+
+.change_line {
+	border: 0.5px solid #000000;
+}
+
+.btn.btn-outline-primary.rounded.nohover {
+	pointer-events: none;
+}
+
+.navbar_move {
+	position: relative;
+	right: 90px;
+}
+
+.menu_property {
+	background-color: #FF5A5F;
+	border-radius: 15px;
+	margin: 5px;
+}
+
+.dropdown_father {
+	background-color: #FF5A5F;
+}
+
+.dropdown_children {
+	color: white;
+	border-radius: 15px;
+	margin: 5px;
+	width: auto;
+}
+
+.dropdown_children:hover{
+	background-color: #FF5A5F;
+}
+
+.setting-menu {
+	position: relative;
+	bottom: -8px;
+}
+
+.container-father {
+	height: auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 5px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.container-father div {
+	padding: 2px;
+}
+
+.content-center {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	width: 70vw;
+}
+
+.title-box_div {
+	margin: 10px;
+	padding: 10px;
+	font-size: 22px;
+}
+
+.position-title {
+	position: relative;
+	text-align: center;
+	margin: 4px;
+	font-size: 40px;
+}
+
+p {
+	font-size: 15px;
+	text-align: justify;
+	width: 650px;
+}
+
+.container li a {
+	color: black;
+}
+
+.btn.btn-primary.new {
+	background-color: rgb(0, 106, 112);
+	border: none;
+	font-size: 12px;
+	padding: 1px 4px;
+}
+
+.content-table {
+	border: 2px solid #000000;
+	border-radius: 15px;
+	width: 380px;
+	margin-bottom: 30px;
+}
+
+.content-table tr td {
+	margin: 15px;
+	padding: 15px;
+	font-weight: bold;
+}
+
+.content-table ol li a {
+	bottom: 10px;
+	padding: 5px;
+	margin: 5px;
+	color: black;
+	text-decoration:none;
+}

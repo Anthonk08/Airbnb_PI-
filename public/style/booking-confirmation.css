@@ -1,0 +1,96 @@
+/*Para poner datos encima de la imagen*/
+ .contenedor{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.imagen-casa{
+    margin-top: 5px;
+}
+
+.puntuacion-casa{
+    position: absolute;
+    width: 35px;
+    bottom: 45px;
+    left: 10px;
+    color: #ffff;
+    background-color: rgb(64, 168, 64);
+    margin-bottom: 2px;
+    border-radius: 30%;
+    font-size: 16px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.nombre-casa{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    color: #ffff;
+    margin-bottom: 2px;
+    font-weight: bolder;
+    font-size: 20px
+}
+
+.ubicacion-casa{
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    color: #ffff;
+
+    margin-bottom: 2px;
+    font-size: 16px
+}
+/*Para poner datos encima de la imagen*/
+
+
+.detalles{
+    color: gray;
+}
+
+.titulo{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 100px;
+    background-color: #f1f1f1;
+    margin-bottom: 15px;
+}
+
+.titulo-resumen-reserva{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.btn {
+    letter-spacing: 1px;
+    color: #ffff;
+    background-color: #F91942;
+}
+
+.respuesta-datos{
+    color: gray;
+}
+
+#resumen{
+    background-color: #f1f1f1;
+}
+
+h3{
+    color: gray;
+}
+
+#respuesta-total-general{
+    color: #F91942;
+}
+
+#subtitulos{
+    color: gray;
+}
+
+#respuesta-adicionales{
+    color: #F91942;
+}

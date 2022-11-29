@@ -1,0 +1,156 @@
+/* Element Selector */
+header {
+	background: #b92b27;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.background_img{
+	background:#FFFFFF;
+	background-repeat: no-repeat;
+	background-size: 100vw 100vh;
+	margin-top: 10px;
+	margin-bottom: 50px;
+	margin: 0;
+	position: relative;
+}
+
+/* For styling NavBar */
+.navbar.navbar-expand-lg.navbar-light li a{
+	color: rgb(255, 255, 255);
+    padding: 8px 8px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.navbar.navbar-expand-lg.navbar-light li a:hover {
+	color: rgba(255, 255, 255, 0.618);
+}
+
+.btn_flashy {
+	background-color: #FF5A5F;
+	border-radius: 15px;
+	margin: auto;
+}
+
+.change_line {
+	border: 0.5px solid #000000;
+}
+
+.btn.btn-outline-primary.rounded.nohover {
+	pointer-events: none;
+}
+
+.navbar_move {
+	position: relative;
+	right: 90px;
+}
+
+.menu_property {
+	background-color: #FF5A5F;
+	border-radius: 15px;
+	margin: 5px;
+}
+
+.dropdown_father {
+	background-color: #FF5A5F;
+}
+
+.dropdown_children {
+	color: white;
+	border-radius: 15px;
+	margin: 5px;
+	width: auto;
+}
+
+.dropdown_children:hover{
+	background-color: #FF5A5F;
+}
+
+.setting-menu {
+	position: relative;
+	bottom: -8px;
+}
+
+.container-father {
+	width: 100vw;
+	height: auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 5px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.container-father div {
+	padding: 2px;
+}
+
+.content-center {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	width: 40vw;
+}
+
+.title-box_div {
+	margin: 10px;
+	padding: 10px;
+	font-size: 22px;
+}
+
+.position-title {
+	display: inline-block;
+	position: relative;
+	margin: 4px;
+	left: 15px;
+	font-size: 35px;
+}
+
+.notification_img {
+	top: 22px;
+	left: 10px;
+	position: relative;
+}
+
+.notification_div {
+	min-height: 100px;
+	height: auto;
+	display:inline-flex;
+	position:relative;
+}
+
+
+p {
+	margin: 10px;
+	padding: 5px;
+	font-size: 15px;
+	text-align: justify;
+}
+
+
+
+/*
+	MEDIA QUERY.
+	Son utilizados para una determinada resolucion
+	hacer algo en este caso
+*/
+
+@media (min-height: 801px) {
+	.container-father{
+		min-height: 85vh;
+	}
+	.navbar-position li a{
+		position: relative;
+		left: 70ch;
+	}
+}
+
+@media (max-height: 800px) {
+	.container-father{
+		min-height: 610px;
+	}
+	.navbar-position li a{
+		position: relative;
+		left: 45ch;
+	}
+}

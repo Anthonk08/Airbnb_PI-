@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- SE ACTIVA COMO PARTE DEL PANEL DE VISITANTE-->
+
+		<!-- The name between <title> tag defines the title of the document. -->
+		<title>Alquiler de alojamientos vacacionales, casas, apartamentos y experiencias</title>
+
+		<!-- Bootstrap 4 is designed to be responsive to mobile devices. Mobile-first styles are part of the core framework.
+
+		To ensure proper rendering and touch zooming, add the following <meta> tag inside the <head> element: -->
+
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+
+			<!-- Bootstrap link -->
+
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+			
+			<!-- Font selection link -->
+
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+			<!-- The Styles used has been stored and saved in another file named "style.css" and linked through <link> tag as shown below: -->	
+
+			<link rel="stylesheet" href="/style/host-page/host-page.css">
+			<!--Airbnb icon-->
+			<link rel="shortcut icon" type="image/x-icon" href="/sources/Airbnb icon.ico"/>
+		</head>
+		<body class="background_img">
+
+				<!-- This is to display the Navbar of the website. -->
+				<header>
+					<nav class="navbar navbar-expand-lg navbar-light">
+						<div class="collapse navbar-collapse">
+
+						<!-- SVG for Logo -->
+						<a href="./home"><img src="/sources/Airbnb icon navbar.png" alt="" style="height: 50px; width: 105px; left: 15px; position: relative;"></a>
+						<!-- End of SVG -->
+						<ul class="navbar-nav navbar-position d-flex flex-row">
+							<li class="nav-item"><a class="nav-link" href="/host-page">Hoy</a></li>
+							<li class="nav-item"><a class="nav-link" href="/messages-host">Mensajes</a></li>
+							<li class="nav-item"><a class="nav-link" href="/resume-host">Resumen</a></li>
+							<li class="nav-item"><a class="nav-link" href="/lodging">Hospedajes</a></li>
+							<li class="nav-item"><a class="nav-link" href="/register-property">Registra un hospedaje</a></li>
+						</ul>
+
+						<ul class="navbar-nav ml-auto navbar_move">
+							<li class="nav-item dropdown">
+								<a class="nav-link menu_property" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									<span class="material-symbols-outlined setting-menu">menu</span>
+									<img class="rounded-circle" src="/sources/person-icon.png" alt="" style="width: 40px; height: 40px;">
+								</a>
+		
+								<ul class="dropdown-menu dropdown_father">
+									<li><a class="dropdown-item dropdown_children" href="/messages-host">Mensajes</a></li>
+									<li><a class="dropdown-item dropdown_children" href="/notification-host">Notificaciones</a></li>
+									<hr class="change_line_navbar">
+									<li><a class="dropdown-item dropdown_children" href="/host-page">Anfitri&oacuten</a></li>
+									<li><a class="dropdown-item dropdown_children" href="#host">Cambiar a Invitado/a</a></li>
+									<hr class="change_line_navbar">
+									<li><a class="dropdown-item dropdown_children" href="/account">Cuenta</a></li>
+									<hr class="change_line_navbar">
+									<li><a class="dropdown-item dropdown_children" href="/help">Ayuda</a></li>
+									<li><a class="dropdown-item dropdown_children" href="#">Cerrar Sesi&oacuten</a></li>
+								</ul>
+							</li>
+						</ul>
+
+						</div>
+					</nav>
+					<hr class="change_line">
+				</header>
+			<!-- End of NavBar -->
+
+			<!-- This is to display the message box of the panel guest in the website. -->
+
+			<div class="container-father">
+				<div class="content-center select-box_div">
+					<h2 class="title-box_div position-title">Tus reservaciones</h2>
+					<ul class="navbar-nav menu-body d-flex flex-row">
+						<li class="nav-item"><a class="nav-link" href="#">Registro de salida</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Actualmente hospedando</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Llegando pronto</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Revisión pendiente</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+			<!-- End of the panel guest -->
+
+	</body>
+</html>
