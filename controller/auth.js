@@ -34,7 +34,9 @@ const getMessagesGuest = (req, res) => {
     return;
   }
 
-  res.render("messages-guest", {});
+  res.render("messages-guest", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 const getFavoritesGuest = (req, res) => {
@@ -48,7 +50,9 @@ const getFavoritesGuest = (req, res) => {
     return;
   }
 
-  res.render("favorites-guest", {});
+  res.render("favorites-guest", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 const getNotificationGuest = (req, res) => {
@@ -62,7 +66,9 @@ const getNotificationGuest = (req, res) => {
     return;
   }
 
-  res.render("notification-guest", {});
+  res.render("notification-guest", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 const getAccount = (req, res) => {
@@ -76,7 +82,9 @@ const getAccount = (req, res) => {
     return;
   }
 
-  res.render("account-pages/account", {});
+  res.render("account-pages/account", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 const getProfileAccount = (req, res) => {
@@ -106,7 +114,9 @@ const getPersonalInformation = (req, res) => {
     return;
   }
 
-  res.render("account-pages/personal-information", {});
+  res.render("account-pages/personal-information", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 const getLoginSecurity = (req, res) => {
@@ -120,7 +130,9 @@ const getLoginSecurity = (req, res) => {
     return;
   }
 
-  res.render("account-pages/login-security", {});
+  res.render("account-pages/login-security", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 const getPaymentsCollections = (req, res) => {
@@ -134,7 +146,9 @@ const getPaymentsCollections = (req, res) => {
     return;
   }
 
-  res.render("account-pages/payments-collections", {});
+  res.render("account-pages/payments-collections", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 const getNotifications = (req, res) => {
@@ -148,7 +162,9 @@ const getNotifications = (req, res) => {
     return;
   }
 
-  res.render("account-pages/notifications", {});
+  res.render("account-pages/notifications", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 const getHelp = (req, res) => {
@@ -226,7 +242,9 @@ const getResumeHost = (req, res) => {
     return;
   }
 
-  res.render("host-page/resume-host", {});
+  res.render("host-page/resume-host", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 const getLodgingHost = (req, res) => {
@@ -256,7 +274,9 @@ const getDashboardAbandonedReservations = (req, res) => {
     return;
   }
 
-  res.render("dashboard-pages/dashboard-abandoned-reservations", {});
+  res.render("dashboard-pages/dashboard-abandoned-reservations", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 const getDashboardBookings = (req, res) => {
@@ -270,7 +290,9 @@ const getDashboardBookings = (req, res) => {
     return;
   }
 
-  res.render("dashboard-pages/dashboard-bookings", {});
+  res.render("dashboard-pages/dashboard-bookings", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 const getDashboardDesactivatedAccounts = (req, res) => {
@@ -284,7 +306,9 @@ const getDashboardDesactivatedAccounts = (req, res) => {
     return;
   }
 
-  res.render("dashboard-pages/dashboard-desactivated-accounts", {});
+  res.render("dashboard-pages/dashboard-desactivated-accounts", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 const getDashboardHome = (req, res) => {
@@ -298,7 +322,9 @@ const getDashboardHome = (req, res) => {
     return;
   }
 
-  res.render("dashboard-pages/dashboard-home", {});
+  res.render("dashboard-pages/dashboard-home", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 const getDashboardProfit = (req, res) => {
@@ -312,7 +338,9 @@ const getDashboardProfit = (req, res) => {
     return;
   }
 
-  res.render("dashboard-pages/dashboard-profit", {});
+  res.render("dashboard-pages/dashboard-profit", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 const getDashboardUsers = (req, res) => {
@@ -326,7 +354,9 @@ const getDashboardUsers = (req, res) => {
     return;
   }
 
-  res.render("dashboard-pages/dashboard-users", {});
+  res.render("dashboard-pages/dashboard-users", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 const getContact = (req, res) => {
@@ -420,7 +450,9 @@ const getcancellationpolicies = (req, res) => {
     return;
   }
 
-  res.render("cancellation-policies", {});
+  res.render("cancellation-policies", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 const getcriteriosconfianza = (req, res) => {
@@ -433,7 +465,9 @@ const getcriteriosconfianza = (req, res) => {
     res.redirect("/dashboard");
     return;
   }
-  res.render("criterios-de-confianza", {});
+  res.render("criterios-de-confianza", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 const getResponsibleHosting = (req, res) => {
@@ -446,7 +480,9 @@ const getResponsibleHosting = (req, res) => {
     res.redirect("/dashboard");
     return;
   }
-  res.render("alojamiento-responsable", {});
+  res.render("alojamiento-responsable", {
+    user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+  });
 };
 
 const getWhyHost = (req, res) => {

@@ -1,595 +1,1317 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<!-- SE ACTIVA COMO PARTE DEL PANEL DE VISITANTE-->
+  <head>
+    <!-- SE ACTIVA COMO PARTE DEL PANEL DE VISITANTE-->
 
-		<!-- The name between <title> tag defines the title of the document. -->
-		<title>Politicas de privacidad</title>
+    <!-- The name between <title> tag defines the title of the document. -->
+    <title>Politicas de privacidad</title>
 
-		<!-- Bootstrap 4 is designed to be responsive to mobile devices. Mobile-first styles are part of the core framework.
+    <!-- Bootstrap 4 is designed to be responsive to mobile devices. Mobile-first styles are part of the core framework.
 
 		To ensure proper rendering and touch zooming, add the following <meta> tag inside the <head> element: -->
 
-			<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-			<!-- Bootstrap link -->
+    <!-- Bootstrap link -->
 
-			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-			
-			<!-- Font selection link -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
 
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Font selection link -->
 
-			<!-- The Styles used has been stored and saved in another file named "style.css" and linked through <link> tag as shown below: -->	
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-			<link rel="stylesheet" href="/style/politicas-privacidad.css">
-			<!--Airbnb icon-->
-			<link rel="shortcut icon" type="image/x-icon" href="/sources/Airbnb icon.ico"/>
-		</head>
-		<body class="background_img">
+    <!-- The Styles used has been stored and saved in another file named "style.css" and linked through <link> tag as shown below: -->
 
-				<!-- This is to display the Navbar of the website. -->
+    <link rel="stylesheet" href="/style/politicas-privacidad.css" />
+    <!--Airbnb icon-->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/sources/Airbnb icon.ico"
+    />
+  </head>
+  <body class="background_img">
+    <!-- This is to display the Navbar of the website. -->
 
-				<nav class="navbar navbar-expand-lg navbar-light">
-					<div class="collapse navbar-collapse">
+    <%- include('partials/navbar.ejs')%>
+    <hr class="change_line" />
 
-					<!-- SVG for Logo -->
-					<a href="./home"><img src="/sources/airbnb icon black.png" alt="" style="height: 40px; width: 40px; left: 15px; position: relative;"></a>
-					<h4 style="position: relative; left: 20px;">Centro de ayuda</h4>
-					<!-- End of SVG -->
+    <!-- End of NavBar -->
 
-					<ul class="navbar-nav ml-auto navbar_move">
-						<li class="nav-item btn_flashy"><a class="nav-link" href="become-host">Hazte Anfitri&oacuten</a></li>
-						
-						<li class="nav-item dropdown">
-							<a class="nav-link menu_property" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								<span class="material-symbols-outlined setting-menu">menu</span>
-								<img class="rounded-circle" src="/sources/person-icon.png" alt="" style="width: 40px; height: 40px;">
-							</a>
-	
-							<ul class="dropdown-menu dropdown_father">
-								<li><a class="dropdown-item dropdown_children" href="./">Iniciar Sesi&oacuten</a></li>
-								<li><a class="dropdown-item dropdown_children" href="./register">Registrarse</a></li>
-								<hr class="change_line_navbar">
-								<li><a class="dropdown-item dropdown_children" href="/messages-guest">Mensajes</a></li>
-								<li><a class="dropdown-item dropdown_children" href="/notification-guest">Notificaciones</a></li>
-								<li><a class="dropdown-item dropdown_children" href="/favorites-guest">Lista de Favoritos</a></li>
-								<hr class="change_line_navbar">
-								<li><a class="dropdown-item dropdown_children" href="/receives-guest">Recibe hu&eacutespedes</a></li>
-								<li><a class="dropdown-item dropdown_children" href="/account">Cuenta</a></li>
-								<hr class="change_line_navbar">
-								<li><a class="dropdown-item dropdown_children" href="/help">Ayuda</a></li>
-								<li><a class="dropdown-item dropdown_children" href="#">Cerrar Sesi&oacuten</a></li>
-							</ul>
-						</li>
-					</ul>
+    <!-- This is to display the message box of the panel guest in the website. -->
 
-				</div>
-			</nav>
-            <hr class="change_line">
+    <div class="container-father">
+      <div class="content-center select-box_div">
+        <h2 class="title-box_div position-title">Políticas de privacidad</h2>
+        <hr class="change_line" />
+        <div>
+          <div class="content-table">
+            <table>
+              <tr>
+                <td>
+                  Tabla de Contenido.
+                  <ol>
+                    <li>
+                      <a href="#title1">DEFINICIONES</a>
+                    </li>
 
-			<!-- End of NavBar -->
+                    <li>
+                      <a href="#title2">INFORMACIÓN PERSONAL QUE RECOPILAMOS</a>
+                    </li>
 
-			<!-- This is to display the message box of the panel guest in the website. -->
+                    <li>
+                      <a href="#title3"
+                        >¿CÓMO UTILIZAMOS LA INFORMACIÓN RECOPILADA?</a
+                      >
+                    </li>
 
-			<div class="container-father">
-				<div class="content-center select-box_div">
-					<h2 class="title-box_div position-title">Políticas de privacidad</h2>
-					<hr class="change_line">
-					<div>
-						<div class="content-table">
-							<table>
-								<tr>
-									<td>
-										Tabla de Contenido.
-										<ol>
-											<li>
-												<a href="#title1">DEFINICIONES</a>
-											</li>
-	
-											<li>
-												<a href="#title2">INFORMACIÓN PERSONAL QUE RECOPILAMOS</a>
-											</li>
-	
-											<li>
-												<a href="#title3">¿CÓMO UTILIZAMOS LA INFORMACIÓN RECOPILADA?</a>
-											</li>
-	
-											<li>
-												<a href="#title4">INTERCAMBIO Y DIVULGACIÓN DE INFORMACIÓN</a>
-											</li>
+                    <li>
+                      <a href="#title4"
+                        >INTERCAMBIO Y DIVULGACIÓN DE INFORMACIÓN</a
+                      >
+                    </li>
 
-											<li>
-												<a href="#title5">OTRA INFORMACIÓN IMPORTANTE</a>
-											</li>
+                    <li>
+                      <a href="#title5">OTRA INFORMACIÓN IMPORTANTE</a>
+                    </li>
 
-											<li>
-												<a href="#title6">SUS DERECHOS</a>
-											</li>
+                    <li>
+                      <a href="#title6">SUS DERECHOS</a>
+                    </li>
 
-											<li>
-												<a href="#title7">SEGURIDAD</a>
-											</li>
+                    <li>
+                      <a href="#title7">SEGURIDAD</a>
+                    </li>
 
-											<li>
-												<a href="#title8">MODIFICACIONES A ESTA POLÍTICA DE PRIVACIDAD</a>
-											</li>
+                    <li>
+                      <a href="#title8"
+                        >MODIFICACIONES A ESTA POLÍTICA DE PRIVACIDAD</a
+                      >
+                    </li>
 
-											<li>
-												<a href="#title9">INFORMACIÓN DE CONTACTO Y ENTIDADES RESPONSABLES DE AIRBNB</a>
-											</li>
-										</ol>
-									</td>
-								</tr>
-							</table>
-						</div>
-						<hr style="height: 150px; visibility: hidden;">
+                    <li>
+                      <a href="#title9"
+                        >INFORMACIÓN DE CONTACTO Y ENTIDADES RESPONSABLES DE
+                        AIRBNB</a
+                      >
+                    </li>
+                  </ol>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <hr style="height: 150px; visibility: hidden" />
 
-						<h4 id="title1">1. DEFINICIONES</h4>
-						<p>Los términos no definidos de esta Política de privacidad tienen la misma definición que en nuestros Términos de Servicio (“Términos”).</p>
-						<hr class="change_line" style="width: 630px;">
-						<hr style="height: 150px; visibility: hidden;">
+          <h4 id="title1">1. DEFINICIONES</h4>
+          <p>
+            Los términos no definidos de esta Política de privacidad tienen la
+            misma definición que en nuestros Términos de Servicio (“Términos”).
+          </p>
+          <hr class="change_line" style="width: 630px" />
+          <hr style="height: 150px; visibility: hidden" />
 
+          <h4 id="title2">2. INFORMACIÓN PERSONAL QUE RECOPILAMOS</h4>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4 id="title2">2. INFORMACIÓN PERSONAL QUE RECOPILAMOS</h4>
-						<hr class="change_line" style="width: 630px;">
+          <h4>2.1 Información necesaria para usar la Plataforma Airbnb.</h4>
+          <p>
+            Recopilamos información personal sobre usted cuando utiliza la
+            plataforma Airbnb. Sin ella, es posible que no podamos proporcionar
+            todos los servicios que solicite. Esta información incluye lo
+            siguiente:
+          </p>
+          <ul>
+            <li>
+              <h5>Información de Contacto, Cuenta, Información del Perfil.</h5>
+              <p>
+                Como su nombre, apellidos, número de teléfono, dirección postal,
+                dirección de correo electrónico, fecha de nacimiento y
+                fotografía, algunos de los cuales dependerán de las
+                características que utilice.
+              </p>
+            </li>
+            <li>
+              <h5>Verificación de Identidad e Información de Pago.</h5>
+              <p>
+                Por ejemplo, imágenes de su identificación oficial personal
+                (según lo permita la legislación aplicable), su número de
+                identificación u otra información de verificación, su cuenta
+                bancaria o su cuenta de pago. Si usted no es usuario en Airbnb,
+                puede que recibamos información de pago relacionada con usted,
+                por ejemplo, cuando un usuario en Airbnb proporciona su tarjeta
+                de pago para completar una reservación. Si se nos proporciona
+                una copia de su identificación personal, podemos escanear, usar
+                y almacenar la información contenida en su identificación
+                personal para verificar su identidad.
+              </p>
+            </li>
+          </ul>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4>2.1 Información necesaria para usar la Plataforma Airbnb.</h4>
-						<p>Recopilamos información personal sobre usted cuando utiliza la plataforma Airbnb. Sin ella, es posible que no podamos proporcionar todos los servicios que solicite. Esta información incluye lo siguiente:</p>
-							<ul>
-								<li>
-									<h5>Información de Contacto, Cuenta, Información del Perfil.</h5>
-									<p>Como su nombre, apellidos, número de teléfono, dirección postal, dirección de correo electrónico, fecha de nacimiento y fotografía, algunos de los cuales dependerán de las características que utilice.</p>
-								</li>
-								<li>
-									<h5>Verificación de Identidad e Información de Pago.</h5>
-									<p>Por ejemplo, imágenes de su identificación oficial personal (según lo permita la legislación aplicable), su número de identificación u otra información de verificación, su cuenta bancaria o su cuenta de pago. Si usted no es usuario en Airbnb, puede que recibamos información de pago relacionada con usted, por ejemplo, cuando un usuario en Airbnb proporciona su tarjeta de pago para completar una reservación. Si se nos proporciona una copia de su identificación personal, podemos escanear, usar y almacenar la información contenida en su identificación personal para verificar su identidad.</p>
-								</li>
-							</ul>
-						<hr class="change_line" style="width: 630px;">
+          <h4>2.2 Información que proporciona voluntariamente.</h4>
+          <p>
+            Puede optar por proporcionarnos información personal adicional. Esta
+            información puede incluir lo siguiente:
+          </p>
+          <ul>
+            <li>
+              <p>
+                <b>Información de Perfil adicional. </b>Como género, idioma(s)
+                de preferencia, ciudad y descripción personal. Parte de esta
+                información, tal como se indica en la configuración de su
+                cuenta, forma parte de la página pública de su perfil y será
+                visible públicamente.
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Información sobre otras personas. </b>Como un instrumento de
+                pago perteneciente a otra persona o información sobre un
+                compañero de viaje. Al proporcionarnos información personal
+                sobre terceros, usted certifica que tiene permiso para
+                proporcionar esa información a Airbnb para los fines descritos
+                en esta Política de Privacidad, que compartió la Política de
+                Privacidad de Airbnb con ellos y que leyeron y entendieron que
+                esta Política de Privacidad se aplica a ellos.
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Información de la agenda de contactos. </b> Contactos de su
+                agenda que importe o ingrese manualmente.
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Otra información. </b>Por ejemplo, cuando llene un
+                formulario, agregue información a su cuenta, responda a
+                encuestas, publique en foros comunitarios, participe en
+                promociones, se comunique con nuestro equipo de atención al
+                cliente y otros Miembros o comparta su experiencia con nosotros.
+                Esto puede incluir información de salud, si decide compartirla
+                con nosotros.
+              </p>
+            </li>
+          </ul>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4>2.2 Información que proporciona voluntariamente.</h4>
-						<p>Puede optar por proporcionarnos información personal adicional. Esta información puede incluir lo siguiente:</p>
-							<ul>
-								<li>
-									<p><b>Información de Perfil adicional. </b>Como género, idioma(s) de preferencia, ciudad y descripción personal. Parte de esta información, tal como se indica en la configuración de su cuenta, forma parte de la página pública de su perfil y será visible públicamente.</p>
-								</li>
-								<li>
-									<p><b>Información sobre otras personas. </b>Como un instrumento de pago perteneciente a otra persona o información sobre un compañero de viaje. Al proporcionarnos información personal sobre terceros, usted certifica que tiene permiso para proporcionar esa información a Airbnb para los fines descritos en esta Política de Privacidad, que compartió la Política de Privacidad de Airbnb con ellos y que leyeron y entendieron que esta Política de Privacidad se aplica a ellos.</p>
-								</li>
-								<li>
-									<p><b>Información de la agenda de contactos. </b> Contactos de su agenda que importe o ingrese manualmente.</p>
-								</li>
-								<li>
-									<p><b>Otra información. </b>Por ejemplo, cuando llene un formulario, agregue información a su cuenta, responda a encuestas, publique en foros comunitarios, participe en promociones, se comunique con nuestro equipo de atención al cliente y otros Miembros o comparta su experiencia con nosotros. Esto puede incluir información de salud, si decide compartirla con nosotros.</p>
-								</li>
-							</ul>
-						<hr class="change_line" style="width: 630px;">
+          <h4>
+            2.3 Información recopilada automáticamente mediante la Plataforma
+            Airbnb y nuestros Servicios de Pago.
+          </h4>
+          <p>
+            Cuando utiliza la Plataforma Airbnb y los Servicios de Pago,
+            recopilamos información personal automáticamente. Esta información
+            puede incluir lo siguiente:
+          </p>
+          <ul>
+            <li>
+              <p>
+                <b>Información de ubicación geográfica. </b>Como la ubicación
+                precisa o aproximada, determinada a partir de la dirección IP o
+                el GPS de su dispositivo móvil, dependiendo de la configuración
+                de su dispositivo. También podemos recopilar esta información
+                cuando no utilice la aplicación si lo habilita a través de la
+                configuración o los permisos del dispositivo.
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Información de uso. </b>Como las páginas o el contenido que
+                ve, las búsquedas de Anuncios, las reservaciones realizadas y
+                otras acciones realizadas en la Plataforma Airbnb.
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Datos de Registro e Información del Dispositivo. </b>Por
+                ejemplo, detalles sobre el uso de la Plataforma Airbnb
+                (incluyendo si hizo clic en enlaces a aplicaciones de terceros),
+                dirección IP, fechas y horas de acceso, información de hardware
+                y software, información del dispositivo, información de los
+                eventos del dispositivo, identificadores únicos, datos de error,
+                datos de cookies y las páginas que vio o con las que interactúe
+                antes o después de usar la Plataforma Airbnb. Es posible que
+                recopilemos esta información aunque no haya creado una cuenta en
+                Airbnb o iniciado sesión.
+              </p>
+            </li>
+            <li>
+              <p>
+                <b
+                  >Cookies y Tecnologías Similares, según se describen en
+                  nuestra Política de Cookies.</b
+                >
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Información de Transacciones de Pago. </b>Como el instrumento
+                de pago utilizado, la fecha y la hora, el importe del pago, la
+                fecha de vencimiento del instrumento de pago y el código postal
+                de facturación, la dirección de correo electrónico de PayPal, la
+                información de IBAN, su dirección y otros detalles relacionados
+                con la transacción.
+              </p>
+            </li>
+          </ul>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4>2.3 Información recopilada automáticamente mediante la Plataforma Airbnb y nuestros Servicios de Pago.</h4>
-						<p>Cuando utiliza la Plataforma Airbnb y los Servicios de Pago, recopilamos información personal automáticamente. Esta información puede incluir lo siguiente:</p>
-							<ul>
-								<li>
-									<p><b>Información de ubicación geográfica. </b>Como la ubicación precisa o aproximada, determinada a partir de la dirección IP o el GPS de su dispositivo móvil, dependiendo de la configuración de su dispositivo. También podemos recopilar esta información cuando no utilice la aplicación si lo habilita a través de la configuración o los permisos del dispositivo.</p>
-								</li>
-								<li>
-									<p><b>Información de uso. </b>Como las páginas o el contenido que ve, las búsquedas de Anuncios, las reservaciones realizadas y otras acciones realizadas en la Plataforma Airbnb.</p>
-								</li>
-								<li>
-									<p><b>Datos de Registro e Información del Dispositivo. </b>Por ejemplo, detalles sobre el uso de la Plataforma Airbnb (incluyendo si hizo clic en enlaces a aplicaciones de terceros), dirección IP, fechas y horas de acceso, información de hardware y software, información del dispositivo, información de los eventos del dispositivo, identificadores únicos, datos de error, datos de cookies y las páginas que vio o con las que interactúe antes o después de usar la Plataforma Airbnb. Es posible que recopilemos esta información aunque no haya creado una cuenta en Airbnb o iniciado sesión.</p>
-								</li>
-								<li>
-									<p><b>Cookies y Tecnologías Similares, según se describen en nuestra Política de Cookies.</b></p>
-								</li>
-								<li>
-									<p><b>Información de Transacciones de Pago. </b>Como el instrumento de pago utilizado, la fecha y la hora, el importe del pago, la fecha de vencimiento del instrumento de pago y el código postal de facturación, la dirección de correo electrónico de PayPal, la información de IBAN, su dirección y otros detalles relacionados con la transacción.</p>
-								</li>
-							</ul>
-						<hr class="change_line" style="width: 630px;">
+          <h4>2.4 Información personal que recopilamos de terceros.</h4>
+          <p>Recopilamos información personal de otras fuentes, como:</p>
+          <ul>
+            <li>
+              <p>
+                <b>Servicios de Terceros. </b>Si vincula, conecta o inicia
+                sesión en la Plataforma Airbnb con un servicio de terceros (p.
+                ej., Google, Facebook o WeChat), instruye a ese servicio para
+                que nos envíe información, como su registro, su lista de amigos
+                y la información de su perfil, según la controle tal servicio o
+                la autorice a través de la configuración de privacidad de dicho
+                servicio.
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Información de Antecedentes. </b>Para los Miembros en los
+                Estados Unidos, en la medida en que lo permita la legislación
+                aplicable, podemos obtener, por ejemplo, informes de
+                antecedentes penales, registros de delincuentes sexuales y otra
+                información sobre usted y sus antecedentes. Para los Miembros
+                fuera de los Estados Unidos, en la medida en la que la ley lo
+                permita, y contando con su consentimiento, cuando así se
+                requiera, podríamos obtener la versión local de la verificación
+                de antecedentes penales o el registro de delincuentes sexuales.
+                Es posible que utilicemos su información, incluyendo su nombre
+                completo y fecha de nacimiento, para obtener dichos informes.
+              </p>
+            </li>
+            <li>
+              <p>
+                <b
+                  >Invitaciones de Productos Empresariales y Administración de
+                  Cuenta. </b
+                >Las organizaciones que utilizan nuestros productos
+                empresariales pueden enviar información personal para facilitar
+                la administración de cuentas y las invitaciones a utilizar
+                productos empresariales.
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Invitaciones y compañeros de viaje. </b>Si lo invitan a la
+                Plataforma Airbnb como compañero de viaje, la persona que lo
+                invitó puede enviar información personal sobre usted, como su
+                dirección de correo electrónico u otra información de contacto.
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Otras fuentes. </b>En la medida en que lo permita la
+                legislación aplicable, es posible que recibamos información
+                adicional sobre usted, como referencias, datos demográficos o
+                información para ayudar a detectar el fraude y los problemas de
+                seguridad por parte de terceros proveedores de servicios o
+                socios y la combinemos con la información que tengamos sobre
+                usted. Por ejemplo, podemos recibir resultados de verificaciones
+                de antecedentes o advertencias de fraude por parte de
+                proveedores de servicios de verificación de la identidad para
+                utilizarlos en nuestros procesos de evaluación de riesgos. Es
+                posible que recibamos información sobre usted y sus actividades
+                dentro y fuera de la Plataforma Airbnb o sobre sus experiencias
+                e interacciones con nuestros socios. Podemos recibir información
+                de salud, incluyendo, pero no limitados a, información de salud
+                relacionada con enfermedades contagiosas.
+              </p>
+            </li>
+          </ul>
+          <hr class="change_line" style="width: 630px" />
+          <hr style="height: 150px; visibility: hidden" />
 
-						<h4>2.4 Información personal que recopilamos de terceros.</h4>
-						<p>Recopilamos información personal de otras fuentes, como:</p>
-							<ul>
-								<li>
-									<p><b>Servicios de Terceros. </b>Si vincula, conecta o inicia sesión en la Plataforma Airbnb con un servicio de terceros (p. ej., Google, Facebook o WeChat), instruye a ese servicio para que nos envíe información, como su registro, su lista de amigos y la información de su perfil, según la controle tal servicio o la autorice a través de la configuración de privacidad de dicho servicio.</p>
-								</li>
-								<li>
-									<p><b>Información de Antecedentes. </b>Para los Miembros en los Estados Unidos, en la medida en que lo permita la legislación aplicable, podemos obtener, por ejemplo, informes de antecedentes penales, registros de delincuentes sexuales y otra información sobre usted y sus antecedentes. Para los Miembros fuera de los Estados Unidos, en la medida en la que la ley lo permita, y contando con su consentimiento, cuando así se requiera, podríamos obtener la versión local de la verificación de antecedentes penales o el registro de delincuentes sexuales. Es posible que utilicemos su información, incluyendo su nombre completo y fecha de nacimiento, para obtener dichos informes.</p>
-								</li>
-								<li>
-									<p><b>Invitaciones de Productos Empresariales y Administración de Cuenta. </b>Las organizaciones que utilizan nuestros productos empresariales pueden enviar información personal para facilitar la administración de cuentas y las invitaciones a utilizar productos empresariales.</p>
-								</li>
-								<li>
-									<p><b>Invitaciones y compañeros de viaje. </b>Si lo invitan a la Plataforma Airbnb como compañero de viaje, la persona que lo invitó puede enviar información personal sobre usted, como su dirección de correo electrónico u otra información de contacto.</p>
-								</li>
-								<li>
-									<p><b>Otras fuentes. </b>En la medida en que lo permita la legislación aplicable, es posible que recibamos información adicional sobre usted, como referencias, datos demográficos o información para ayudar a detectar el fraude y los problemas de seguridad por parte de terceros proveedores de servicios o socios y la combinemos con la información que tengamos sobre usted. Por ejemplo, podemos recibir resultados de verificaciones de antecedentes o advertencias de fraude por parte de proveedores de servicios de verificación de la identidad para utilizarlos en nuestros procesos de evaluación de riesgos. Es posible que recibamos información sobre usted y sus actividades dentro y fuera de la Plataforma Airbnb o sobre sus experiencias e interacciones con nuestros socios. Podemos recibir información de salud, incluyendo, pero no limitados a, información de salud relacionada con enfermedades contagiosas.</p>
-								</li>
-							</ul>
-						<hr class="change_line" style="width: 630px;">
-						<hr style="height: 150px; visibility: hidden;">
+          <h4 id="title3">3. ¿CÓMO UTILIZAMOS LA INFORMACIÓN RECOPILADA?</h4>
+          <hr class="change_line" style="width: 630px" />
 
+          <h4>3.1 Proporcionar, Mejorar y Desarrollar la Plataforma Airbnb.</h4>
+          <p>Entre otros fines, utilizamos la información personal para:</p>
+          <ul>
+            <li>
+              <p>
+                permitirle acceder a la Plataforma Airbnb y realizar y recibir
+                pagos,
+              </p>
+            </li>
+            <li>
+              <p>permitirle comunicarte con otros Miembros,</p>
+            </li>
+            <li>
+              <p>procesar sus solicitudes,</p>
+            </li>
+            <li>
+              <p>realizar análisis, depurar y realizar investigaciones,</p>
+            </li>
+            <li>
+              <p>proporcionar servicio al cliente, capacitaciones,</p>
+            </li>
+            <li>
+              <p>
+                enviarle mensajes, actualizaciones, avisos de seguridad y
+                notificaciones de cuentas,
+              </p>
+            </li>
+            <li>
+              <p>
+                si nos proporciona la información de sus contactos, como sus
+                amigos o compañeros de viaje, podemos procesar esta información
+                para: (i) facilitar las invitaciones, (ii) compartir los
+                detalles de su viaje y facilitar la planificación de viajes,
+                (iii) detectar y prevenir casos de fraude, y (iv) facilitar las
+                solicitudes o cualquier otro propósito que usted autorice,
+              </p>
+            </li>
+            <li>
+              <p>
+                configurar y personalizar su experiencia en función de sus
+                interacciones con la Plataforma Airbnb, su historial de búsqueda
+                y reservaciones, sus preferencias e información de perfil y
+                otros contenidos que envíe, y
+              </p>
+            </li>
+            <li>
+              <p>permitir el uso de nuestros productos empresariales.</p>
+            </li>
+          </ul>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4 id="title3">3. ¿CÓMO UTILIZAMOS LA INFORMACIÓN RECOPILADA?</h4>
-						<hr class="change_line" style="width: 630px;">
+          <h4>2.2. Crear y mantener un entorno de confianza y seguridad.</h4>
+          <p>Entre otros fines, utilizamos la información personal para:</p>
+          <ul>
+            <li>
+              <p>
+                detección y prevención de fraudes, mensajes no deseados, abusos,
+                incidentes de seguridad y otras prácticas perjudiciales,
+              </p>
+            </li>
+            <li>
+              <p>
+                estudiar y combatir la discriminación de conformidad con nuestra
+                Política Contra la Discriminación,
+              </p>
+            </li>
+            <li>
+              <p>
+                llevar a cabo investigaciones de seguridad y evaluaciones de
+                riesgos,
+              </p>
+            </li>
+            <li>
+              <p>verificar o autenticar la información que proporciones,</p>
+            </li>
+            <li>
+              <p>
+                realizar verificaciones con bases de datos y otras fuentes de
+                información, incluidas verificaciones de antecedentes o
+                policiales,
+              </p>
+            </li>
+            <li>
+              <p>
+                cumplir con nuestras obligaciones legales, proteger la salud y
+                el bienestar de nuestros Huéspedes, Anfitriones, empleados de
+                Anfitriones y miembros del público,
+              </p>
+            </li>
+            <li>
+              <p>
+                resolver disputas con nuestros Miembros, incluyendo compartir
+                información con su coAnfitrión o Huéspedes adicionales sobre
+                disputas relacionadas con su rol como coAnfitrión o Huésped
+                adicional,
+              </p>
+            </li>
+            <li>
+              <p>hacer cumplir nuestros acuerdos con terceros,</p>
+            </li>
+            <li>
+              <p>
+                cumplir con la ley, responder a las solicitudes legales,
+                prevenir daños y proteger nuestros derechos (ver sección 4.5),
+              </p>
+            </li>
+            <li>
+              <p>
+                hacer cumplir nuestros Términos y otras políticas (por ejemplo,
+                la Política Contra la Discriminación), y
+              </p>
+            </li>
+            <li>
+              <p>
+                en relación con las actividades anteriores, podemos realizar
+                perfiles en función de sus interacciones con la Plataforma
+                Airbnb, sus datos de perfil y otros contenidos que envíe a
+                Airbnb e información obtenida de terceros. En casos específicos,
+                los procesos automatizados, que analizan su cuenta y actividades
+                en la Plataforma Airbnb, así como la información relacionada con
+                actividades dentro y fuera de la Plataforma Airbnb que puedan
+                asociarse con usted, podrían restringir o suspender el acceso a
+                la Plataforma Airbnb si dichos procesos detectan actividades que
+                puedan suponer un riesgo de seguridad u otro tipo para Airbnb,
+                para nuestra comunidad o para terceros. Si quiere impugnar
+                decisiones basadas en procesos automatizados, comuníquese con
+                nosotros a través de la sección de Información de Contacto que
+                aparece más abajo.
+              </p>
+            </li>
+          </ul>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4>3.1 Proporcionar, Mejorar y Desarrollar la Plataforma Airbnb.</h4>
-						<p>Entre otros fines, utilizamos la información personal para:</p>
-							<ul>
-								<li>
-									<p>permitirle acceder a la Plataforma Airbnb y realizar y recibir pagos,</p>
-								</li>
-								<li>
-									<p>permitirle comunicarte con otros Miembros,</p>
-								</li>
-								<li>
-									<p>procesar sus solicitudes,</p>
-								</li>
-								<li>
-									<p>realizar análisis, depurar y realizar investigaciones,</p>
-								</li>
-								<li>
-									<p>proporcionar servicio al cliente, capacitaciones,</p>
-								</li>
-								<li>
-									<p>enviarle mensajes, actualizaciones, avisos de seguridad y notificaciones de cuentas,</p>
-								</li>
-								<li>
-									<p>si nos proporciona la información de sus contactos, como sus amigos o compañeros de viaje, podemos procesar esta información para: (i) facilitar las invitaciones, (ii) compartir los detalles de su viaje y facilitar la planificación de viajes, (iii) detectar y prevenir casos de fraude, y (iv) facilitar las solicitudes o cualquier otro propósito que usted autorice,</p>
-								</li>
-								<li>
-									<p>configurar y personalizar su experiencia en función de sus interacciones con la Plataforma Airbnb, su historial de búsqueda y reservaciones, sus preferencias e información de perfil y otros contenidos que envíe, y</p>
-								</li>
-								<li>
-									<p>permitir el uso de nuestros productos empresariales.</p>
-								</li>
-							</ul>
-						<hr class="change_line" style="width: 630px;">
+          <h4>
+            3.3 Proporcionar, personalizar, medir y mejorar nuestra publicidad y
+            mercadotecnia.
+          </h4>
+          <p>Utilizamos información personal por ejemplo para:</p>
+          <ul>
+            <li>
+              <p>
+                enviarle mensajes promocionales, marketing, publicidad y otra
+                información en función de sus preferencias y publicidad en redes
+                sociales a través de plataformas de redes sociales,
+              </p>
+            </li>
+            <li>
+              <p>personalizar, medir y mejorar nuestra publicidad,</p>
+            </li>
+            <li>
+              <p>
+                administrar programas de recomendaciones, recompensas,
+                encuestas, sorteos, concursos u otras actividades o eventos
+                promocionales patrocinados o gestionados por Airbnb o sus socios
+                comerciales externos,
+              </p>
+            </li>
+            <li>
+              <p>
+                analizar características y preferencias para enviarle mensajes
+                promocionales, información de marketing, publicidad y otra que
+                creamos que pueda ser de su interés e
+              </p>
+            </li>
+            <li>
+              <p>invitarlo a eventos y oportunidades relevantes.</p>
+            </li>
+          </ul>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4>2.2. Crear y mantener un entorno de confianza y seguridad.</h4>
-						<p>Entre otros fines, utilizamos la información personal para:</p>
-							<ul>
-								<li>
-									<p>detección y prevención de fraudes, mensajes no deseados, abusos, incidentes de seguridad y otras prácticas perjudiciales,</p>
-								</li>
-								<li>
-									<p>estudiar y combatir la discriminación de conformidad con nuestra Política Contra la Discriminación,</p>
-								</li>
-								<li>
-									<p>llevar a cabo investigaciones de seguridad y evaluaciones de riesgos,</p>
-								</li>
-								<li>
-									<p>verificar o autenticar la información que proporciones,</p>
-								</li>
-								<li>
-									<p>realizar verificaciones con bases de datos y otras fuentes de información, incluidas verificaciones de antecedentes o policiales,</p>
-								</li>
-								<li>
-									<p>cumplir con nuestras obligaciones legales, proteger la salud y el bienestar de nuestros Huéspedes, Anfitriones, empleados de Anfitriones y miembros del público,</p>
-								</li>
-								<li>
-									<p>resolver disputas con nuestros Miembros, incluyendo compartir información con su coAnfitrión o Huéspedes adicionales sobre disputas relacionadas con su rol como coAnfitrión o Huésped adicional,</p>
-								</li>
-								<li>
-									<p>hacer cumplir nuestros acuerdos con terceros,</p>
-								</li>
-								<li>
-									<p>cumplir con la ley, responder a las solicitudes legales, prevenir daños y proteger nuestros derechos (ver sección 4.5),</p>
-								</li>
-								<li>
-									<p>hacer cumplir nuestros Términos y otras políticas (por ejemplo, la Política Contra la Discriminación), y</p>
-								</li>
-								<li>
-									<p>en relación con las actividades anteriores, podemos realizar perfiles en función de sus interacciones con la Plataforma Airbnb, sus datos de perfil y otros contenidos que envíe a Airbnb e información obtenida de terceros. En casos específicos, los procesos automatizados, que analizan su cuenta y actividades en la Plataforma Airbnb, así como la información relacionada con actividades dentro y fuera de la Plataforma Airbnb que puedan asociarse con usted, podrían restringir o suspender el acceso a la Plataforma Airbnb si dichos procesos detectan actividades que puedan suponer un riesgo de seguridad u otro tipo para Airbnb, para nuestra comunidad o para terceros. Si quiere impugnar decisiones basadas en procesos automatizados, comuníquese con nosotros a través de la sección de Información de Contacto que aparece más abajo.</p>
-								</li>
-							</ul>
-						<hr class="change_line" style="width: 630px;">
+          <h4>3.4 Prestar Servicios de Pago.</h4>
+          <p>
+            La información personal se utiliza para permitir o autorizar a
+            terceros el uso de los Servicios de Pago, entre otros fines:
+          </p>
+          <ul>
+            <li>
+              <p>
+                detectar y prevenir el lavado de dinero, el fraude, los abusos y
+                los incidentes de seguridad,
+              </p>
+            </li>
+            <li>
+              <p>
+                llevar a cabo investigaciones de seguridad y evaluaciones de
+                riesgos,
+              </p>
+            </li>
+            <li>
+              <p>
+                cumplir con las obligaciones legales (tales como las
+                disposiciones contra el lavado de dinero),
+              </p>
+            </li>
+            <li>
+              <p>
+                hacer cumplir los Términos de Pago y otras políticas de pago,
+              </p>
+            </li>
+            <li>
+              <p>
+                con su consentimiento, enviarle mensajes promocionales,
+                información de marketing, publicidad y otra que pueda ser de su
+                interés en función de sus preferencias, y
+              </p>
+            </li>
+            <li>
+              <p>proporcionar y mejorar los Servicios de Pago.</p>
+            </li>
+          </ul>
+          <hr class="change_line" style="width: 630px" />
+          <hr style="height: 150px; visibility: hidden" />
 
-						<h4>3.3 Proporcionar, personalizar, medir y mejorar nuestra publicidad y mercadotecnia.</h4>
-						<p>Utilizamos información personal por ejemplo para:</p>
-							<ul>
-								<li>
-									<p>enviarle mensajes promocionales, marketing, publicidad y otra información en función de sus preferencias y publicidad en redes sociales a través de plataformas de redes sociales,</p>
-								</li>
-								<li>
-									<p>personalizar, medir y mejorar nuestra publicidad,</p>
-								</li>
-								<li>
-									<p>administrar programas de recomendaciones, recompensas, encuestas, sorteos, concursos u otras actividades o eventos promocionales patrocinados o gestionados por Airbnb o sus socios comerciales externos,</p>
-								</li>
-								<li>
-									<p>analizar características y preferencias para enviarle mensajes promocionales, información de marketing, publicidad y otra que creamos que pueda ser de su interés e</p>
-								</li>
-								<li>
-									<p>invitarlo a eventos y oportunidades relevantes.</p>
-								</li>
-							</ul>
-						<hr class="change_line" style="width: 630px;">
+          <h4 id="title4">4. INTERCAMBIO Y DIVULGACIÓN DE INFORMACIÓN</h4>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4>3.4 Prestar Servicios de Pago.</h4>
-						<p>La información personal se utiliza para permitir o autorizar a terceros el uso de los Servicios de Pago, entre otros fines:</p>
-							<ul>
-								<li>
-									<p>detectar y prevenir el lavado de dinero, el fraude, los abusos y los incidentes de seguridad,</p>
-								</li>
-								<li>
-									<p>llevar a cabo investigaciones de seguridad y evaluaciones de riesgos,</p>
-								</li>
-								<li>
-									<p>cumplir con las obligaciones legales (tales como las disposiciones contra el lavado de dinero),</p>
-								</li>
-								<li>
-									<p>hacer cumplir los Términos de Pago y otras políticas de pago,</p>
-								</li>
-								<li>
-									<p>con su consentimiento, enviarle mensajes promocionales, información de marketing, publicidad y otra que pueda ser de su interés en función de sus preferencias, y</p>
-								</li>
-								<li>
-									<p>proporcionar y mejorar los Servicios de Pago.</p>
-								</li>
-							</ul>
-						<hr class="change_line" style="width: 630px;">
-						<hr style="height: 150px; visibility: hidden;">
+          <h4>
+            4.1 Información facilitada con su consentimiento o a petición suya.
+          </h4>
+          <p>
+            Cuando haya dado su consentimiento, compartimos su información, tal
+            como se describe en el momento de tal consentimiento, como cuando
+            autorizamos a una aplicación o sitio web de terceros a acceder a su
+            cuenta en Airbnb o cuando participamos en actividades promocionales
+            de socios de Airbnb o de terceros.
+          </p>
+          <p>
+            Cuando lo permita la legislación aplicable, es posible que
+            utilicemos cierta información sobre usted, como su dirección de
+            correo electrónico, la eliminemos de la identificación y la
+            compartamos con las plataformas de redes sociales, para generar
+            clientes potenciales, impulsar el tráfico a Airbnb o promocionar
+            nuestros productos y servicios.
+          </p>
+          <hr class="change_line" style="width: 630px" />
 
+          <h4>4.2 Información compartida entre Miembros.</h4>
+          <p>
+            Para ayudar a facilitar las reservaciones u otras interacciones
+            entre los Miembros, es posible que necesitemos compartir cierta
+            información, como:
+          </p>
+          <ul>
+            <li>
+              <p>
+                Cuando se hace una solicitud de reservación, cuando existe un
+                coanfitrión o se envía una disputa, es posible que se comparta
+                cierta información entre los Huéspedes y los Anfitriones,
+                incluidos el perfil, el nombre, los nombres de cualquiera de los
+                Huéspedes adicionales, el historial de cancelaciones, la
+                información sobre evaluaciones, la edad del huésped (salvo que
+                lo prohíba la legislación aplicable), el resultado de la disputa
+                (cuando corresponda) y cualquier otra información que decida
+                compartir y enviar. Cuando la reservación es confirmada se
+                comparte información adicional para ayudar a coordinar el viaje,
+                como la foto de perfil o el número de teléfono. Cuando tiene una
+                reservación confirmada como Anfitrión, se comparte cierta
+                información con el Huésped (y con cualquier Huésped adicional a
+                quien invite, si esto resulta aplicable) para coordinar la
+                reservación, como su perfil, su nombre completo, su número de
+                teléfono y la dirección de su Anuncio.
+              </p>
+            </li>
+            <li>
+              <p>
+                Cada vez que, en calidad de Anfitrión, invite a otro Miembro a
+                recibir Huéspedes con usted, autoriza a esa persona a acceder y
+                actualizar su información y el Contenido del Miembro, incluida,
+                entre otras, cierta información, como su nombre completo, su
+                número de teléfono, la dirección de su Alojamiento, el
+                calendario, la información de su Anuncio, las fotos de su
+                Anuncio y la dirección de correo electrónico.
+              </p>
+            </li>
+            <li>
+              <p>
+                Cada vez que, en calidad de Huésped, invite a un Huésped
+                adicional a una reservación, facilitaremos a los Huéspedes
+                adicionales su nombre y apellidos, las fechas del viaje, el
+                nombre del Anfitrión, los detalles del Anuncio, la dirección del
+                Alojamiento y otra información relacionada.
+              </p>
+            </li>
+          </ul>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4 id="title4">4. INTERCAMBIO Y DIVULGACIÓN DE INFORMACIÓN</h4>
-						<hr class="change_line" style="width: 630px;">
+          <h4>
+            4.3 Información que Publique en perfiles, Anuncios y otra
+            Información Pública.
+          </h4>
+          <p>
+            Puede permitir que cierta información sea visible al público, como:
+          </p>
+          <ul>
+            <li>
+              <p>
+                Su página de perfil público, que incluye su foto de perfil, su
+                nombre (o sus iniciales, cuando resulte aplicable), una
+                descripción y su ciudad.
+              </p>
+            </li>
+            <li>
+              <p>
+                Páginas de Anuncios que contengan información como la ubicación
+                aproximada o exacta del Alojamiento o la Experiencia,
+                disponibilidad de fechas, foto de perfil, información de demanda
+                agregada (como visitas a la página durante un periodo de tiempo)
+                y datos adicionales que decidas compartir.
+              </p>
+            </li>
+            <li>
+              <p>Evaluaciones, calificaciones y otros comentarios públicos.</p>
+            </li>
+            <li>
+              <p>
+                Contenido en una comunidad o foro de discusión, blog o
+                publicación en redes sociales.
+              </p>
+            </li>
+          </ul>
+          <p>
+            Podríamos mostrar partes de su perfil público y otro Contenido que
+            ponga a disposición del público, como los detalles del Anuncio en
+            sitios, plataformas y aplicaciones de terceros.
+          </p>
+          <p>
+            Información que comparte públicamente en la Plataforma Airbnb podría
+            indexarse a través de motores de búsqueda de terceros. En algunos
+            casos, puede inhabilitar esta función en la configuración de su
+            Cuenta.
+          </p>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4>4.1 Información facilitada con su consentimiento o a petición suya.</h4>
-						<p>Cuando haya dado su consentimiento, compartimos su información, tal como se describe en el momento de tal consentimiento, como cuando autorizamos a una aplicación o sitio web de terceros a acceder a su cuenta en Airbnb o cuando participamos en actividades promocionales de socios de Airbnb o de terceros.</p>
-						<p>Cuando lo permita la legislación aplicable, es posible que utilicemos cierta información sobre usted, como su dirección de correo electrónico, la eliminemos de la identificación y la compartamos con las plataformas de redes sociales, para generar clientes potenciales, impulsar el tráfico a Airbnb o promocionar nuestros productos y servicios.</p>
-						<hr class="change_line" style="width: 630px;">
+          <h4>4.4 Proveedores de Servicios de Anfitrión.</h4>
+          <p>
+            Los Anfitriones pueden utilizar servicios de terceros para
+            administrar o prestar sus servicios, como proveedores de servicios
+            de limpieza o seguridad. Los Anfitriones pueden utilizar las
+            funciones de la Plataforma Airbnb para compartir información sobre
+            el Huésped (como las fechas de llegada y salida, el nombre del
+            Huésped y su número telefónico) con dichos terceros proveedores de
+            servicios.
+          </p>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4>4.2 Información compartida entre Miembros.</h4>
-						<p>Para ayudar a facilitar las reservaciones u otras interacciones entre los Miembros, es posible que necesitemos compartir cierta información, como:</p>
-							<ul>
-								<li>
-									<p>Cuando se hace una solicitud de reservación, cuando existe un coanfitrión o se envía una disputa, es posible que se comparta cierta información entre los Huéspedes y los Anfitriones, incluidos el perfil, el nombre, los nombres de cualquiera de los Huéspedes adicionales, el historial de cancelaciones, la información sobre evaluaciones, la edad del huésped (salvo que lo prohíba la legislación aplicable), el resultado de la disputa (cuando corresponda) y cualquier otra información que decida compartir y enviar. Cuando la reservación es confirmada se comparte información adicional para ayudar a coordinar el viaje, como la foto de perfil o el número de teléfono. Cuando tiene una reservación confirmada como Anfitrión, se comparte cierta información con el Huésped (y con cualquier Huésped adicional a quien invite, si esto resulta aplicable) para coordinar la reservación, como su perfil, su nombre completo, su número de teléfono y la dirección de su Anuncio.</p>
-								</li>
-								<li>
-									<p>Cada vez que, en calidad de Anfitrión, invite a otro Miembro a recibir Huéspedes con usted, autoriza a esa persona a acceder y actualizar su información y el Contenido del Miembro, incluida, entre otras, cierta información, como su nombre completo, su número de teléfono, la dirección de su Alojamiento, el calendario, la información de su Anuncio, las fotos de su Anuncio y la dirección de correo electrónico.</p>
-								</li>
-								<li>
-									<p>Cada vez que, en calidad de Huésped, invite a un Huésped adicional a una reservación, facilitaremos a los Huéspedes adicionales su nombre y apellidos, las fechas del viaje, el nombre del Anfitrión, los detalles del Anuncio, la dirección del Alojamiento y otra información relacionada.</p>
-								</li>
-							</ul>
-						<hr class="change_line" style="width: 630px;">
+          <h4>
+            4.5 Cumplir con la ley, responder a la solicitudes legales, prevenir
+            daños y proteger nuestros derechos.
+          </h4>
+          <p>
+            Podemos dar a conocer su información a los tribunales, a las
+            autoridades policiales, gubernamentales o públicas, a las
+            autoridades fiscales o a terceros autorizados, en la medida en que
+            la ley nos lo exija o nos lo permita, o cuando la divulgación sea
+            razonablemente necesaria para: (i) cumplir con nuestras obligaciones
+            legales; (ii) cumplir con una solicitud legal válida (como una
+            citación u orden judicial) o responder a las reclamaciones
+            formuladas contra Airbnb; (iii) responder a una solicitud legal
+            válida relacionada con una investigación penal para abordar una
+            actividad presuntamente ilegal, o responder a cualquier otra
+            actividad que pueda exponernos a nosotros, a usted o a cualquier
+            otro de nuestros usuarios a una responsabilidad legal o
+            reglamentaria (más información sobre cómo Airbnb responde a
+            solicitudes de autoridades aquí); (iv) hacer cumplir y administrar
+            nuestros acuerdos con los Miembros, incluidos nuestros Términos,
+            Términos legales adicionales y Políticas o (v) proteger los
+            derechos, la propiedad o la seguridad personal de Airbnb, sus
+            empleados, los Miembros, o los miembros del público. Por ejemplo, si
+            se permite, debido a las circunstancias anteriores, es posible que
+            la información fiscal del Anfitrión se transmita a las autoridades
+            fiscales u otras dependencias gubernamentales.
+          </p>
+          <p>
+            Cuando corresponda, podemos notificar a los Miembros sobre las
+            solicitudes legales a menos que: (i) la notificación esté prohibida
+            por el propio proceso legal, por una orden judicial recibida o por
+            la ley aplicable, o (ii) consideremos que proporcionar notificación
+            sería inútil, ineficaz, causaría un riesgo de lesión o daño corporal
+            a una persona o grupo, crearía o aumentaría un riesgo de fraude o
+            daño a Airbnb, nuestros Miembros, o expondría a Airbnb a una
+            reclamación por obstrucción a la justicia.
+          </p>
+          <p>
+            Cuando la ley lo exija o lo permita, de acuerdo con la legislación
+            aplicable, podemos divulgar la información de los Anfitriones y/o
+            Huéspedes a las autoridades fiscales para que estas determinen si
+            cumplen adecuadamente con las obligaciones fiscales
+            correspondientes. Las obligaciones fiscales correspondientes
+            incluyen las obligaciones fiscales de Airbnb sobre sus tarifas de
+            servicio, la facilitación de impuestos a los alojamientos y las
+            retenciones de impuestos, y las obligaciones fiscales individuales
+            de los Anfitriones. La información que se puede divulgar incluye,
+            pero no se limita a, los nombres de los Anfitriones y los Huéspedes,
+            los domicilios de los anuncios, los domicilios de los Anfitriones,
+            los números de identificación fiscal o comercial, la fecha de
+            nacimiento y/o la información de contacto, los números de
+            identificación de las parcelas, la información de cobro, las fechas
+            y los importes de las transacciones, el número de noches y los
+            Huéspedes reservados, el valor bruto y neto de las reservaciones y
+            los importes de cobro, los impuestos recaudados por Airbnb en nombre
+            de los Huéspedes y los Anfitriones, en la medida en que esta
+            información sea conocida por Airbnb.
+          </p>
+          <p>
+            En las jurisdicciones en las que Airbnb facilite o requiera el
+            registro, la notificación, el permiso o la solicitud de licencia o
+            el número de un Anfitrión ante una autoridad gubernamental, podemos
+            compartir la información de los Anfitriones participantes con la
+            autoridad pertinente, tanto durante el proceso de solicitud, cuando
+            se publique el Anuncio, como periódicamente, como el nombre completo
+            y los datos de contacto del Anfitrión, la dirección del Alojamiento,
+            el número de identificación fiscal, el registro, el permiso o el
+            número de licencia, los datos del Anuncio, la información de la
+            reservación y el número de noches reservadas sujeto a lo que
+            disponga la legislación aplicable.
+          </p>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4>4.3 Información que Publique en perfiles, Anuncios y otra Información Pública.</h4>
-						<p>Puede permitir que cierta información sea visible al público, como:</p>
-							<ul>
-								<li>
-									<p>Su página de perfil público, que incluye su foto de perfil, su nombre (o sus iniciales, cuando resulte aplicable), una descripción y su ciudad.</p>
-								</li>
-								<li>
-									<p>Páginas de Anuncios que contengan información como la ubicación aproximada o exacta del Alojamiento o la Experiencia, disponibilidad de fechas, foto de perfil, información de demanda agregada (como visitas a la página durante un periodo de tiempo) y datos adicionales que decidas compartir.</p>
-								</li>
-								<li>
-									<p>Evaluaciones, calificaciones y otros comentarios públicos.</p>
-								</li>
-								<li>
-									<p>Contenido en una comunidad o foro de discusión, blog o publicación en redes sociales.</p>
-								</li>
-							</ul>
-						<p>Podríamos mostrar partes de su perfil público y otro Contenido que ponga a disposición del público, como los detalles del Anuncio en sitios, plataformas y aplicaciones de terceros.</p>
-						<p>Información que comparte públicamente en la Plataforma Airbnb podría indexarse a través de motores de búsqueda de terceros. En algunos casos, puede inhabilitar esta función en la configuración de su Cuenta.</p>
-						<hr class="change_line" style="width: 630px;">
+          <h4>4.6 Programas con Administradores y Propietarios.</h4>
+          <p>
+            Podemos compartir información personal de Anfitriones y Huéspedes
+            con propietarios, empresas de administración y/o propietarios
+            (“Administración del Consorcio”), como información sobre
+            reservaciones e información relacionada con el cumplimiento de las
+            leyes aplicables, con el fin de facilitar los programas con
+            Administración del Consorcio. Por ejemplo, la información personal y
+            las reservaciones de los huéspedes, incluida la información de
+            contacto del huésped, se pueden compartir con la Administración del
+            Consorcio del edificio, el complejo o la comunidad en la que vive el
+            anfitrión o en la que se encuentra el alojamiento, para facilitar
+            los servicios del anfitrión, el cumplimiento de las leyes
+            aplicables, la seguridad, la facturación y otros servicios.
+          </p>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4>4.4 Proveedores de Servicios de Anfitrión.</h4>
-						<p>Los Anfitriones pueden utilizar servicios de terceros para administrar o prestar sus servicios, como proveedores de servicios de limpieza o seguridad. Los Anfitriones pueden utilizar las funciones de la Plataforma Airbnb para compartir información sobre el Huésped (como las fechas de llegada y salida, el nombre del Huésped y su número telefónico) con dichos terceros proveedores de servicios.</p>
-						<hr class="change_line" style="width: 630px;">
+          <h4>
+            4.7 Información sobre Anfitriones proporcionada a los Clientes de
+            Airbnb for Work.
+          </h4>
+          <p>
+            Si se designa una reservación como para viajes de negocios o de
+            trabajo y (1) la realiza un Huésped afiliado a una Empresa, y (2) la
+            empresa está inscrita en Airbnb for Work, podemos revelar
+            información relacionada con la reservación a la Empresa (por
+            ejemplo, nombre del Anfitrión, dirección del Alojamiento, fechas de
+            reservación, detalles del Anuncio, etc.) en la medida en que sea
+            necesario para el cumplimiento adecuado del contrato de Airbnb con
+            la Empresa y para proporcionar los servicios. A petición de la
+            Empresa o del Huésped, también podemos compartir esta información
+            con terceros contratados por la Empresa para proporcionar servicios
+            de soporte.
+          </p>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4>4.5 Cumplir con la ley, responder a la solicitudes legales, prevenir daños y proteger nuestros derechos.</h4>
-						<p>Podemos dar a conocer su información a los tribunales, a las autoridades policiales, gubernamentales o públicas, a las autoridades fiscales o a terceros autorizados, en la medida en que la ley nos lo exija o nos lo permita, o cuando la divulgación sea razonablemente necesaria para: (i) cumplir con nuestras obligaciones legales; (ii) cumplir con una solicitud legal válida (como una citación u orden judicial) o responder a las reclamaciones formuladas contra Airbnb; (iii) responder a una solicitud legal válida relacionada con una investigación penal para abordar una actividad presuntamente ilegal, o responder a cualquier otra actividad que pueda exponernos a nosotros, a usted o a cualquier otro de nuestros usuarios a una responsabilidad legal o reglamentaria (más información sobre cómo Airbnb responde a solicitudes de autoridades aquí); (iv) hacer cumplir y administrar nuestros acuerdos con los Miembros, incluidos nuestros Términos, Términos legales adicionales y Políticas o (v) proteger los derechos, la propiedad o la seguridad personal de Airbnb, sus empleados, los Miembros, o los miembros del público. Por ejemplo, si se permite, debido a las circunstancias anteriores, es posible que la información fiscal del Anfitrión se transmita a las autoridades fiscales u otras dependencias gubernamentales.</p>
-						<p>Cuando corresponda, podemos notificar a los Miembros sobre las solicitudes legales a menos que: (i) la notificación esté prohibida por el propio proceso legal, por una orden judicial recibida o por la ley aplicable, o (ii) consideremos que proporcionar notificación sería inútil, ineficaz, causaría un riesgo de lesión o daño corporal a una persona o grupo, crearía o aumentaría un riesgo de fraude o daño a Airbnb, nuestros Miembros, o expondría a Airbnb a una reclamación por obstrucción a la justicia.</p>
-						<p>Cuando la ley lo exija o lo permita, de acuerdo con la legislación aplicable, podemos divulgar la información de los Anfitriones y/o Huéspedes a las autoridades fiscales para que estas determinen si cumplen adecuadamente con las obligaciones fiscales correspondientes. Las obligaciones fiscales correspondientes incluyen las obligaciones fiscales de Airbnb sobre sus tarifas de servicio, la facilitación de impuestos a los alojamientos y las retenciones de impuestos, y las obligaciones fiscales individuales de los Anfitriones. La información que se puede divulgar incluye, pero no se limita a, los nombres de los Anfitriones y los Huéspedes, los domicilios de los anuncios, los domicilios de los Anfitriones, los números de identificación fiscal o comercial, la fecha de nacimiento y/o la información de contacto, los números de identificación de las parcelas, la información de cobro, las fechas y los importes de las transacciones, el número de noches y los Huéspedes reservados, el valor bruto y neto de las reservaciones y los importes de cobro, los impuestos recaudados por Airbnb en nombre de los Huéspedes y los Anfitriones, en la medida en que esta información sea conocida por Airbnb.</p>
-						<p>En las jurisdicciones en las que Airbnb facilite o requiera el registro, la notificación, el permiso o la solicitud de licencia o el número de un Anfitrión ante una autoridad gubernamental, podemos compartir la información de los Anfitriones participantes con la autoridad pertinente, tanto durante el proceso de solicitud, cuando se publique el Anuncio, como periódicamente, como el nombre completo y los datos de contacto del Anfitrión, la dirección del Alojamiento, el número de identificación fiscal, el registro, el permiso o el número de licencia, los datos del Anuncio, la información de la reservación y el número de noches reservadas sujeto a lo que disponga la legislación aplicable.</p>
-						<hr class="change_line" style="width: 630px;">
+          <h4>4.8 Proveedores de Servicios.</h4>
+          <p>
+            Compartimos información personal con proveedores de servicios
+            afiliados y no afiliados, para ayudarnos a administrar nuestro
+            negocio y para sus propósitos de cumplir con las normas aplicables,
+            incluidos proveedores de servicios que nos ayudan a: (i) verificar
+            su identidad o autentificar sus documentos de identificación, (ii)
+            cotejar información con bases de datos públicas, (iii) llevar a cabo
+            verificaciones de antecedentes o policiales, prevención de fraudes y
+            evaluación de riesgos, (iv) desarrollar, mantener y depurar
+            productos, (v) permitir la prestación de los Servicios de Airbnb a
+            través de plataformas de terceros y herramientas de software (por
+            ejemplo, mediante la integración con nuestras API), (vi)
+            proporcionar servicios de atención al cliente, publicidad o
+            servicios de pago, (vii) procesar, gestionar o evaluar reclamaciones
+            de seguros o reclamaciones similares, o (viii) facilitar actividades
+            de beneficencia y sin ánimo de lucro congruentes con la misión de
+            Airbnb. Estos proveedores están obligados contractualmente a
+            proteger su información personal y tienen acceso a su información
+            personal para realizar estas tareas.
+          </p>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4>4.6 Programas con Administradores y Propietarios.</h4>
-						<p>Podemos compartir información personal de Anfitriones y Huéspedes con propietarios, empresas de administración y/o propietarios (“Administración del Consorcio”), como información sobre reservaciones e información relacionada con el cumplimiento de las leyes aplicables, con el fin de facilitar los programas con Administración del Consorcio. Por ejemplo, la información personal y las reservaciones de los huéspedes, incluida la información de contacto del huésped, se pueden compartir con la Administración del Consorcio del edificio, el complejo o la comunidad en la que vive el anfitrión o en la que se encuentra el alojamiento, para facilitar los servicios del anfitrión, el cumplimiento de las leyes aplicables, la seguridad, la facturación y otros servicios.</p>
-						<hr class="change_line" style="width: 630px;">
+          <h4>4.9 Traspaso de Empresas.</h4>
+          <p>
+            Si Airbnb lleva a cabo o participa en cualquier fusión, adquisición,
+            reorganización, venta de activos, quiebra o evento de insolvencia,
+            podríamos vender, transferir o compartir parte o la totalidad de
+            nuestros activos, incluyendo su información en relación con dicha
+            transacción o con miras a tal transacción (por ejemplo, en una
+            auditoría de compra). En tal caso, le enviaremos una notificación
+            antes de que su información personal se transfiera y quede sujeta a
+            una política de privacidad diferente.
+          </p>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4>4.7 Información sobre Anfitriones proporcionada a los Clientes de Airbnb for Work.</h4>
-						<p>Si se designa una reservación como para viajes de negocios o de trabajo y (1) la realiza un Huésped afiliado a una Empresa, y (2) la empresa está inscrita en Airbnb for Work, podemos revelar información relacionada con la reservación a la Empresa (por ejemplo, nombre del Anfitrión, dirección del Alojamiento, fechas de reservación, detalles del Anuncio, etc.) en la medida en que sea necesario para el cumplimiento adecuado del contrato de Airbnb con la Empresa y para proporcionar los servicios. A petición de la Empresa o del Huésped, también podemos compartir esta información con terceros contratados por la Empresa para proporcionar servicios de soporte.</p>
-						<hr class="change_line" style="width: 630px;">
+          <h4>4.10 Empresas Asociadas.</h4>
+          <p>
+            Para ayudarnos a brindar, integrar, promocionar y mejorar la
+            Plataforma Airbnb, los Servicios de Pago y los servicios de nuestros
+            afiliados, podríamos compartir información personal con nuestra
+            familia corporativa de empresas que estén relacionadas por propiedad
+            o control común. Algunos ejemplos son:
+          </p>
+          <ul>
+            <li>
+              <p>
+                <b>Datos compartidos con Airbnb, Inc. </b>Incluso si su país de
+                residencia no es Estados Unidos, se compartirán tus datos con
+                Airbnb, Inc. que proporciona la infraestructura técnica para la
+                Plataforma Airbnb.
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Datos compartidos con Airbnb Pagos. </b>Para facilitar los
+                pagos en la Plataforma Airbnb o a través de la misma, se
+                compartirá con la entidad de Airbnb Pagos determinada
+                información expuesta en la sección “Fuera de Estados Unidos”.
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Compartir con Airbnb Ireland. </b>Incluso si su país de
+                residencia está fuera del AEE (por ejemplo, Estados Unidos,
+                Japón, China), es posible que sus datos se compartan con Airbnb
+                Ireland, quien proporciona atención al cliente y otros servicios
+                de operaciones comerciales a otras entidades de Airbnb, y que
+                puedan ser divulgados de acuerdo con la sección 4.5 de más
+                arriba.
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Datos compartidos con Airbnb GSL. </b>Incluso si su país de
+                residencia no es Japón, es posible que sus datos sean
+                compartidos con Airbnb GSL, que proporciona atención al cliente
+                y otros servicios de operaciones comerciales a otras entidades
+                de Airbnb.
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Datos compartidos con Airbnb China. </b>Incluso si su país de
+                residencia no es China, se compartirán algunos de sus datos con
+                Airbnb China en las siguientes circunstancias:
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    <b>Datos públicos. </b>Información que comparte públicamente
+                    en la Plataforma Airbnb.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Creación de un Anuncio. </b> Si crea un anuncio en China,
+                    la información compartida incluye: (i) su nombre, número de
+                    teléfono, dirección de correo electrónico, nacionalidad y
+                    datos de pasaporte/identificación, (ii) (si ustedutiliza una
+                    entidad corporativa china para brindar el servicio del
+                    anfitrión), nombre de la entidad, dirección de constitución,
+                    número de teléfono, código de crédito social unificado (o
+                    número de registro comercial), nombre del representante
+                    legal y la persona responsable, alcance comercial, capital
+                    registrado, fecha de vencimiento, otros datos de la licencia
+                    comercial y el permiso de la industria, (iii) datos de la
+                    operación del anfitrión (por ejemplo, tipo de negocio de
+                    comercio electrónico, permiso de la industria proporcionado,
+                    tipo de anfitrión/anuncio, obligación de registro de la
+                    entidad, estado de cuenta/operación activo), (iv)
+                    información relacionada con el anuncio (por ejemplo,
+                    dirección, descripciones, fotos), (v) información de
+                    reservación y llegada/salida relacionada con el anuncio,
+                    como los datos del huésped que se indican a continuación en
+                    Servicios del Anfitrión, fechas, hora y montos de pago, y
+                    (vi) mensajes entre usted y los Huéspedes potenciales y
+                    confirmados del Anuncio.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Servicios del Anfitrión. </b>Si consulta o reserva un
+                    Servicio de Anfitrión ubicado en China, la información
+                    compartida incluye: (i) su nombre, número de teléfono y
+                    dirección de correo electrónico (ii) información de
+                    reservación y checkin/checkout, incluida la ciudad, las
+                    fechas, hora, la cantidad de pago, la dirección del anuncio
+                    y los datos públicos disponibles sobre su anuncio, (iii)
+                    mensajes entre el anfitrión y usted u otros huéspedes en la
+                    misma reservación, y (iv) los nombres, nacionalidades, sexo,
+                    fecha de nacimiento y datos de pasaporte/identificación
+                    nacional (incluido el tipo de identificación, número de
+                    identificación y fecha de vencimiento) de cualquier huésped.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <b>Envío de mensajes. </b>Si envía un mensaje a un Anfitrión
+                    en relación con su Anuncio en China, la información
+                    compartida incluye su nombre, foto de perfil y el contenido
+                    del mensaje.
+                  </p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            El intercambio de datos descrito anteriormente es necesario para el
+            cumplimiento del contrato celebrado entre usted y nosotros para
+            permitirle publicar o reservar Servicios del Anfitrión en China y
+            ponerle en contacto con Miembros en China y viceversa. Los
+            organismos gubernamentales chinos solicitan a Airbnb China que
+            revele los datos de los anfitriones y de los anuncios relacionados
+            con anuncios en China, así como la información de huéspedes y de los
+            checkin/checkout relacionados con estancias en China. Al igual que
+            otras empresas del rubro o de espacios compartidos que realizan
+            negocios en China, Airbnb China compartirá sus datos indicados más
+            arriba con agencias gubernamentales chinas sin mayor notificación a
+            usted. Es posible que su información se comparta asimismo con
+            proveedores de servicios (incluyendo China) para contribuir a la
+            administración de nuestro negocio. Nuestros proveedores de servicios
+            podrán también compartir su información cuando lo exija la ley.
+          </p>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4>4.8 Proveedores de Servicios.</h4>
-						<p>Compartimos información personal con proveedores de servicios afiliados y no afiliados, para ayudarnos a administrar nuestro negocio y para sus propósitos de cumplir con las normas aplicables, incluidos proveedores de servicios que nos ayudan a: (i) verificar su identidad o autentificar sus documentos de identificación, (ii) cotejar información con bases de datos públicas, (iii) llevar a cabo verificaciones de antecedentes o policiales, prevención de fraudes y evaluación de riesgos, (iv) desarrollar, mantener y depurar productos, (v) permitir la prestación de los Servicios de Airbnb a través de plataformas de terceros y herramientas de software (por ejemplo, mediante la integración con nuestras API), (vi) proporcionar servicios de atención al cliente, publicidad o servicios de pago, (vii) procesar, gestionar o evaluar reclamaciones de seguros o reclamaciones similares, o (viii) facilitar actividades de beneficencia y sin ánimo de lucro congruentes con la misión de Airbnb. Estos proveedores están obligados contractualmente a proteger su información personal y tienen acceso a su información personal para realizar estas tareas.</p>
-						<hr class="change_line" style="width: 630px;">
+          <h4>4.8 Proveedores de Servicios.</h4>
+          <p>
+            Compartimos información personal con proveedores de servicios
+            afiliados y no afiliados, para ayudarnos a administrar nuestro
+            negocio y para sus propósitos de cumplir con las normas aplicables,
+            incluidos proveedores de servicios que nos ayudan a: (i) verificar
+            su identidad o autentificar sus documentos de identificación, (ii)
+            cotejar información con bases de datos públicas, (iii) llevar a cabo
+            verificaciones de antecedentes o policiales, prevención de fraudes y
+            evaluación de riesgos, (iv) desarrollar, mantener y depurar
+            productos, (v) permitir la prestación de los Servicios de Airbnb a
+            través de plataformas de terceros y herramientas de software (por
+            ejemplo, mediante la integración con nuestras API), (vi)
+            proporcionar servicios de atención al cliente, publicidad o
+            servicios de pago, (vii) procesar, gestionar o evaluar reclamaciones
+            de seguros o reclamaciones similares, o (viii) facilitar actividades
+            de beneficencia y sin ánimo de lucro congruentes con la misión de
+            Airbnb. Estos proveedores están obligados contractualmente a
+            proteger su información personal y tienen acceso a su información
+            personal para realizar estas tareas.
+          </p>
+          <hr class="change_line" style="width: 630px" />
+          <hr style="height: 150px; visibility: hidden" />
 
-						<h4>4.9 Traspaso de Empresas.</h4>
-						<p>Si Airbnb lleva a cabo o participa en cualquier fusión, adquisición, reorganización, venta de activos, quiebra o evento de insolvencia, podríamos vender, transferir o compartir parte o la totalidad de nuestros activos, incluyendo su información en relación con dicha transacción o con miras a tal transacción (por ejemplo, en una auditoría de compra). En tal caso, le enviaremos una notificación antes de que su información personal se transfiera y quede sujeta a una política de privacidad diferente.</p>
-						<hr class="change_line" style="width: 630px;">
-						
-						<h4>4.10 Empresas Asociadas.</h4>
-						<p>Para ayudarnos a brindar, integrar, promocionar y mejorar la Plataforma Airbnb, los Servicios de Pago y los servicios de nuestros afiliados, podríamos compartir información personal con nuestra familia corporativa de empresas que estén relacionadas por propiedad o control común. Algunos ejemplos son:</p>
-							<ul>
-								<li>
-									<p><b>Datos compartidos con Airbnb, Inc. </b>Incluso si su país de residencia no es Estados Unidos, se compartirán tus datos con Airbnb, Inc. que proporciona la infraestructura técnica para la Plataforma Airbnb.</p>
-								</li>
-								<li>
-									<p><b>Datos compartidos con Airbnb Pagos. </b>Para facilitar los pagos en la Plataforma Airbnb o a través de la misma, se compartirá con la entidad de Airbnb Pagos determinada información expuesta en la sección “Fuera de Estados Unidos”.</p>
-								</li>
-								<li>
-									<p><b>Compartir con Airbnb Ireland. </b>Incluso si su país de residencia está fuera del AEE (por ejemplo, Estados Unidos, Japón, China), es posible que sus datos se compartan con Airbnb Ireland, quien proporciona atención al cliente y otros servicios de operaciones comerciales a otras entidades de Airbnb, y que puedan ser divulgados de acuerdo con la sección 4.5 de más arriba.</p>
-								</li>
-								<li>
-									<p><b>Datos compartidos con Airbnb GSL. </b>Incluso si su país de residencia no es Japón, es posible que sus datos sean compartidos con Airbnb GSL, que proporciona atención al cliente y otros servicios de operaciones comerciales a otras entidades de Airbnb.</p>
-								</li>
-								<li>
-									<p><b>Datos compartidos con Airbnb China. </b>Incluso si su país de residencia no es China, se compartirán algunos de sus datos con Airbnb China en las siguientes circunstancias:</p>
-									<ul>
-										<li>
-											<p><b>Datos públicos. </b>Información que comparte públicamente en la Plataforma Airbnb.</p>
-										</li>
-										<li>
-											<p><b>Creación de un Anuncio. </b> Si crea un anuncio en China, la información compartida incluye: (i) su nombre, número de teléfono, dirección de correo electrónico, nacionalidad y datos de pasaporte/identificación, (ii) (si ustedutiliza una entidad corporativa china para brindar el servicio del anfitrión), nombre de la entidad, dirección de constitución, número de teléfono, código de crédito social unificado (o número de registro comercial), nombre del representante legal y la persona responsable, alcance comercial, capital registrado, fecha de vencimiento, otros datos de la licencia comercial y el permiso de la industria, (iii) datos de la operación del anfitrión (por ejemplo, tipo de negocio de comercio electrónico, permiso de la industria proporcionado, tipo de anfitrión/anuncio, obligación de registro de la entidad, estado de cuenta/operación activo), (iv) información relacionada con el anuncio (por ejemplo, dirección, descripciones, fotos), (v) información de reservación y llegada/salida relacionada con el anuncio, como los datos del huésped que se indican a continuación en Servicios del Anfitrión, fechas, hora y montos de pago, y (vi) mensajes entre usted y los Huéspedes potenciales y confirmados del Anuncio.</p>
-										</li>
-										<li>
-											<p><b>Servicios del Anfitrión. </b>Si consulta o reserva un Servicio de Anfitrión ubicado en China, la información compartida incluye: (i) su nombre, número de teléfono y dirección de correo electrónico (ii) información de reservación y checkin/checkout, incluida la ciudad, las fechas, hora, la cantidad de pago, la dirección del anuncio y los datos públicos disponibles sobre su anuncio, (iii) mensajes entre el anfitrión y usted u otros huéspedes en la misma reservación, y (iv) los nombres, nacionalidades, sexo, fecha de nacimiento y datos de pasaporte/identificación nacional (incluido el tipo de identificación, número de identificación y fecha de vencimiento) de cualquier huésped. </p>
-										</li>
-										<li>
-											<p><b>Envío de mensajes. </b>Si envía un mensaje a un Anfitrión en relación con su Anuncio en China, la información compartida incluye su nombre, foto de perfil y el contenido del mensaje.</p>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						<p>El intercambio de datos descrito anteriormente es necesario para el cumplimiento del contrato celebrado entre usted y nosotros para permitirle publicar o reservar Servicios del Anfitrión en China y ponerle en contacto con Miembros en China y viceversa. Los organismos gubernamentales chinos solicitan a Airbnb China que revele los datos de los anfitriones y de los anuncios relacionados con anuncios en China, así como la información de huéspedes y de los checkin/checkout relacionados con estancias en China. Al igual que otras empresas del rubro o de espacios compartidos que realizan negocios en China, Airbnb China compartirá sus datos indicados más arriba con agencias gubernamentales chinas sin mayor notificación a usted. Es posible que su información se comparta asimismo con proveedores de servicios (incluyendo China) para contribuir a la administración de nuestro negocio. Nuestros proveedores de servicios podrán también compartir su información cuando lo exija la ley.</p>
-						<hr class="change_line" style="width: 630px;">
+          <h4 id="title5">5. OTRA INFORMACIÓN IMPORTANTE</h4>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4>4.8 Proveedores de Servicios.</h4>
-						<p>Compartimos información personal con proveedores de servicios afiliados y no afiliados, para ayudarnos a administrar nuestro negocio y para sus propósitos de cumplir con las normas aplicables, incluidos proveedores de servicios que nos ayudan a: (i) verificar su identidad o autentificar sus documentos de identificación, (ii) cotejar información con bases de datos públicas, (iii) llevar a cabo verificaciones de antecedentes o policiales, prevención de fraudes y evaluación de riesgos, (iv) desarrollar, mantener y depurar productos, (v) permitir la prestación de los Servicios de Airbnb a través de plataformas de terceros y herramientas de software (por ejemplo, mediante la integración con nuestras API), (vi) proporcionar servicios de atención al cliente, publicidad o servicios de pago, (vii) procesar, gestionar o evaluar reclamaciones de seguros o reclamaciones similares, o (viii) facilitar actividades de beneficencia y sin ánimo de lucro congruentes con la misión de Airbnb. Estos proveedores están obligados contractualmente a proteger su información personal y tienen acceso a su información personal para realizar estas tareas.</p>
-						<hr class="change_line" style="width: 630px;">
-						<hr style="height: 150px; visibility: hidden;">
+          <h4>5.1 Análisis de sus Comunicaciones.</h4>
+          <p>
+            Podríamos revisar, explorar o analizar sus comunicaciones en la
+            Plataforma Airbnb por los motivos descritos en la sección “Cómo
+            utilizamos la información que recopilamos” de esta política,
+            incluidos motivos de prevención de fraudes, evaluación de riesgos,
+            cumplimiento normativo, investigación, desarrollo de productos,
+            estudios, análisis, cumplimiento de nuestros Términos de Servicio y
+            atención al cliente. Por ejemplo, como parte de nuestros esfuerzos
+            de prevención de fraudes, examinamos y analizamos los mensajes para
+            ocultar la información de contacto y referencias a otros sitios web.
+            En algunos casos, también inspeccionaremos, revisaremos o
+            analizaremos los mensajes para depurar, mejorar y ampliar la oferta
+            de productos. Utilizamos métodos automatizados cuando es
+            razonablemente posible. Sin embargo, en ocasiones, es posible que
+            tengamos que revisar manualmente algunas comunicaciones, como las
+            investigaciones de fraude y el servicio de atención al cliente, o
+            evaluar y mejorar la funcionalidad de estas herramientas
+            automatizadas. No revisaremos, examinaremos ni analizaremos sus
+            comunicaciones para enviarle mensajes de marketing de terceros, y no
+            venderemos evaluaciones o análisis de estas comunicaciones.
+          </p>
+          <hr class="change_line" style="width: 630px" />
 
+          <h4>5.2 Vinculación de cuentas de terceros.</h4>
+          <p>
+            Puede vincular su cuenta en Airbnb con determinados servicios de
+            terceros, como las redes sociales. A sus contactos en estos
+            servicios de terceros se les llama “Amigos”. Cuando permita la
+            comunicación de datos al vincular dichas cuentas:
+          </p>
+          <ul>
+            <li>
+              <p>
+                algunos de los datos que nos proporcione al vincular las cuentas
+                podrán publicarse en su perfil público,
+              </p>
+            </li>
+            <li>
+              <p>
+                sus actividades en la Plataforma Airbnb pueden mostrarse a sus
+                Amigos en la Plataforma Airbnb y/o en el servicio de terceros,
+              </p>
+            </li>
+            <li>
+              <p>
+                se puede incluir un enlace a su perfil público en el servicio de
+                terceros en su perfil público de Airbnb,
+              </p>
+            </li>
+            <li>
+              <p>
+                otros usuarios de Airbnb podrían ver a cualquier Amigo que usted
+                pueda tener en común con ellos, o que usted sea Amigo de su
+                Amigo, si aplica,
+              </p>
+            </li>
+            <li>
+              <p>
+                otros usuarios de Airbnb podrían ver cualquier escuela, ciudad
+                natal u otro grupo que usted tenga en común con ellos, que
+                aparezca en su servicio de redes sociales vinculado,
+              </p>
+            </li>
+            <li>
+              <p>
+                la información que nos proporcione a partir de la vinculación de
+                sus cuentas podría almacenarse, procesarse y transmitirse con
+                fines de prevención de fraudes y evaluación de riesgos; y
+              </p>
+            </li>
+            <li>
+              <p>
+                la publicación y visualización de la información que proporcione
+                a la Plataforma Airbnb a través de esta vinculación está sujeta
+                a las configuraciones y autorizaciones que haya establecido
+                tanto en la Plataforma Airbnb como en el servicio externo.
+              </p>
+            </li>
+          </ul>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4 id="title5">5. OTRA INFORMACIÓN IMPORTANTE</h4>
-						<hr class="change_line" style="width: 630px;">
+          <h4>5.3 Socios externos e integraciones.</h4>
+          <p>
+            Podríamos revisar, explorar o analizar sus comunicaciones en la
+            Plataforma Airbnb por los motivos descritos en la sección “Cómo
+            utilizamos la información que recopilamos” de esta política,
+            incluidos motivos de prevención de fraudes, evaluación de riesgos,
+            cumplimiento normativo, investigación, desarrollo de productos,
+            estudios, análisis, cumplimiento de nuestros Términos de Servicio y
+            atención al cliente. Por ejemplo, como parte de nuestros esfuerzos
+            de prevención de fraudes, examinamos y analizamos los mensajes para
+            ocultar la información de contacto y referencias a otros sitios web.
+            En algunos casos, también inspeccionaremos, revisaremos o
+            analizaremos los mensajes para depurar, mejorar y ampliar la oferta
+            de productos. Utilizamos métodos automatizados cuando es
+            razonablemente posible. Sin embargo, en ocasiones, es posible que
+            tengamos que revisar manualmente algunas comunicaciones, como las
+            investigaciones de fraude y el servicio de atención al cliente, o
+            evaluar y mejorar la funcionalidad de estas herramientas
+            automatizadas. No revisaremos, examinaremos ni analizaremos sus
+            comunicaciones para enviarle mensajes de marketing de terceros, y no
+            venderemos evaluaciones o análisis de estas comunicaciones.
+          </p>
+          <hr class="change_line" style="width: 630px" />
+          <hr style="height: 150px; visibility: hidden" />
 
-						<h4>5.1 Análisis de sus Comunicaciones.</h4>
-						<p>Podríamos revisar, explorar o analizar sus comunicaciones en la Plataforma Airbnb por los motivos descritos en la sección “Cómo utilizamos la información que recopilamos” de esta política, incluidos motivos de prevención de fraudes, evaluación de riesgos, cumplimiento normativo, investigación, desarrollo de productos, estudios, análisis, cumplimiento de nuestros Términos de Servicio y atención al cliente. Por ejemplo, como parte de nuestros esfuerzos de prevención de fraudes, examinamos y analizamos los mensajes para ocultar la información de contacto y referencias a otros sitios web. En algunos casos, también inspeccionaremos, revisaremos o analizaremos los mensajes para depurar, mejorar y ampliar la oferta de productos. Utilizamos métodos automatizados cuando es razonablemente posible. Sin embargo, en ocasiones, es posible que tengamos que revisar manualmente algunas comunicaciones, como las investigaciones de fraude y el servicio de atención al cliente, o evaluar y mejorar la funcionalidad de estas herramientas automatizadas. No revisaremos, examinaremos ni analizaremos sus comunicaciones para enviarle mensajes de marketing de terceros, y no venderemos evaluaciones o análisis de estas comunicaciones.</p>
-						<hr class="change_line" style="width: 630px;">
-						
-						<h4>5.2 Vinculación de cuentas de terceros.</h4>
-						<p>Puede vincular su cuenta en Airbnb con determinados servicios de terceros, como las redes sociales. A sus contactos en estos servicios de terceros se les llama “Amigos”. Cuando permita la comunicación de datos al vincular dichas cuentas:</p>
-							<ul>
-								<li>
-									<p>algunos de los datos que nos proporcione al vincular las cuentas podrán publicarse en su perfil público,</p>
-								</li>
-								<li>
-									<p>sus actividades en la Plataforma Airbnb pueden mostrarse a sus Amigos en la Plataforma Airbnb y/o en el servicio de terceros,</p>
-								</li>
-								<li>
-									<p>se puede incluir un enlace a su perfil público en el servicio de terceros en su perfil público de Airbnb,</p>
-								</li>
-								<li>
-									<p>otros usuarios de Airbnb podrían ver a cualquier Amigo que usted pueda tener en común con ellos, o que usted sea Amigo de su Amigo, si aplica,</p>
-								</li>
-								<li>
-									<p>otros usuarios de Airbnb podrían ver cualquier escuela, ciudad natal u otro grupo que usted tenga en común con ellos, que aparezca en su servicio de redes sociales vinculado,</p>
-								</li>
-								<li>
-									<p>la información que nos proporcione a partir de la vinculación de sus cuentas podría almacenarse, procesarse y transmitirse con fines de prevención de fraudes y evaluación de riesgos; y</p>
-								</li>
-								<li>
-									<p>la publicación y visualización de la información que proporcione a la Plataforma Airbnb a través de esta vinculación está sujeta a las configuraciones y autorizaciones que haya establecido tanto en la Plataforma Airbnb como en el servicio externo.</p>
-								</li>
-							</ul>
-						<hr class="change_line" style="width: 630px;">
+          <h4 id="title6">6. SUS DERECHOS</h4>
+          <p>
+            Puede ejercer cualquiera de los derechos descritos en esta sección
+            de conformidad con la legislación aplicable. Aquí puede obtener
+            información sobre las solicitudes de derechos del interesado y el
+            envío de solicitudes. Tenga en cuenta que quizá le pidamos que nos
+            confirme su identidad antes de procesar la solicitud.
+          </p>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4>5.3 Socios externos e integraciones.</h4>
-						<p>Podríamos revisar, explorar o analizar sus comunicaciones en la Plataforma Airbnb por los motivos descritos en la sección “Cómo utilizamos la información que recopilamos” de esta política, incluidos motivos de prevención de fraudes, evaluación de riesgos, cumplimiento normativo, investigación, desarrollo de productos, estudios, análisis, cumplimiento de nuestros Términos de Servicio y atención al cliente. Por ejemplo, como parte de nuestros esfuerzos de prevención de fraudes, examinamos y analizamos los mensajes para ocultar la información de contacto y referencias a otros sitios web. En algunos casos, también inspeccionaremos, revisaremos o analizaremos los mensajes para depurar, mejorar y ampliar la oferta de productos. Utilizamos métodos automatizados cuando es razonablemente posible. Sin embargo, en ocasiones, es posible que tengamos que revisar manualmente algunas comunicaciones, como las investigaciones de fraude y el servicio de atención al cliente, o evaluar y mejorar la funcionalidad de estas herramientas automatizadas. No revisaremos, examinaremos ni analizaremos sus comunicaciones para enviarle mensajes de marketing de terceros, y no venderemos evaluaciones o análisis de estas comunicaciones.</p>
-						<hr class="change_line" style="width: 630px;">
-						<hr style="height: 150px; visibility: hidden;">
-						
+          <h4>6.1 Administración de su información.</h4>
+          <p>
+            Puede acceder a algunos de sus datos personales y actualizarlos a
+            través de la configuración de su Cuenta. Si conectó su cuenta en
+            Airbnb a un servicio de terceros, como Facebook o Google, puede
+            modificar su configuración y desvincularse de ese servicio en la
+            configuración de su Cuenta. Usted es responsable de mantener
+            actualizada tu información personal.
+          </p>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4 id="title6">6. SUS DERECHOS</h4>
-						<p>Puede ejercer cualquiera de los derechos descritos en esta sección de conformidad con la legislación aplicable. Aquí puede obtener información sobre las solicitudes de derechos del interesado y el envío de solicitudes. Tenga en cuenta que quizá le pidamos que nos confirme su identidad antes de procesar la solicitud.</p>
-						<hr class="change_line" style="width: 630px;">
+          <h4>6.2 Acceso a los Datos y Portabilidad.</h4>
+          <p>
+            En algunas regiones, la legislación aplicable puede darle el derecho
+            a solicitar ciertas copias de sus datos personales o datos sobre
+            cómo tratamos sus datos personales, solicitar copias de los datos
+            personales que nos haya proporcionado en un formato estructurado, de
+            uso común y legible por máquina, y/o solicitar que transmitamos esta
+            información a otro proveedor de servicios (cuando sea técnicamente
+            posible).
+          </p>
+          <hr class="change_line" style="width: 630px" />
 
-						<h4>6.1 Administración de su información.</h4>
-						<p>Puede acceder a algunos de sus datos personales y actualizarlos a través de la configuración de su Cuenta. Si conectó su cuenta en Airbnb a un servicio de terceros, como Facebook o Google, puede modificar su configuración y desvincularse de ese servicio en la configuración de su Cuenta. Usted es responsable de mantener actualizada tu información personal.</p>
-						<hr class="change_line" style="width: 630px;">
+          <h4>6.3 Eliminación de datos.</h4>
+          <p>
+            En ciertas jurisdicciones, usted puede solicitar que se eliminen sus
+            datos personales. Tenga en cuenta que si usted solicita la
+            eliminación de sus datos personales o si su cuenta es suspendida,
+            eliminada o voluntariamente cerrada:
+          </p>
+          <ul>
+            <li>
+              <p>
+                Podemos conservar su información personal según sea necesario
+                para nuestros intereses comerciales legítimos, tal como la
+                prevención del lavado de dinero, la detección y prevención de
+                fraudes y la mejora de la seguridad. Por ejemplo, si suspendemos
+                una cuenta en Airbnb por fraude o por razones de seguridad, es
+                posible que retengamos información de esa cuenta en Airbnb para
+                evitar que en el futuro ese Miembro vuelva a abrir una nueva
+                cuenta en Airbnb.
+              </p>
+            </li>
+            <li>
+              <p>
+                Podremos conservar y utilizar su información personal en la
+                medida necesaria para cumplir nuestras obligaciones legales. Por
+                ejemplo, es posible que Airbnb y Airbnb Pagos conserven su
+                información para cumplir con obligaciones fiscales, legales y de
+                auditoría.
+              </p>
+            </li>
+            <li>
+              <p>
+                La información que compartió con otras personas (por ejemplo,
+                las evaluaciones, las publicaciones del foro) seguirá visible
+                públicamente en Airbnb, incluso después de que cancele su cuenta
+                en Airbnb. Sin embargo, se eliminará la atribución a usted de
+                dicha información. Algunas copias de su información (por
+                ejemplo, registros) podrían permanecer en nuestra base de datos,
+                pero se disocian de cualquier identificador personal.
+              </p>
+            </li>
+            <li>
+              <p>
+                Debido a que tomamos medidas para proteger los datos de pérdidas
+                y destrucción accidentales o maliciosas, es posible que las
+                copias residuales de su información no se eliminen de nuestros
+                sistemas de respaldo durante un determinado tiempo.
+              </p>
+            </li>
+          </ul>
+          <hr class="change_line" style="width: 630px" />
+          <hr style="height: 150px; visibility: hidden" />
 
-						<h4>6.2 Acceso a los Datos y Portabilidad.</h4>
-						<p>En algunas regiones, la legislación aplicable puede darle el derecho a solicitar ciertas copias de sus datos personales o datos sobre cómo tratamos sus datos personales, solicitar copias de los datos personales que nos haya proporcionado en un formato estructurado, de uso común y legible por máquina, y/o solicitar que transmitamos esta información a otro proveedor de servicios (cuando sea técnicamente posible).</p>
-						<hr class="change_line" style="width: 630px;">
+          <h4 id="title7">7. SEGURIDAD</h4>
+          <p>
+            Implementamos y actualizamos continuamente medidas de seguridad,
+            administrativas, técnicas y físicas, para proteger su información
+            contra cualquier acceso no autorizado, pérdida, destrucción o
+            alteración.
+          </p>
+          <hr class="change_line" style="width: 630px" />
+          <hr style="height: 150px; visibility: hidden" />
 
-						<h4>6.3 Eliminación de datos.</h4>
-						<p>En ciertas jurisdicciones, usted puede solicitar que se eliminen sus datos personales. Tenga en cuenta que si usted solicita la eliminación de sus datos personales o si su cuenta es suspendida, eliminada o voluntariamente cerrada:</p>
-							<ul>
-								<li>
-									<p>Podemos conservar su información personal según sea necesario para nuestros intereses comerciales legítimos, tal como la prevención del lavado de dinero, la detección y prevención de fraudes y la mejora de la seguridad. Por ejemplo, si suspendemos una cuenta en Airbnb por fraude o por razones de seguridad, es posible que retengamos información de esa cuenta en Airbnb para evitar que en el futuro ese Miembro vuelva a abrir una nueva cuenta en Airbnb.</p>
-								</li>
-								<li>
-									<p>Podremos conservar y utilizar su información personal en la medida necesaria para cumplir nuestras obligaciones legales. Por ejemplo, es posible que Airbnb y Airbnb Pagos conserven su información para cumplir con obligaciones fiscales, legales y de auditoría.</p>
-								</li>
-								<li>
-									<p>La información que compartió con otras personas (por ejemplo, las evaluaciones, las publicaciones del foro) seguirá visible públicamente en Airbnb, incluso después de que cancele su cuenta en Airbnb. Sin embargo, se eliminará la atribución a usted de dicha información. Algunas copias de su información (por ejemplo, registros) podrían permanecer en nuestra base de datos, pero se disocian de cualquier identificador personal.</p>
-								</li>
-								<li>
-									<p>Debido a que tomamos medidas para proteger los datos de pérdidas y destrucción accidentales o maliciosas, es posible que las copias residuales de su información no se eliminen de nuestros sistemas de respaldo durante un determinado tiempo.</p>
-								</li>
-							</ul>
-						<hr class="change_line" style="width: 630px;">
-						<hr style="height: 150px; visibility: hidden;">
+          <h4 id="title8">8. MODIFICACIONES A ESTA POLÍTICA DE PRIVACIDAD</h4>
+          <p>
+            Nos reservamos el derecho de modificar en cualquier momento esta
+            Política de Privacidad, de conformidad con la legislación aplicable.
+            Si lo hacemos, publicaremos la Política de Privacidad modificada y
+            actualizaremos la fecha de “Última actualización” indicada en la
+            parte superior. En caso de cambios importantes, también le
+            comunicaremos las modificaciones por correo electrónico al menos
+            treinta (30) días antes de la fecha de entrada en vigor. Si no está
+            de acuerdo con la Política de Privacidad modificada, puede cancelar
+            su cuenta. Si no cancela su Cuenta en Airbnb antes de la fecha de
+            entrada en vigor de la Política de Privacidad modificada, cualquier
+            acceso o uso de la Plataforma Airbnb que realice a partir de
+            entonces implicará su aceptación de la misma.
+          </p>
+          <hr class="change_line" style="width: 630px" />
+          <hr style="height: 150px; visibility: hidden" />
 
+          <h4 id="title9">
+            9. INFORMACIÓN DE CONTACTO Y ENTIDADES RESPONSABLES DE AIRBNB
+          </h4>
+          <p>
+            Si tiene dudas o quejas sobre esta Política de Privacidad o sobre el
+            tratamiento de la información personal por parte de Airbnb (i) Si
+            reside en Estados Unidos, comuníquese con Airbnb, Inc., Legal
+            Privacy, 888 Brannan Street, San Francisco, CA 94103 EE. UU.; (ii)
+            para asuntos relacionados con pagos, utilice la información de
+            contacto proporcionada en la página de Términos del Servicio de
+            Pagos, (iii) si reside fuera de Estados Unidos, utilice la
+            información de contacto de su controlador proporcionado en la página
+            Fuera de Estados Unidos.
+          </p>
+          <hr class="change_line" style="width: 630px" />
+          <hr style="height: 150px; visibility: hidden" />
+        </div>
+      </div>
+    </div>
 
-						<h4 id="title7">7. SEGURIDAD</h4>
-						<p>Implementamos y actualizamos continuamente medidas de seguridad, administrativas, técnicas y físicas, para proteger su información contra cualquier acceso no autorizado, pérdida, destrucción o alteración.</p>
-						<hr class="change_line" style="width: 630px;">
-						<hr style="height: 150px; visibility: hidden;">
-						
+    <!-- End of the panel guest -->
 
-						<h4 id="title8">8. MODIFICACIONES A ESTA POLÍTICA DE PRIVACIDAD</h4>
-						<p>Nos reservamos el derecho de modificar en cualquier momento esta Política de Privacidad, de conformidad con la legislación aplicable. Si lo hacemos, publicaremos la Política de Privacidad modificada y actualizaremos la fecha de “Última actualización” indicada en la parte superior. En caso de cambios importantes, también le comunicaremos las modificaciones por correo electrónico al menos treinta (30) días antes de la fecha de entrada en vigor. Si no está de acuerdo con la Política de Privacidad modificada, puede cancelar su cuenta. Si no cancela su Cuenta en Airbnb antes de la fecha de entrada en vigor de la Política de Privacidad modificada, cualquier acceso o uso de la Plataforma Airbnb que realice a partir de entonces implicará su aceptación de la misma.</p>
-						<hr class="change_line" style="width: 630px;">
-						<hr style="height: 150px; visibility: hidden;">
-						
-
-						<h4 id="title9">9. INFORMACIÓN DE CONTACTO Y ENTIDADES RESPONSABLES DE AIRBNB</h4>
-						<p>Si tiene dudas o quejas sobre esta Política de Privacidad o sobre el tratamiento de la información personal por parte de Airbnb (i) Si reside en Estados Unidos, comuníquese con Airbnb, Inc., Legal Privacy, 888 Brannan Street, San Francisco, CA 94103 EE. UU.; (ii) para asuntos relacionados con pagos, utilice la información de contacto proporcionada en la página de Términos del Servicio de Pagos, (iii) si reside fuera de Estados Unidos, utilice la información de contacto de su controlador proporcionado en la página Fuera de Estados Unidos.</p>
-						<hr class="change_line" style="width: 630px;">
-						<hr style="height: 150px; visibility: hidden;">
-					</div>
-				</div>
-			</div>
-
-			<!-- End of the panel guest -->
-
-			<!-- FOOTER -->
-			<hr>
-			<div class="container" style="margin-top: 70px;">
-				<div class="row">
-					<div class="col-md-3">
-						<section>
-							<h6 style="margin-left: 40px;">Airbnb</h6>
-							<ul style="list-style: none;">
-								<li><a href="/help">Ayuda</a></li>
-								<li><a href="/cancellation-policies">Pol&iacuteticas</a></li>
-								<li><a href="/terminos">T&eacuterminos</a></li>
-								<li><a href="/politicas-privacidad">Privacidad</a></li>
-							</ul>
-						</section>
-					</div>
-					<div class="col-md-3">
-						<section>
-							<h6 style="margin-left: 40px;">Descubrir</h6>
-							<ul style="list-style: none;">
-								<li><a href="/criterios-de-confianza">Confianza y seguridad</a></li>
-							</ul>
-						</section>
-					</div>
-					<div class="col-md-3">
-						<section>
-							<h6 style="margin-left: 40px;">Alojamiento</h6>
-							<ul style="list-style: none;">
-								<li><a href="/por-que-anfitrion">Por qu&eacute anfitri&oacuten/a</a></li>
-								<li><a href="/alojamiento-responsable">Alojamiento Responsable</a></li>
-							</ul>
-						</section>
-					</div>
-					<div class="col-md-3">
-						<section>
-							<h5 style="margin-left: 40px;">
-							<a href="https://es-la.facebook.com/airbnb/" target="_blank" style="color: #3B5998;"><i class="fa fa-facebook" style="padding-right: 20px;"></i></a>
-							<a href="https://twitter.com/airbnb" target="_blank" style="color: #00ACEE;"><i class="fa fa-twitter" style="padding-right: 20px;"></i></a>
-							<a href="https://www.instagram.com/airbnb/" target="_blank" style="color: #d6249f;"><i class="fa fa-instagram" style="padding-right: 20px;"></i></a>
-							</h5>
-							<ul style="list-style: none;">
-								<li><a href="#">Reseñas</a></li>
-								<li><a href="/suggestions">Sugerencias</a></li>
-								<li><a href="/contact">Contacto</a></li>
-							</ul>
-						</section>
-					</div>
-				</div>
-			</div>
-			<!-- FOOTER -->
-
-	</body>
+    <!-- FOOTER -->
+    <hr />
+    <div class="container" style="margin-top: 70px">
+      <div class="row">
+        <div class="col-md-3">
+          <section>
+            <h6 style="margin-left: 40px">Airbnb</h6>
+            <ul style="list-style: none">
+              <li><a href="/help">Ayuda</a></li>
+              <li><a href="/cancellation-policies">Pol&iacuteticas</a></li>
+              <li><a href="/terminos">T&eacuterminos</a></li>
+              <li><a href="/politicas-privacidad">Privacidad</a></li>
+            </ul>
+          </section>
+        </div>
+        <div class="col-md-3">
+          <section>
+            <h6 style="margin-left: 40px">Descubrir</h6>
+            <ul style="list-style: none">
+              <li>
+                <a href="/criterios-de-confianza">Confianza y seguridad</a>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <div class="col-md-3">
+          <section>
+            <h6 style="margin-left: 40px">Alojamiento</h6>
+            <ul style="list-style: none">
+              <li>
+                <a href="/por-que-anfitrion">Por qu&eacute anfitri&oacuten/a</a>
+              </li>
+              <li>
+                <a href="/alojamiento-responsable">Alojamiento Responsable</a>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <div class="col-md-3">
+          <section>
+            <h5 style="margin-left: 40px">
+              <a
+                href="https://es-la.facebook.com/airbnb/"
+                target="_blank"
+                style="color: #3b5998"
+                ><i class="fa fa-facebook" style="padding-right: 20px"></i
+              ></a>
+              <a
+                href="https://twitter.com/airbnb"
+                target="_blank"
+                style="color: #00acee"
+                ><i class="fa fa-twitter" style="padding-right: 20px"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/airbnb/"
+                target="_blank"
+                style="color: #d6249f"
+                ><i class="fa fa-instagram" style="padding-right: 20px"></i
+              ></a>
+            </h5>
+            <ul style="list-style: none">
+              <li><a href="#">Reseñas</a></li>
+              <li><a href="/suggestions">Sugerencias</a></li>
+              <li><a href="/contact">Contacto</a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+    <!-- FOOTER -->
+  </body>
 </html>

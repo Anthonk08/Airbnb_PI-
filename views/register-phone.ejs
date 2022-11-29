@@ -55,41 +55,7 @@
           </li>
         </ul>
 
-				<nav class="navbar navbar-expand-lg navbar-light">
-					<div class="collapse navbar-collapse">
-
-					<!-- SVG for Logo -->
-					<a href="./home"><img src="/sources/Airbnb icon navbar.png" alt="" style="height: 50px; width: 100px;"></a>
-					<!-- End of SVG -->
-					<ul class="navbar-nav d-flex flex-row">
-						<li class="nav-item"><a class="nav-link" href="./home">Inicio</a></li>
-						<li class="nav-item"><a class="nav-link" href="bookings">Reservas</a></li>
-						<li class="nav-item"><a class="nav-link" href="contact">Contacto</a></li>
-						<li class="nav-item"><a class="nav-link" href="suggestions">Sugerencias</a></li>
-						<li class="nav-item"><a class="nav-link" href="about-us">Sobre Nosotros</a></li>
-					</ul>
-
-					<ul class="navbar-nav ml-auto navbar_move">
-						<li class="nav-item btn_flashy"><a class="nav-link" href="become-host">Hazte Anfitri&oacuten</a></li>
-						
-						<li class="nav-item dropdown">
-							<a class="nav-link menu_property" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								<span class="material-symbols-outlined setting-menu">menu</span>
-								<img class="rounded-circle" src="/sources/person-icon.png" alt="" style="width: 40px; height: 40px;">
-							</a>
-	
-							<ul class="dropdown-menu dropdown_father">
-								<li><a class="dropdown-item dropdown_children" href="./">Iniciar Sesi&oacuten</a></li>
-								<li><a class="dropdown-item dropdown_children" href="./register">Registrarse</a></li>
-                                <hr class="change_line_navbar">
-								<li><a class="dropdown-item dropdown_children" href="/receives-guest">Recibe hu&eacutespedes</a></li>
-								<li><a class="dropdown-item dropdown_children" href="/help">Ayuda</a></li>
-							</ul>
-						</li>
-					</ul>
-
-				</div>
-			</nav>
+        <%- include('partials/navbar.ejs')%>
             <hr class="change_line">
 
 			<!-- End of NavBar -->

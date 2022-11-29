@@ -99,7 +99,7 @@ const loadUserInfo = async (req, res) => {
 const getBookings = async (req, res) => {
   logService.info("Estado de la sesion: " + req.state);
 
-  if (req.session.user_id == undefined) {
+  if (req.session.user_id == undefined || req.session.user_id == "") {
     res.redirect("/home");
     return;
   }
