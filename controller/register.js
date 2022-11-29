@@ -277,7 +277,7 @@ const getRegisterProperty = async (req, res) => {
   } catch (error) {}
 
   // carga de la pantalla
-  res.render("register-property", {
+  res.render("host-page/register-property", {
     cities: cities,
     livingTypes: livingTypes,
     message: message,
