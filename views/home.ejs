@@ -54,53 +54,7 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
     <!-- This is to display the Navbar of the website. -->
 
     
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="collapse navbar-collapse">
-
-      <!-- SVG for Logo -->
-      <a href="./home"><img src="/sources/Airbnb icon navbar.png" alt="" style="height: 50px; width: 100px;"></a>
-      <!-- End of SVG -->
-      <ul class="navbar-nav d-flex flex-row">
-        <li class="nav-item"><a class="nav-link" href="./home">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="bookings">Reservas</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact">Contacto</a></li>
-        <li class="nav-item"><a class="nav-link" href="suggestions">Sugerencias</a></li>
-        <li class="nav-item"><a class="nav-link" href="about-us">Sobre Nosotros</a></li>
-      </ul>
-
-
-      <ul class="navbar-nav ml-auto navbar_move">
-        <li class="nav-item btn_flashy"><a class="nav-link" href="become-host">Hazte Anfitri&oacuten</a></li>
-        
-        <li class="nav-item dropdown">
-          <a class="nav-link menu_property" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="material-symbols-outlined setting-menu">menu</span>
-            <img class="rounded-circle" src="/sources/person-icon.png" alt="" style="width: 40px; height: 40px;">
-          </a>
-
-          <ul class="dropdown-menu dropdown_father">
-            <li><a class="dropdown-item dropdown_children" href="/login">Iniciar Sesi&oacuten</a></li>
-            <li><a class="dropdown-item dropdown_children" href="/register">Registrarse</a></li>
-            <hr class="change_line_navbar">
-            <li><a class="dropdown-item dropdown_children" href="/messages-guest">Mensajes</a></li>
-            <li><a class="dropdown-item dropdown_children" href="/notification-guest">Notificaciones</a></li>
-            <li><a class="dropdown-item dropdown_children" href="/favorites-guest">Lista de Favoritos</a></li>
-            <hr class="change_line_navbar">
-            <li><a class="dropdown-item dropdown_children" href="/host-page">Anfitri&oacuten</a></li>
-            <hr class="change_line_navbar">
-            <li><a class="dropdown-item dropdown_children" href="/receives-guest">Recibe hu&eacutespedes</a></li>
-            <li><a class="dropdown-item dropdown_children" href="/account">Cuenta</a></li>
-            <hr class="change_line_navbar">
-            <li><a class="dropdown-item dropdown_children" href="/dashboard-home">Administrador</a></li>
-            <hr class="change_line_navbar">
-            <li><a class="dropdown-item dropdown_children" href="/help">Ayuda</a></li>
-            <li><a class="dropdown-item dropdown_children" href="#">Cerrar Sesi&oacuten</a></li>
-          </ul>
-        </li>
-      </ul>
-
-    </div>
-  </nav>
+    <%- include('partials/navbar.ejs')%>
         <hr class="change_line">
 
     <!-- End of NavBar -->
@@ -109,6 +63,8 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
 
     <form
       class="container mt-3 rounded"
+      method="GET"
+      action="/search-bookings"
       style="
         margin: 150px;
         max-width: 420px;
@@ -211,7 +167,9 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
 				</div>
 			</div>
 		</div>
-		<hr>
+    
+		<!-- FOOTER -->
+		<hr class="footer-container">
 		<div class="container" style="margin-top: 70px;">
 			<div class="row">
 				<div class="col-md-3">
@@ -219,9 +177,9 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
 						<h6 style="margin-left: 40px;">Airbnb</h6>
 						<ul style="list-style: none;">
 							<li><a href="/help">Ayuda</a></li>
-							<li><a href="#">Pol&iacuteticas</a></li>
-							<li><a href="#">T&eacuterminos</a></li>
-							<li><a href="#">Privacidad</a></li>
+							<li><a href="/cancellation-policies">Pol&iacuteticas</a></li>
+							<li><a href="/terminos">T&eacuterminos</a></li>
+							<li><a href="/politicas-privacidad">Privacidad</a></li>
 						</ul>
 					</section>
 				</div>
@@ -229,8 +187,7 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
 					<section>
 						<h6 style="margin-left: 40px;">Descubrir</h6>
 						<ul style="list-style: none;">
-							<li><a href="#">Confianza y seguridad</a></li>
-							<li><a href="#">Mapa del sitio</a></li>
+							<li><a href="/criterios-de-confianza">Confianza y seguridad</a></li>
 						</ul>
 					</section>
 				</div>
@@ -238,9 +195,8 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
 					<section>
 						<h6 style="margin-left: 40px;">Alojamiento</h6>
 						<ul style="list-style: none;">
-							<li><a href="#">Por qu&eacute anfitri&oacuten/a</a></li>
-							<li><a href="#">Alojamiento Responsable</a></li>
-							<li><a href="#">Casas abiertas</a>&emsp;<a href="#"><button type="button" class="btn btn-primary new">New</button></a></li>
+							<li><a href="/por-que-anfitrion">Por qu&eacute anfitri&oacuten/a</a></li>
+							<li><a href="/alojamiento-responsable">Alojamiento Responsable</a></li>
 						</ul>
 					</section>
 				</div>
@@ -253,12 +209,13 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
 						</h5>
 						<ul style="list-style: none;">
 							<li><a href="#">Reseñas</a></li>
-							<li><a href="#">Sugerencias</a></li>
-							<li><a href="#">Contacto</a></li>
+							<li><a href="/suggestions">Sugerencias</a></li>
+							<li><a href="/contact">Contacto</a></li>
 						</ul>
 					</section>
 				</div>
 			</div>
 		</div>
+		<!-- FOOTER -->
 	</body>
 </html>

@@ -1,16 +1,24 @@
-const crypto = require("crypto");
 const logService = require("../services/log");
 const mysqlService = require("../services/mysql");
 const config = require("../config");
 const homeCtrl = require("./home");
 
 const getLoginView = (req, res) => {
+  console.log(req.session.sessionError);
   if (req.session.user_id != undefined) {
     res.redirect("/home");
     return;
   }
+  if (req.session.sessionError != "") {
+    res.render("login", {
+      sessionError: req.session.sessionError,
+    });
+    return;
+  }
 
-  res.render("login");
+  res.render("login", {
+    sessionError: undefined,
+  });
 };
 
 const getMessagesGuest = (req, res) => {
@@ -307,19 +315,6 @@ const getDashboardUsers = (req, res) => {
   res.render("dashboard-pages/dashboard-users", {});
 };
 
-const getBookings = (req, res) => {
-  logService.info("Estado de la sesion: " + req.state);
-
-  // Al acceder a la ruta raiz:
-
-  if (req.state == "done") {
-    logService.info("Estado del usuario: done");
-    res.redirect("/dashboard");
-    return;
-  }
-
-  res.render("bookings", {});
-};
 const getContact = (req, res) => {
   logService.info("Estado de la sesion: " + req.state);
 
@@ -333,6 +328,7 @@ const getContact = (req, res) => {
 
   res.render("contact", {});
 };
+
 const getSuggestions = (req, res) => {
   logService.info("Estado de la sesion: " + req.state);
 
@@ -346,6 +342,7 @@ const getSuggestions = (req, res) => {
 
   res.render("suggestions", {});
 };
+
 const getAboutUs = (req, res) => {
   logService.info("Estado de la sesion: " + req.state);
 
@@ -388,7 +385,7 @@ const getReceivesGuest = (req, res) => {
   res.render("receives-guest", {});
 };
 
-const getSearchBookings = (req, res) => {
+const getcancellationpolicies = (req, res) => {
   logService.info("Estado de la sesion: " + req.state);
 
   // Al acceder a la ruta raiz:
@@ -399,10 +396,10 @@ const getSearchBookings = (req, res) => {
     return;
   }
 
-  res.render("search-bookings", {});
+  res.render("cancellation-policies", {});
 };
 
-const getLodgingprofile = (req, res) => {
+const getcriteriosconfianza = (req, res) => {
   logService.info("Estado de la sesion: " + req.state);
 
   // Al acceder a la ruta raiz:
@@ -412,11 +409,10 @@ const getLodgingprofile = (req, res) => {
     res.redirect("/dashboard");
     return;
   }
-
-  res.render("lodging-profile", {});
+  res.render("criterios-de-confianza", {});
 };
 
-const getLodgingBooking = (req, res) => {
+const getResponsibleHosting = (req, res) => {
   logService.info("Estado de la sesion: " + req.state);
 
   // Al acceder a la ruta raiz:
@@ -426,8 +422,46 @@ const getLodgingBooking = (req, res) => {
     res.redirect("/dashboard");
     return;
   }
+  res.render("alojamiento-responsable", {});
+};
 
-  res.render("lodging-booking", {});
+const getWhyHost = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+  res.render("por-que-anfitrion", {});
+};
+
+const getServiceTerms = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+  res.render("terminos", {});
+};
+
+const getPrivacyPolicy = (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  // Al acceder a la ruta raiz:
+
+  if (req.state == "done") {
+    logService.info("Estado del usuario: done");
+    res.redirect("/dashboard");
+    return;
+  }
+  res.render("politicas-privacidad", {});
 };
 
 /**
@@ -442,14 +476,16 @@ const logIn = async (req, res) => {
   const { email, password } = req.body;
   if (email == "" || email == undefined) {
     logService.error(`El parametro [email] no esta definido`);
-    // req.sessionError = "El USUARIO escrito no es valido, Intente de nuevo.";
+    req.session.sessionError =
+      "El USUARIO escrito no es valido, Intente de nuevo.";
     res.redirect("/login");
     return;
   }
 
   if (password == "" || password == undefined) {
     logService.error(`El parametro [password] no esta definido`);
-    // req.sessionError = "El PASSWORD escrito no es valido, Intente de nuevo.";
+    req.session.sessionError =
+      "El PASSWORD escrito no es valido, Intente de nuevo.";
     res.redirect("/login");
     return;
   }
@@ -481,10 +517,7 @@ const logIn = async (req, res) => {
     if (userInfo.pass != password) {
       req.session.sessionError = `El usuario existe pero la contraseña no coincide. | data: {user_name: ${email.toLowerCase()} }`;
 
-      logService.warn(
-        `El usuario existe pero la contraseña no coincide. | data: {user_name: ${email.toLowerCase()}}`
-      );
-      logService.warn(req.session.sessionError);
+      // logService.warn(req.session.sessionError);
 
       res.redirect("/login");
       return;
@@ -506,7 +539,7 @@ const logIn = async (req, res) => {
     // guardando datos del usuario en la sesion.
     req.session.user_id = userInfo.id;
     req.session.user_name = userInfo.name;
-
+    req.session.user_email = userInfo.email;
     req.session.state = "";
 
     logService.info(`Sesion iniciada. | session: ${email}`);
@@ -534,18 +567,15 @@ module.exports = {
   getDashboardHome,
   getDashboardProfit,
   getDashboardUsers,
-  getBookings,
   getContact,
   getSuggestions,
   getAboutUs,
   getBecomeHost,
   getReceivesGuest,
-  getSearchBookings,
-  getLodgingprofile,
-  getLodgingBooking,
-  getProfileAccount,
-  getPersonalInformation,
-  getLoginSecurity,
-  getPaymentsCollections,
-  getNotifications,
+  getResponsibleHosting,
+  getWhyHost,
+  getServiceTerms,
+  getPrivacyPolicy,
+  getcancellationpolicies,
+  getcriteriosconfianza,
 };

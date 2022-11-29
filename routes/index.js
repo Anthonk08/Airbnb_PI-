@@ -10,6 +10,10 @@ const ctrlPayment = require("../controller/payment");
 router.get("/home", ctrlHome.loadIndex); // ruta raiz de todo el proyecto
 router.post("/logout", ctrlHome.setVariables);
 
+router.get("/search-bookings", ctrlHome.getSearchBookings);
+router.get("/lodging-profile", ctrlHome.getLodgingProfile);
+router.get("/lodging-booking", ctrlHome.getLodgingBooking);
+
 //ENDPOINT DEL LOGIN
 router.post("/login", ctrlLogin.logIn);
 router.get("/login", ctrlLogin.getLoginView);
@@ -34,16 +38,25 @@ router.get(
 router.get("/dashboard-home", ctrlLogin.getDashboardHome);
 router.get("/dashboard-profit", ctrlLogin.getDashboardProfit);
 router.get("/dashboard-users", ctrlLogin.getDashboardUsers);
-router.get("/bookings", ctrlLogin.getBookings);
+router.get("/bookings", ctrlProfile.getBookings);
 router.get("/contact", ctrlLogin.getContact);
 router.get("/suggestions", ctrlLogin.getSuggestions);
 router.get("/about-us", ctrlLogin.getAboutUs);
 router.get("/become-host", ctrlLogin.getBecomeHost);
 router.get("/receives-guest", ctrlLogin.getReceivesGuest);
+<<<<<<< HEAD
+=======
 router.get("/search-bookings", ctrlLogin.getSearchBookings);
 router.get("/lodging-profile", ctrlLogin.getLodgingprofile);
 router.get("/lodging-booking", ctrlLogin.getLodgingBooking);
+router.get("/alojamiento-responsable", ctrlLogin.getResponsibleHosting);
+router.get("/por-que-anfitrion", ctrlLogin.getWhyHost);
+router.get("/terminos", ctrlLogin.getServiceTerms);
+router.get("/politicas-privacidad", ctrlLogin.getPrivacyPolicy);
+router.get("/cancellation-policies", ctrlLogin.getcancellationpolicies);
+router.get("/criterios-de-confianza", ctrlLogin.getcriteriosconfianza);
 
+>>>>>>> 615b140d43da8b3a09629bb7f4cc8ee2850188c9
 //ENDPOINT DEL PERFIL DE USUARIO
 // TODO: definir ruta de la pantalla de perfil de usuario
 router.get("/profile-history", ctrlProfile.loadRentalHistory);
@@ -63,8 +76,8 @@ router.get("/profile/history-rent", ctrlProfile.loadRentalHistory);
 router.get("/profile/history-property", ctrlProfile.loadPropertyHistory);
 router.get("/profile/history-payment", ctrlProfile.loadPaymentHistory);
 
-router.post("/pay", ctrlPayment.payViaPaypal);
-router.get("/pay-success", ctrlPayment.paySuccess);
+router.post("/api/orders", ctrlPayment.makeOrder);
+router.post("/api/orders/:orderID/capture", ctrlPayment.captureOrder);
 router.get("/pay-cancelled", ctrlPayment.payCancelled);
 
 //ENDPOINT DEL PERFIL DE USUARIO

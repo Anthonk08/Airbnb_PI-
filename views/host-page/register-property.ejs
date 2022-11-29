@@ -100,66 +100,102 @@
                      <div class="myform form">
                            <div class="logo mb-3">
                               <div class="col-md-12 text-center">
-                                 <h1 align="center">Registrarse</h1>
+                                 <h1 align="center">Registrar Propiedad</h1>
                               </div>
                            </div>
-                        <form action="" method="post" name="registro">
-                              <div class="form-group">
-                                 <label>Tipo de vivienda</label>
-                                 <input type="text" name="tipo_vivienda"  class="form-control" id="tipo_vivienda" placeholder="Apartamento, Casa, etc.">
-                                 <p></p>
-                              </div>
-
+                        <form action="/register-property" method="post" name="registro">
+                           <label>Tipo de vivienda</label>
+                           <select name="tipo_vivienda" id="tipo_vivienda" class="form-select" aria-label="Default select example">
+                              <%if(livingTypes!=''){%>
+                                 <% livingTypes.forEach(function(livingType){ %>
+                                    <option value="<%=livingType.id%>"><%=livingType.description%></option>
+                                 <%})%>
+                              <%}%>
+                             </select> 
+                        
+                              <p></p>
                              <div class="form-group">
-                                <label>Direccion</label>
+                                <label>Ubicacion</label>
                                 <!--<input type="text" class="form-control" id="search_input" placeholder="Escribe tu direccion"/>
                                 <p></p>-->
                                 <div id="map"></div>
-                                
-                                <script>
-                                 let map = L.map('map').setView([19.470800,-70.692039],8)
-
-                                 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                                 }).addTo(map);
-
-                                 var marker = new L.marker([19.4792,-70.6931],{
-                                    draggable: true,
-                                    autoPan: true
-                                 }).addTo(map);
-                                </script>
-                                
+                                <input type="text" name="loc" class="form-control" id="loc" hidden required>
                                 <p></p>
-                             </div>
+                              <div class="form-group">
+                                 <label>Direccion</label>
+                                 <input type="text" name="address" class="form-control" id="address"required>
+                                 <p></p>
+                              </div>
+                                <script>
+                                    let map = L.map('map').setView([19.470800,-70.692039],8)
+                                    var marker;
 
+                                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                                    }).addTo(map);
+
+                                    // var marker = new L.marker([19.4792,-70.6931],{
+                                    //    draggable: true,
+                                    //    autoPan: true
+                                    // }).addTo(map);
+                                    
+                                    // al hacer click
+                                    function onMapClick(e) {
+                                       if(marker!=undefined){
+
+                                          map.removeLayer(marker);
+                                       }
+                                       //campo de las coordenadas
+                                       document.getElementById('loc').value = e.latlng;
+                                      
+                                          // marcador al momento de dar click
+                                       marker = new L.marker([e.latlng['lat'],e.latlng['lng']],{
+                                          autoPan: true
+                                       });
+                                       map.addLayer(marker);
+                                    }
+                                    
+                                    map.on('click', onMapClick);
+                                </script>
+                             </div>
+                             <label for="cars">Provincia</label>
+
+                             <select name="city" id="city" class="form-select" aria-label="Default select example"required>
+                              <% cities.forEach(function(city){ %>
+                                 <option value="<%=city.id_provincia%>"><%=city.provincia%></option>
+                                 <%})%>
+                             </select> 
+                             <p></p>
                              <div class="form-group">
                                 <label>Cantidad de personas</label>
-                                <input type="number" name="cant_personas"  class="form-control" id="cant_personas" placeholder="1, 2, 3, ...">
+                                <input type="number" name="persons" min="0" max="16" step="1" class="form-control" id="cant_personas" placeholder="1, 2, 3, ..."required>
                                 <p></p>
                              </div>
                              <div class="form-group">
                                 <label>Numero de camas</label>
-                                <input type="number" name="cant_camas"  class="form-control" id="cant_camas" placeholder="1, 2, 3, ...">
+                                <input type="number" name="beds" min="0" max="8" step="1" class="form-control" id="cant_camas" placeholder="1, 2, 3, ..."required>
                                 <p></p>
                              </div>
                              <div class="form-group">
                                 <label>Numero de habitaciones</label>
-                                <input type="number" name="cant_hab"  class="form-control" id="cant_hab" placeholder="1, 2, 3, ...">
+                                <input type="number" name="rooms" min="0" max="8" step="1" class="form-control" id="cant_hab" placeholder="1, 2, 3, ..."required>
                                 <p></p>
                              </div>
                              <div class="form-group">
                                 <label>Numero de baños</label>
-                                <input type="number" name="cant_banos"  class="form-control" id="cant_banos" placeholder="1, 1.5, 2, ...">
+                                <input type="number" name="baths" min="0" max="8" step="0.5 " class="form-control" id="cant_banos" placeholder="1, 1.5, 2, ..."required>
                                 <p></p>
                              </div>
                              <div class="form-group">
                                 <label>Fotos del lugar</label>
-                                <input type="file" id="myFile" name="filename">
+                                <input type="file" id="myFile" name="img" required>
+                                <img id="image_view" style="display: block; width: 250px; height:250px">
+                                <input type="hidden" id="source" name="source">
                                 <p></p>
-                             </div>
+                              </div>
                              <div class="form-group">
                                 <label>Precio por noche</label>
-                                <input type="number" name="precio"  class="form-control" id="precio" placeholder="US $86">
+                                <input type="number" name="precio" min="0" max="100000" step="1" class="form-control" id="precio" placeholder="USD$86" required>
                                 <p></p>
                              </div>
                               <!--<div class="form-group">
@@ -168,7 +204,7 @@
                                  <p></p>
                               </div>-->
                               <div class="col-md-12 text-center ">
-                                 <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Finalizar</button>
+                                 <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Registrar</button>
                               </div>
                         </form>
                      </div>
@@ -225,6 +261,62 @@
                </div>
             </div>
          </div>
+          <!-- Proceso para guardar la imagen de la propiedad -->
+          <script>
+            var images = document.getElementById('myFile');
+          
+            images.onchange = () => {
+               var image_file = images.files[0];
+
+               var image_view = document.getElementById('image_view');
+               
+               var reader = new FileReader();
+               
+
+               reader.onload = (e) =>{
+                  var canvas =document.createElement('canvas');
+
+                  image_view.src = e.target.result;
+                  
+                  canvas.height = 500;
+                  canvas.width = 500;
+                  
+                  var ctx = canvas.getContext('2d');
+
+                  var img = new Image();
+                  img.src = e.target.result;
+                  
+                  img.onload = function (){
+
+                     ctx.drawImage(img,0,0,canvas.width,canvas.height);
+
+                     var dataurl = canvas.toDataURL(image_file.type,0.7);
+                     var src=document.getElementById('source');
+
+                     src.value = dataurl;
+
+                  }
+               }
+               reader.readAsDataURL(image_file);
+            }
+         
+        
+         </script>
+         
+<!-- 
+         <script>
+            console.log('hola');
+         </script> -->
+         <!-- Mostrar mensaje si esta definido -->
+         <%if(message != undefined){%>
+            <script>
+                var message = '<%=message%>'; 
+                alert(message);
+               
+            </script>
+         <%}%>
+
+        
     </body>
 
     

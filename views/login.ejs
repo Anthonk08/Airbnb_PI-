@@ -36,10 +36,10 @@
 					<!-- End of SVG -->
 					<ul class="navbar-nav d-flex flex-row">
 						<li class="nav-item"><a class="nav-link" href="./home">Inicio</a></li>
-						<li class="nav-item"><a class="nav-link" href="#booking">Reservas</a></li>
-						<li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
-						<li class="nav-item"><a class="nav-link" href="#suggestions">Sugerencias</a></li>
-						<li class="nav-item"><a class="nav-link" href="#aboutus">Sobre Nosotros</a></li>
+						<li class="nav-item"><a class="nav-link" href="/bookings">Reservas</a></li>
+						<li class="nav-item"><a class="nav-link" href="/contact">Contacto</a></li>
+						<li class="nav-item"><a class="nav-link" href="/suggestions">Sugerencias</a></li>
+						<li class="nav-item"><a class="nav-link" href="/about-us">Sobre Nosotros</a></li>
 					</ul>
 
 					<ul class="navbar-nav ml-auto navbar_move">
@@ -84,14 +84,14 @@
                                     <p><strong>Te damos la bienvenida a Airbnb</strong></p>
                                 </div>
                             </div>
-                            <form action="/login" method="post" name="login">
+                            <form action="/login" method="post" name="login" >
                                 <div class="form-group">
                                     <label for="exampleInputEmail1"><strong>Correo electrónico / Nombre de Usuario</strong></label>
-                                    <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Digite correo electrónico o nombre de usuario">
+                                    <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Digite correo electrónico o nombre de usuario" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1"><strong>Contraseña</strong></label>
-                                    <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Digite su contraseña">
+                                    <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Digite su contraseña" required>
                                 </div>
                                 <div class="form-group">
                                     <p class="text-center">Al ingresar, acepta nuestros terminos de uso <a href="#">Terms Of Use</a></p>
@@ -115,9 +115,19 @@
                 </div>
             </div>
         </div>
-
+        <%if(sessionError != undefined){%>
+            <script>
+                $(document).ready(function () {
+                    
+                    var message = '<%=sessionError%>';
+                    alert(message);
+                });
+            
+            </script>
+        <%}%>
         <!--Modal view-->
-       
-       
+      
     </body>
 </html>
+
+
