@@ -578,4 +578,9 @@ module.exports = {
   getPrivacyPolicy,
   getcancellationpolicies,
   getcriteriosconfianza,
+  getProfileAccount,
+  getPersonalInformation,
+  getLoginSecurity,
+  getPaymentsCollections,
+  getNotifications,
 };

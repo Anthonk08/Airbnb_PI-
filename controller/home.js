@@ -10,7 +10,7 @@ const loadIndex = async (req, res) => {
     var allProperty = await mysqlService.getAllProperties();
 
     if (req.session.state == undefined) {
-      setVariables(req, undefined);
+      setVariables(req, "");
     }
 
     // si el usuario ha iniciado sesion pasara a la vista home adecuada al usuario
