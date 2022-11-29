@@ -20,7 +20,6 @@ router.get("/login", ctrlLogin.getLoginView);
 router.get("/messages-guest", ctrlLogin.getMessagesGuest);
 router.get("/favorites-guest", ctrlLogin.getFavoritesGuest);
 router.get("/notification-guest", ctrlLogin.getNotificationGuest);
-router.get("/account", ctrlLogin.getAccount);
 router.get("/help", ctrlLogin.getHelp);
 router.get("/host-page", ctrlLogin.getHostPage);
 router.get("/messages-host", ctrlLogin.getMessagesHost);
@@ -74,5 +73,14 @@ router.get("/profile/history-payment", ctrlProfile.loadPaymentHistory);
 router.post("/api/orders", ctrlPayment.makeOrder);
 router.post("/api/orders/:orderID/capture", ctrlPayment.captureOrder);
 router.get("/pay-cancelled", ctrlPayment.payCancelled);
+
+//ENDPOINT DEL PERFIL DE USUARIO
+// TODO: definir ruta de la pantalla de cuenta
+router.get("/account", ctrlLogin.getAccount);
+router.get("/profile-account", ctrlLogin.getProfileAccount);
+router.get("/personal-information", ctrlLogin.getPersonalInformation);
+router.get("/login-security", ctrlLogin.getLoginSecurity);
+router.get("/payments-collections", ctrlLogin.getPaymentsCollections);
+router.get("/notifications", ctrlLogin.getNotifications);
 
 module.exports = router;
