@@ -383,60 +383,62 @@ Bootstrap also gives you the ability to easily create responsive designs. -->
               });
 
               if (existRent) alert(dateExistenceRent);
+              else {
+                if ("<%=userLogged%>" == "true") {
+                  paypal
+                    .Buttons({
+                      createOrder: function (data, actions) {
+                        const orderJson = { amount: totalValue };
+                        return fetch("/api/orders", {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json",
+                          },
+                          body: JSON.stringify(orderJson),
+                        })
+                          .then((response) => response.json())
+                          .then((response) => {
+                            return response.id;
+                          });
+                      },
+
+                      // Finalize the transaction
+                      onApprove: function (data, actions) {
+                        const trasacJson = {
+                          propertyId: "<%=property.id%>",
+                          checkinDate: checkin,
+                          checkoutDate: checkout,
+                          amount: totalValue,
+                        };
+
+                        return fetch(`/api/orders/${data.orderID}/capture`, {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json",
+                          },
+                          body: JSON.stringify(trasacJson),
+                        })
+                          .then((response) => response.json())
+                          .then(function (orderData) {
+                            window.location.assign(
+                              "/lodging-profile?id=<%=property.id%>"
+                            );
+                          });
+                      },
+                      style: {
+                        layout: "horizontal",
+                        color: "blue",
+                        label: "pay",
+                        height: 40,
+                      },
+                    })
+                    .render("#paypal-button-container");
+                } else {
+                  alert("Debe tener una sesion iniciada para reservar");
+                }
+              }
               existRent = false;
             }
-          }
-          if ("<%=userLogged%>" == "true") {
-            paypal
-              .Buttons({
-                createOrder: function (data, actions) {
-                  const orderJson = { amount: totalValue };
-                  return fetch("/api/orders", {
-                    method: "POST",
-                    headers: {
-                      "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(orderJson),
-                  })
-                    .then((response) => response.json())
-                    .then((response) => {
-                      return response.id;
-                    });
-                },
-
-                // Finalize the transaction
-                onApprove: function (data, actions) {
-                  const trasacJson = {
-                    propertyId: "<%=property.id%>",
-                    checkinDate: checkin,
-                    checkoutDate: checkout,
-                    amount: totalValue,
-                  };
-
-                  return fetch(`/api/orders/${data.orderID}/capture`, {
-                    method: "POST",
-                    headers: {
-                      "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(trasacJson),
-                  })
-                    .then((response) => response.json())
-                    .then(function (orderData) {
-                      window.location.assign(
-                        "/lodging-profile?id=<%=property.id%>"
-                      );
-                    });
-                },
-                style: {
-                  layout: "horizontal",
-                  color: "blue",
-                  label: "pay",
-                  height: 40,
-                },
-              })
-              .render("#paypal-button-container");
-          } else {
-            alert("Debe tener una sesion iniciada para reservar");
           }
         } else {
           paypalButton.innerHTML = "";
