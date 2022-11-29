@@ -132,7 +132,7 @@
 
 .accounts_div2 {
 	min-height: 100px;
-	height: 300px;
+	height: 370px;
 	width: 320px;
 	position:relative;
 	border: 0.2px solid black;
@@ -145,6 +145,7 @@
 
 .accounts_div p {
 	text-align: start;
+	font-size: 15px;
 }
 
 
