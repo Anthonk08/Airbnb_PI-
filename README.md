@@ -6,7 +6,7 @@ ___
 ___
 Airbnb clon.
 
-El sector turístico en la República Dominicana estuvo dominado por completo por varias décadas por las asociaciones de hoteles y grandes cadenas hoteleras de clase mundial y atracciones turísticas erradicadas en el país, debido a la perfecta localización del país y sus innumerables atracciones por ejemplo, playas excepcionales y lugares históricos, hasta turismo de aventura y una emocionante vida nocturna. Con la llegada de la empresa de San francisco, USA, llamada Airbnb, la cual facilitó el hospedaje particular de las personas a precios cómodos y accesibles.
+Asignacion final de la materia Proyecto Integrador 1, asignado por el profesor Ivan Mendoza
 
 ## **Grupo #1.**
 ___
@@ -26,6 +26,8 @@ ___
 ___
 * Javascript
 * Bootstrap 4
+* Nodejs
+* EJS - Embedded JavaScript templating.
 * Html
 * Css
 
