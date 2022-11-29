@@ -96,9 +96,28 @@ const loadUserInfo = async (req, res) => {
   }
 };
 
+const getBookings = async (req, res) => {
+  logService.info("Estado de la sesion: " + req.state);
+
+  if (req.session.user_id == undefined) {
+    res.redirect("/home");
+    return;
+  }
+
+  var currentRent;
+  try {
+    currentRent = await mysqlService.getCurrentRent(req.session.user_id);
+  } catch (error) {
+    console.log(error);
+  }
+
+  res.render("bookings", { currentRent });
+};
+
 module.exports = {
   loadRentalHistory,
   loadPropertyHistory,
   loadPaymentHistory,
   loadUserInfo,
+  getBookings,
 };

@@ -1,5 +1,9 @@
 const mysql = require("mysql");
 const config = require("../config");
+const { decodeBase64Image } = require("../services/functions");
+const fs = require("fs");
+const moment = require("moment");
+var path = require("path");
 
 const connection = mysql.createConnection(config.dbConecction);
 
@@ -92,51 +96,52 @@ const createUser = (email, name, lastName, idCity, pass) =>
   });
 
 /**
- * Registro de propiedad
+ *
  * @param {*} id_user
+ * @param {*} tipo_vivienda
+ * @param {*} loc
  * @param {*} address
- * @param {*} address2
- * @param {*} id_city
- * @param {*} price
- * @param {*} itbis
+ * @param {*} city
+ * @param {*} persons
+ * @param {*} beds
  * @param {*} rooms
- * @param {*} adults
- * @param {*} kids
- * @param {*} geo
+ * @param {*} baths
+ * @param {*} precio
  * @returns
  */
 const registerUserProperty = (
   id_user,
+  tipo_vivienda,
+  loc,
   address,
-  address2,
-  id_city,
-  price,
-  itbis,
+  city,
+  persons,
+  beds,
   rooms,
-  adults,
-  kids,
-  geo
+  baths,
+  precio
 ) =>
   new Promise((resolve, reject) => {
-    if (address2 == undefined) address2 = "";
+    const propertyQuery = `insert into property (id_user,address,id_city,price,rooms,beds,baths,adults,geo) values (${id_user},'${address}',${city},${precio},${rooms},${beds},${baths},${persons},'${loc}')`;
 
-    // si el itbis no es seleccionado, su valor sera false
-    if (itbis == undefined) itbis = 0;
-
-    const query = `insert into property (id_user,address,address2,id_city,price,itbis,rooms,adults,kids,geo) values 
-    (${id_user},${address},${address2},${id_city},${price},${itbis},${rooms},${adults},${kids},${geo})`;
-
-    connection.query(query, (err, rows) => {
+    connection.query(propertyQuery, (err, rows) => {
       if (err) {
         reject(err);
         return;
       }
+      const categoryQuery = `insert into category_vs_property(id_category,id_property) values (${tipo_vivienda},${rows.insertId});`;
+      connection.query(categoryQuery, (err, result) => {
+        if (err) {
+          reject(err);
+          return;
+        }
 
-      try {
-        resolve(rows[0]);
-      } catch (ex) {
-        reject(ex.message);
-      }
+        try {
+          resolve(result);
+        } catch (ex) {
+          reject(ex.message);
+        }
+      });
     });
   });
 
@@ -154,7 +159,28 @@ const getCity = () =>
       }
 
       try {
-        resolve(rows[0]);
+        resolve(rows);
+      } catch (ex) {
+        reject(ex.message);
+      }
+    });
+  });
+
+/**
+ * Devuelve el listado de las ciudades, actualmente solo [Rep.Dom]
+ * @returns
+ */
+const getLivingType = () =>
+  new Promise((resolve, reject) => {
+    const query = `select * from categories;`;
+    connection.query(query, (err, rows) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+
+      try {
+        resolve(rows);
       } catch (ex) {
         reject(ex.message);
       }
@@ -188,9 +214,15 @@ const getRentalHistory = (idUser) =>
  * @param {int} idUser
  * @returns
  */
-const getPropertyInfo = (idUser) =>
+const getPropertyInfo = (idProperty) =>
   new Promise((resolve, reject) => {
-    const query = `select * from property where id_user = ${idUser};`;
+    const query = `select p.*, u.name, u.lastname , pi2.source, c.provincia,c2.description as category
+    from property p 
+    inner join property_image pi2 on p.id = pi2.id
+    inner join city c on p.id_city = c.id_provincia
+    inner join category_vs_property cvp on p.id =cvp.id_property 
+    inner join categories c2 on cvp.id_category =c2.id 
+    inner join user u on p.id_user = u.id where p.id = ${idProperty}`;
     connection.query(query, (err, rows) => {
       if (err) {
         reject(err);
@@ -198,7 +230,11 @@ const getPropertyInfo = (idUser) =>
       }
 
       try {
-        resolve(rows[0]);
+        if (!Object.keys(rows).length == 0) {
+          resolve(rows[0]);
+        } else {
+          reject("No existe");
+        }
       } catch (ex) {
         reject(ex.message);
       }
@@ -209,9 +245,27 @@ const getPropertyInfo = (idUser) =>
  * Devuelve la informacion de todas las propiedads en orden descendiente.
  * @returns
  */
-const getAllProperties = () =>
+const getAllProperties = (city, persons, rooms, beds, baths, queryIsValid) =>
   new Promise((resolve, reject) => {
-    const query = `select * from property where state = 1 order by id desc;`;
+    var query = `select p.*, pi2.source, c.provincia,c2.description as category
+    from property p 
+    inner join property_image pi2 on p.id = pi2.id
+    inner join city c on p.id_city = c.id_provincia
+    inner join category_vs_property cvp on p.id =cvp.id_property 
+    inner join categories c2 on cvp.id_category =c2.id  
+    order by p.id desc limit 10;`;
+
+    if (queryIsValid) {
+      query = `select p.*, pi2.source, c.provincia,c2.description as category
+      from property p 
+      inner join property_image pi2 on p.id = pi2.id
+      inner join city c on p.id_city = c.id_provincia
+      inner join category_vs_property cvp on p.id =cvp.id_property 
+      inner join categories c2 on cvp.id_category =c2.id 
+      where p.id_city =${city} and p.rooms >=${rooms} and p.beds >=${beds} and baths >=${baths} and p.adults >=${persons}  
+      order by p.id desc limit 10;`;
+    }
+
     connection.query(query, (err, rows) => {
       if (err) {
         reject(err);
@@ -219,7 +273,7 @@ const getAllProperties = () =>
       }
 
       try {
-        resolve(rows[0]);
+        resolve(rows);
       } catch (ex) {
         reject(ex.message);
       }
@@ -268,12 +322,9 @@ const getPaymentHistory = (idUser) =>
     });
   });
 
-const makeReservation = (idUser, idProperty, startDate, endDate) =>
-  new Promise(() => {
-    var currentDate = moment().format("yyyy-mm-dd:hh:mm:ss");
-
-    const query = `insert into rental(id_user,id_property,rental_date,return_date,last_update)
-    values (${idUser},${idProperty},'${startDate}','${endDate}','${currentDate}')`;
+const getCurrentRent = (idUser) =>
+  new Promise((resolve, reject) => {
+    const query = `select * from rental r where r.id_user =${idUser} order by r.last_update desc;`;
 
     connection.query(query, (err, result, rows) => {
       if (err) {
@@ -284,8 +335,25 @@ const makeReservation = (idUser, idProperty, startDate, endDate) =>
     });
   });
 
+const makeReservation = (idUser, idProperty, startDate, endDate) =>
+  new Promise((resolve, reject) => {
+    var currentDate = moment().format();
+
+    const query = `insert into rental(id_user,id_property,rental_date,return_date,last_update)
+    values ('${idUser}','${idProperty}','${startDate}','${endDate}','${currentDate}')`;
+
+    connection.query(query, (err, result, rows) => {
+      if (err) {
+        console.log(err);
+        reject(err);
+        return;
+      }
+      resolve(result.insertId);
+    });
+  });
+
 const savePayment = (idUser, idRental, payer, amount, paymentDate) =>
-  new Promise(() => {
+  new Promise((resolve, reject) => {
     const query = `insert into payment(id_user,id_rental,id_payer,amount,payment_date)
     values (${idUser},${idRental},'${payer}','${amount}','${paymentDate}')`;
 
@@ -296,6 +364,58 @@ const savePayment = (idUser, idRental, payer, amount, paymentDate) =>
       }
       resolve(result.insertId);
     });
+  });
+
+const savePropertyImage = (userId, idProperty, img_src) =>
+  new Promise((resolve, reject) => {
+    var imageTypeRegularExpression = /\/(.*?)$/;
+
+    // Generate random string
+    // var seed = crypto.randomBytes(20);
+    // var uniqueSHA1String = crypto.createHash("sha1").update(seed).digest("hex");
+
+    var imageBuffer = decodeBase64Image(img_src);
+    var userPropertyDir =
+      path.resolve(__dirname, "..") + `/public/property/${userId}/`;
+
+    var imageName = "image-" + idProperty;
+
+    // la extension esta en la variable [1]
+    var imageExtension = imageBuffer.type.match(imageTypeRegularExpression)[1];
+
+    var userImagePath = userPropertyDir + imageName + "." + imageExtension;
+
+    // Save decoded binary image to disk
+    try {
+      fs.promises
+        .mkdir(userPropertyDir, { recursive: true })
+        .then(() => {
+          fs.writeFile(userImagePath, imageBuffer.data, (err) => {
+            if (err) {
+              console.log(err);
+              reject(error);
+            } else {
+              console.log("File written successfully\n");
+              console.log("The written has the following contents:");
+            }
+          });
+        })
+        .catch(console.error);
+
+      var imageURL = `/property/${userId}/${imageName}.${imageExtension}`;
+      const query = `INSERT INTO property_image(id,source) values(${idProperty},'${imageURL}');`;
+      connection.query(query, (err, result, rows) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+        resolve(userImagePath);
+      });
+    } catch (error) {
+      console.log("ERROR:", error);
+      reject(error);
+      return;
+    }
   });
 
 module.exports = {
@@ -312,4 +432,8 @@ module.exports = {
   makeReservation,
   savePayment,
   getCity,
+  localQuery,
+  getLivingType,
+  savePropertyImage,
+  getCurrentRent,
 };

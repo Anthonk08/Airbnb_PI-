@@ -1,9 +1,8 @@
 const logService = require("../services/log");
 const mysqlService = require("../services/mysql");
 const config = require("../config");
-const geolocation = require("geolocation");
 
-//POST---------------
+//POST---------------------------------
 const registerUser = async (req, res) => {
   const { email, name, lastname, pass } = req.body;
   // VALIDACIONES DE CAMPOS
@@ -80,88 +79,105 @@ const registerPropertyPost = async (req, res) => {
   if (req.session.user_id == undefined) {
     req.session.sessionError = "No tiene acceso a esta pantalla";
     res.redirect("/home");
+    return;
   }
 
   const {
+    tipo_vivienda,
+    loc,
     address,
-    address2,
-    id_city,
-    price,
-    itbis,
-    rooms,
-    beds,
+    city,
     persons,
-    bathrooms,
+    beds,
+    rooms,
+    baths,
+    source,
+    precio,
   } = req.body;
-  var currentPosition;
 
-  if (address != undefined || address == "") {
+  if (address == undefined || address == "") {
     req.session.sessionError = "Debe digitar una direccion";
     res.redirect("/register-property");
+    return;
   }
 
-  if (id_city != undefined || id_city == "") {
+  if (city == undefined || city == "") {
     req.session.sessionError = "Debe seleccionar una ciudad";
     res.redirect("/register-property");
+    return;
   }
 
-  if (price != undefined || isNaN(price)) {
+  if (precio == undefined || isNaN(precio)) {
     req.session.sessionError = "Debe digitar el precio por alquiler";
     res.redirect("/register-property");
+    return;
   }
 
-  if (rooms != undefined || isNaN(rooms)) {
+  if (beds == undefined || isNaN(beds)) {
     req.session.sessionError = "Debe digitar la cantidad de habitaciones";
     res.redirect("/register-property");
+    return;
   }
 
-  if (adults != undefined || isNaN(adults)) {
-    req.session.sessionError = "Debe digitar la cantidad de adultos maximo";
+  if (rooms == undefined || isNaN(rooms)) {
+    req.session.sessionError = "Debe digitar la cantidad de habitaciones";
     res.redirect("/register-property");
+    return;
   }
 
-  if (kids != undefined || isNaN(kids)) {
-    req.session.sessionError = "Debe digitar la cantidad de niños maximo";
+  if (persons == undefined || isNaN(persons)) {
+    req.session.sessionError = "Debe digitar la cantidad de personas";
     res.redirect("/register-property");
+    return;
   }
 
+  if (baths == undefined || isNaN(baths)) {
+    req.session.sessionError = "Debe digitar la cantidad de baños";
+    res.redirect("/register-property");
+    return;
+  }
+  var propertyId;
+  // guardar registro.
   try {
-    geolocation.getCurrentPosition(function (err, position) {
-      if (err) throw err;
+    var saveProperty = await mysqlService.registerUserProperty(
+      req.session.user_id,
+      tipo_vivienda,
+      loc,
+      address,
+      city,
+      persons,
+      beds,
+      rooms,
+      baths,
+      precio
+    );
 
-      currentPosition = position;
-      console.log(position);
-    });
+    logService.info(`Propiedad registrada, id: ${saveProperty.insertId}`);
+    propertyId = saveProperty.insertId;
   } catch (error) {
-    req.session.sessionError = "Error al conseguir la ubicacion";
+    req.session.sessionError =
+      "Error al procesar el registro, intentelo mas tarde.";
     console.error("ERROR: ", error);
     res.redirect("/register");
+    return;
   }
 
+  // guardar la imagen
   try {
-    // await mysqlService.registerUserProperty(
-    //   req.user_id,
-    //   address,
-    //   address2,
-    //   id_city,
-    //   price,
-    //   itbis,
-    //   rooms,
-    //   adults,
-    //   kids,
-    //   currentPosition
-    // );
+    await mysqlService.savePropertyImage(1, propertyId, source);
   } catch (error) {
-    req.sessionError = "Error al procesar el registro, intentelo mas tarde.";
+    req.session.sessionError =
+      "Error al procesar el registro, intentelo mas tarde.";
     console.error("ERROR: ", error);
     res.redirect("/register");
+    return;
   }
 
-  req.sessionSucces = true;
-  res.render("register-property");
+  req.session.sessionSuccess = "Se ha registrado su propiedad";
+  res.redirect("/register-property");
 };
 
-//GET---------------
+//GET-----------------------------------
 const getRegisterEmail = (req, res) => {
   logService.info("Estado de la sesion: " + req.state);
   if (req.session.sessionError != undefined) {
@@ -216,19 +232,41 @@ const getRegisterPhone = (req, res) => {
   res.render("register-phone");
 };
 
-const getRegisterProperty = (req, res) => {
-  logService.info("Estado de la sesion: " + req.state);
+const getRegisterProperty = async (req, res) => {
+  console.log(req.session);
+  var message = undefined;
 
-  // Al acceder a la ruta raiz:
+  if (req.session.sessionError != undefined && req.session.sessionError != "") {
+    // console.log(req.session.sessionError);
+  }
 
-  // si el usuario no ha iniciado sesion, no tiene permitido ver esta pantalla
   if (req.session.user_id == undefined) {
     res.redirect("/home");
     return;
   }
 
+  if (
+    req.session.sessionSuccess != undefined &&
+    req.session.sessionSuccess != ""
+  ) {
+    // console.log("esta accediendo:", req.session.sessionSuccess);
+    message = req.session.sessionSuccess;
+    req.session.sessionSuccess = "";
+  }
+
+  var cities,
+    livingTypes = "";
+  try {
+    cities = await mysqlService.getCity();
+    livingTypes = await mysqlService.getLivingType();
+  } catch (error) {}
+
   // carga de la pantalla
-  res.render("register-property");
+  res.render("register-property", {
+    cities: cities,
+    livingTypes: livingTypes,
+    message: message,
+  });
 };
 
 module.exports = {

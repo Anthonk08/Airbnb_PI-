@@ -1,17 +1,24 @@
-const crypto = require("crypto");
-
 const logService = require("../services/log");
 const mysqlService = require("../services/mysql");
 const config = require("../config");
 const homeCtrl = require("./home");
 
 const getLoginView = (req, res) => {
+  console.log(req.session.sessionError);
   if (req.session.user_id != undefined) {
     res.redirect("/home");
     return;
   }
+  if (req.session.sessionError != "") {
+    res.render("login", {
+      sessionError: req.session.sessionError,
+    });
+    return;
+  }
 
-  res.render("login");
+  res.render("login", {
+    sessionError: undefined,
+  });
 };
 
 const getMessagesGuest = (req, res) => {
@@ -238,19 +245,6 @@ const getDashboardUsers = (req, res) => {
   res.render("dashboard-users", {});
 };
 
-const getBookings = (req, res) => {
-  logService.info("Estado de la sesion: " + req.state);
-
-  // Al acceder a la ruta raiz:
-
-  if (req.state == "done") {
-    logService.info("Estado del usuario: done");
-    res.redirect("/dashboard");
-    return;
-  }
-
-  res.render("bookings", {});
-};
 const getContact = (req, res) => {
   logService.info("Estado de la sesion: " + req.state);
 
@@ -264,6 +258,7 @@ const getContact = (req, res) => {
 
   res.render("contact", {});
 };
+
 const getSuggestions = (req, res) => {
   logService.info("Estado de la sesion: " + req.state);
 
@@ -277,6 +272,7 @@ const getSuggestions = (req, res) => {
 
   res.render("suggestions", {});
 };
+
 const getAboutUs = (req, res) => {
   logService.info("Estado de la sesion: " + req.state);
 
@@ -319,48 +315,6 @@ const getReceivesGuest = (req, res) => {
   res.render("receives-guest", {});
 };
 
-const getSearchBookings = (req, res) => {
-  logService.info("Estado de la sesion: " + req.state);
-
-  // Al acceder a la ruta raiz:
-
-  if (req.state == "done") {
-    logService.info("Estado del usuario: done");
-    res.redirect("/dashboard");
-    return;
-  }
-
-  res.render("search-bookings", {});
-};
-
-const getLodgingprofile = (req, res) => {
-  logService.info("Estado de la sesion: " + req.state);
-
-  // Al acceder a la ruta raiz:
-
-  if (req.state == "done") {
-    logService.info("Estado del usuario: done");
-    res.redirect("/dashboard");
-    return;
-  }
-
-  res.render("lodging-profile", {});
-};
-
-const getLodgingBooking = (req, res) => {
-  logService.info("Estado de la sesion: " + req.state);
-
-  // Al acceder a la ruta raiz:
-
-  if (req.state == "done") {
-    logService.info("Estado del usuario: done");
-    res.redirect("/dashboard");
-    return;
-  }
-
-  res.render("lodging-booking", {});
-};
-
 /**
  * POST para iniciar sesion
  * al iniciar sesion, mantendra el usuario en los request para que las demas pantallas validen que haya una sesion activa.
@@ -373,14 +327,16 @@ const logIn = async (req, res) => {
   const { email, password } = req.body;
   if (email == "" || email == undefined) {
     logService.error(`El parametro [email] no esta definido`);
-    // req.sessionError = "El USUARIO escrito no es valido, Intente de nuevo.";
+    req.session.sessionError =
+      "El USUARIO escrito no es valido, Intente de nuevo.";
     res.redirect("/login");
     return;
   }
 
   if (password == "" || password == undefined) {
     logService.error(`El parametro [password] no esta definido`);
-    // req.sessionError = "El PASSWORD escrito no es valido, Intente de nuevo.";
+    req.session.sessionError =
+      "El PASSWORD escrito no es valido, Intente de nuevo.";
     res.redirect("/login");
     return;
   }
@@ -412,10 +368,7 @@ const logIn = async (req, res) => {
     if (userInfo.pass != password) {
       req.session.sessionError = `El usuario existe pero la contraseña no coincide. | data: {user_name: ${email.toLowerCase()} }`;
 
-      logService.warn(
-        `El usuario existe pero la contraseña no coincide. | data: {user_name: ${email.toLowerCase()}}`
-      );
-      logService.warn(req.session.sessionError);
+      // logService.warn(req.session.sessionError);
 
       res.redirect("/login");
       return;
@@ -437,7 +390,7 @@ const logIn = async (req, res) => {
     // guardando datos del usuario en la sesion.
     req.session.user_id = userInfo.id;
     req.session.user_name = userInfo.name;
-
+    req.session.user_email = userInfo.email;
     req.session.state = "";
 
     logService.info(`Sesion iniciada. | session: ${email}`);
@@ -465,13 +418,9 @@ module.exports = {
   getDashboardHome,
   getDashboardProfit,
   getDashboardUsers,
-  getBookings,
   getContact,
   getSuggestions,
   getAboutUs,
   getBecomeHost,
   getReceivesGuest,
-  getSearchBookings,
-  getLodgingprofile,
-  getLodgingBooking,
 };

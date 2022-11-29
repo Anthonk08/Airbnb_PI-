@@ -118,7 +118,7 @@
 
 .principal-img-profile {
 	height: 400px;
-	width: 600px;
+	width: 450px;
 	position: relative;
 	left: 15px;
 	border-radius: 15px;
@@ -169,6 +169,7 @@
 	height: 490px;
 	width: 450px;
 	margin: 0 auto;
+	position: relative;
 }
 
 .form-details {
