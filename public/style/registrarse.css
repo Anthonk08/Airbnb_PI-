@@ -45,6 +45,10 @@ a{
    border-radius:50px;
 }
 
+.req{
+   color: #ff0000;
+}
+
 .login-or {
    position: relative;
    color: #aaa;

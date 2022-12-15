@@ -255,7 +255,7 @@ const getRegisterProperty = async (req, res) => {
     // console.log(req.session.sessionError);
   }
 
-  if (req.session.user_id == undefined) {
+  if (req.session.user_id == undefined || req.session.user_id == "") {
     res.redirect("/home");
     return;
   }
