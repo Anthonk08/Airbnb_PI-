@@ -5,6 +5,7 @@ const ctrlLogin = require("../controller/auth");
 const ctrlRegister = require("../controller/register");
 const ctrlProfile = require("../controller/profile");
 const ctrlPayment = require("../controller/payment");
+const ctrlAccount = require("../controller/account");
 
 // rutas de los controladores
 router.get("/home", ctrlHome.loadIndex); // ruta raiz de todo el proyecto
@@ -37,7 +38,7 @@ router.get(
 );
 router.get("/dashboard-home", ctrlLogin.getDashboardHome);
 router.get("/dashboard-profit", ctrlLogin.getDashboardProfit);
-router.get("/dashboard-users", ctrlLogin.getDashboardUsers);
+router.get("/dashboard-booking", ctrlLogin.getDashboardBookings);
 router.get("/bookings", ctrlProfile.getBookings);
 router.get("/contact", ctrlLogin.getContact);
 router.get("/suggestions", ctrlLogin.getSuggestions);
@@ -82,5 +83,8 @@ router.get("/personal-information", ctrlLogin.getPersonalInformation);
 router.get("/login-security", ctrlLogin.getLoginSecurity);
 router.get("/payments-collections", ctrlLogin.getPaymentsCollections);
 router.get("/notifications", ctrlLogin.getNotifications);
+
+router.get("/search-users", ctrlAccount.searchUser);
+router.get("/search-payments", ctrlAccount.searchPayment);
 
 module.exports = router;

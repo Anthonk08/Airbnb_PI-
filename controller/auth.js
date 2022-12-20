@@ -11,6 +11,9 @@ const getLoginView = (req, res) => {
   if (req.session.sessionError != "") {
     res.render("login", {
       sessionError: req.session.sessionError,
+      sessionSuccess: message,
+      user_name:
+        req.session.user_name == undefined ? "" : req.session.user_name,
     });
     return;
   }
@@ -280,8 +283,6 @@ const getDashboardAbandonedReservations = (req, res) => {
 };
 
 const getDashboardBookings = (req, res) => {
-  logService.info("Estado de la sesion: " + req.state);
-
   // Al acceder a la ruta raiz:
 
   if (req.state == "done") {
@@ -311,19 +312,71 @@ const getDashboardDesactivatedAccounts = (req, res) => {
   });
 };
 
-const getDashboardHome = (req, res) => {
-  logService.info("Estado de la sesion: " + req.state);
-
-  // Al acceder a la ruta raiz:
-
+const getDashboardHome = async (req, res) => {
   if (req.state == "done") {
     logService.info("Estado del usuario: done");
     res.redirect("/dashboard");
     return;
   }
 
+  var reportList = [];
+  var recentRents = "";
+
+  try {
+    var rents = await mysqlService.getAllRental();
+    recentRents = rents;
+  } catch (error) {}
+
+  try {
+    var newUsers = await mysqlService.getNewUsers();
+    reportList.push(newUsers.users);
+  } catch (error) {}
+
+  try {
+    var newOwners = await mysqlService.getNewOwners();
+    if (newOwners != undefined) reportList.push(newOwners.users);
+    else reportList.push(0);
+  } catch (error) {}
+
+  try {
+    var newProperties = await mysqlService.getNewProperty();
+    reportList.push(newProperties.properties);
+  } catch (error) {}
+
+  try {
+    var todaysMoney = await mysqlService.getMoneyFromToday();
+    reportList.push(todaysMoney.money);
+  } catch (error) {}
+
+  try {
+    var weekMoney = await mysqlService.getMoneyFromWeek();
+    reportList.push(weekMoney.money);
+  } catch (error) {}
+
+  try {
+    var monthMoney = await mysqlService.getMoneyFromMonth();
+    reportList.push(monthMoney.money);
+  } catch (error) {}
+
+  try {
+    var todaysRent = await mysqlService.getTodaysRental();
+    reportList.push(todaysRent.rental);
+  } catch (error) {}
+
+  try {
+    var weekRent = await mysqlService.getWeekRental();
+    reportList.push(weekRent.rental);
+  } catch (error) {}
+
+  try {
+    var monthRent = await mysqlService.getMonthRental();
+    reportList.push(monthRent.rental);
+  } catch (error) {}
+
   res.render("dashboard-pages/dashboard-home", {
     user_name: req.session.user_name == undefined ? "" : req.session.user_name,
+    reportList,
+    recentRents,
   });
 };
 

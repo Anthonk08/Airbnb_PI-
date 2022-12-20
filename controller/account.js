@@ -19,6 +19,18 @@ const getAccount = (req, res) => {
   });
 };
 
+const searchUser = async (req, res) => {
+  var result = await mysqlService.searchUsers(req.query.query);
+  res.json(result);
+};
+
+const searchPayment = async (req, res) => {
+  var result = await mysqlService.searchPayments(req.query.query);
+  res.json(result);
+};
+
 module.exports = {
   getAccount,
+  searchUser,
+  searchPayment,
 };

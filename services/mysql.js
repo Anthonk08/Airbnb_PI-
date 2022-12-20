@@ -416,6 +416,254 @@ const savePropertyImage = (userId, idProperty, img_src) =>
     }
   });
 
+/**
+ * Devuelve el listado de las ciudades, actualmente solo [Rep.Dom]
+ * @returns
+ */
+const getNewUsers = () =>
+  new Promise((resolve, reject) => {
+    const query = `select count(u.id) users from user u;`;
+    connection.query(query, (err, rows) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+
+      try {
+        resolve(rows[0]);
+      } catch (ex) {
+        reject(ex.message);
+      }
+    });
+  });
+
+/**
+ * Devuelve el listado de las ciudades, actualmente solo [Rep.Dom]
+ * @returns
+ */
+const getNewOwners = () =>
+  new Promise((resolve, reject) => {
+    const query = `select COUNT(u.id) as users from user u 
+  inner join property p on p.id_user = u.id 
+  GROUP by u.id HAVING COUNT(*) =1;`;
+    connection.query(query, (err, rows) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      try {
+        resolve(rows[0]);
+      } catch (ex) {
+        reject(ex.message);
+      }
+    });
+  });
+
+/**
+ * Devuelve el listado de las ciudades, actualmente solo [Rep.Dom]
+ * @returns
+ */
+const getNewProperty = () =>
+  new Promise((resolve, reject) => {
+    const query = `select COUNT(p.id) properties from property p  `;
+    connection.query(query, (err, rows) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      try {
+        resolve(rows[0]);
+      } catch (ex) {
+        reject(ex.message);
+      }
+    });
+  });
+
+/**
+ * Devuelve el listado de las ciudades, actualmente solo [Rep.Dom]
+ * @returns
+ */
+const getMoneyFromToday = () =>
+  new Promise((resolve, reject) => {
+    const query = `select IFNULL(SUM(p.amount),0) money from payment p where p.payment_date = DATE(NOW()) `;
+    connection.query(query, (err, rows) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      try {
+        resolve(rows[0]);
+      } catch (ex) {
+        reject(ex.message);
+      }
+    });
+  });
+
+/**
+ * Devuelve el listado de las ciudades, actualmente solo [Rep.Dom]
+ * @returns
+ */
+const getMoneyFromWeek = () =>
+  new Promise((resolve, reject) => {
+    const query = `select IFNULL(SUM(p.amount),0) money from payment p where (p.payment_date  BETWEEN (NOW() - INTERVAL 7 DAY) AND NOW())`;
+    connection.query(query, (err, rows) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      try {
+        resolve(rows[0]);
+      } catch (ex) {
+        reject(ex.message);
+      }
+    });
+  });
+
+/**
+ * Devuelve el listado de las ciudades, actualmente solo [Rep.Dom]
+ * @returns
+ */
+const getMoneyFromMonth = () =>
+  new Promise((resolve, reject) => {
+    const query = `select IFNULL(SUM(p.amount),0) money from payment p where MONTH(p.payment_date) = MONTH(NOW())`;
+    connection.query(query, (err, rows) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      try {
+        resolve(rows[0]);
+      } catch (ex) {
+        reject(ex.message);
+      }
+    });
+  });
+
+/**
+ * Devuelve el listado de las ciudades, actualmente solo [Rep.Dom]
+ * @returns
+ */
+const getTodaysRental = () =>
+  new Promise((resolve, reject) => {
+    const query = `select ifnull(COUNT(r.id),0) rental from rental r WHERE r.last_update = DATE(NOW()) `;
+    connection.query(query, (err, rows) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      try {
+        resolve(rows[0]);
+      } catch (ex) {
+        reject(ex.message);
+      }
+    });
+  });
+
+/**
+ * Devuelve el listado de las ciudades, actualmente solo [Rep.Dom]
+ * @returns
+ */
+const getWeekRental = () =>
+  new Promise((resolve, reject) => {
+    const query = `select ifnull(COUNT(r.id),0) rental from rental r WHERE (r.last_update BETWEEN (NOW() - INTERVAL 7 DAY) AND NOW()) `;
+    connection.query(query, (err, rows) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      try {
+        resolve(rows[0]);
+      } catch (ex) {
+        reject(ex.message);
+      }
+    });
+  });
+
+/**
+ * Devuelve el listado de las ciudades, actualmente solo [Rep.Dom]
+ * @returns
+ */
+const getMonthRental = () =>
+  new Promise((resolve, reject) => {
+    const query = `select COUNT(r.id) rental from rental r WHERE MONTH(r.last_update) = MONTH(NOW())`;
+    connection.query(query, (err, rows) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      try {
+        resolve(rows[0]);
+      } catch (ex) {
+        reject(ex.message);
+      }
+    });
+  });
+
+/**
+ * Devuelve el listado de las ciudades, actualmente solo [Rep.Dom]
+ * @returns
+ */
+const getAllRental = () =>
+  new Promise((resolve, reject) => {
+    const query = `select * from rental r inner join payment p on r.id = p.id_rental limit 10`;
+    connection.query(query, (err, rows) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      console.log(rows);
+      try {
+        resolve(rows);
+      } catch (ex) {
+        reject(ex.message);
+      }
+    });
+  });
+
+/**
+ * Devuelve el listado de las ciudades, actualmente solo [Rep.Dom]
+ * @returns
+ */
+const searchUsers = (name) =>
+  new Promise((resolve, reject) => {
+    const query = `SELECT id, email, pass, email_validation, pho_validation, id_country, id_city,name,lastname, active
+    FROM user where CONCAT(name,' ',lastname) LIKE '%${name}%'`;
+    connection.query(query, (err, rows) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      console.log(rows);
+      try {
+        resolve(rows);
+      } catch (ex) {
+        reject(ex.message);
+      }
+    });
+  });
+
+const searchPayments = (name) =>
+  new Promise((resolve, reject) => {
+    const query = `SELECT p.* , CONCAT(u.name, ' ', u.lastname) nombre,p2.id property
+    FROM user u 
+    inner join payment p on p.id_user = u.id 
+    inner join rental r on p.id_rental = r.id
+    inner join property p2 on p2.id = r.id_property 
+    where CONCAT(u.name, ' ', u.lastname, ' ', p.id_payer) LIKE '%${name}%'`;
+    connection.query(query, (err, rows) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      console.log(rows);
+      try {
+        resolve(rows);
+      } catch (ex) {
+        reject(ex.message);
+      }
+    });
+  });
+
 module.exports = {
   connection,
   getUserInfo,
@@ -434,4 +682,16 @@ module.exports = {
   getLivingType,
   savePropertyImage,
   getCurrentRent,
+  getNewUsers,
+  getNewOwners,
+  getNewProperty,
+  getMoneyFromToday,
+  getMoneyFromWeek,
+  getMoneyFromMonth,
+  getTodaysRental,
+  getMonthRental,
+  getWeekRental,
+  getAllRental,
+  searchUsers,
+  searchPayments,
 };

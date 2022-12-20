@@ -64,31 +64,13 @@
           <li>
             <a href="/dashboard-profit">
               <i class="uil uil-credit-card"></i>
-              <span class="link-name">Ganancias</span>
+              <span class="link-name">Consultar usuarios</span>
             </a>
           </li>
           <li>
-            <a href="/dashboard-users">
+            <a href="/dashboard-booking">
               <i class="uil uil-chart"></i>
-              <span class="link-name">Usuarios</span>
-            </a>
-          </li>
-          <li>
-            <a href="/dashboard-bookings">
-              <i class="uil uil-files-landscapes"></i>
-              <span class="link-name">Reservaciones</span>
-            </a>
-          </li>
-          <li>
-            <a href="/dashboard-abandoned-reservations">
-              <i class="uil uil-user-times"></i>
-              <span class="link-name">Reservaciones abandonadas</span>
-            </a>
-          </li>
-          <li>
-            <a href="/dashboard-desactivated-accounts">
-              <i class="uil uil-compass"></i>
-              <span class="link-name">Cuentas desactivadas</span>
+              <span class="link-name">Consultar pagos</span>
             </a>
           </li>
         </ul>
@@ -144,49 +126,49 @@
             <div class="box box1">
               <i class="uil uil-grin"></i>
               <span class="text">Nuevos visitantes</span>
-              <span class="number">50,120</span>
+              <span class="number"><%=reportList[0]%></span>
             </div>
             <div class="box box1">
               <i class="uil uil-smile-beam"></i>
               <span class="text">Nuevos Anfitriones</span>
-              <span class="number">50,120</span>
+              <span class="number"><%=reportList[1]%></span>
             </div>
             <div class="box box1">
               <i class="uil uil-house-user"></i>
               <span class="text">Nuevos hospedajes</span>
-              <span class="number">20,120</span>
+              <span class="number"><%=reportList[2]%></span>
             </div>
 
             <div class="box box2">
               <i class="uil uil-money-bill"></i>
               <span class="text">Dinero ganado hoy</span>
-              <span class="number">500,000</span>
+              <span class="number">$<%=reportList[3]%>.00</span>
             </div>
             <div class="box box2">
               <i class="uil uil-money-withdraw"></i>
               <span class="text">Dinero ganado en la semana</span>
-              <span class="number">1,000,000</span>
+              <span class="number">$<%=reportList[4]%>.00</span>
             </div>
             <div class="box box2">
               <i class="uil uil-money-stack"></i>
               <span class="text">Dinero ganado en el mes</span>
-              <span class="number">10,000,000</span>
+              <span class="number">$<%=reportList[5]%>.00</span>
             </div>
 
             <div class="box box3">
               <i class="uil uil-user-check"></i>
               <span class="text">Reservaciones en el d&iacutea</span>
-              <span class="number">5,000</span>
+              <span class="number"><%=reportList[6]%></span>
+            </div>
+            <div class="box box3">
+              <i class="uil uil-user-plus"></i>
+              <span class="text">Reservaciones en la semana</span>
+              <span class="number"><%=reportList[7]%></span>
             </div>
             <div class="box box3">
               <i class="uil uil-user-plus"></i>
               <span class="text">Reservaciones en el mes</span>
-              <span class="number">25,000</span>
-            </div>
-            <div class="box box3">
-              <i class="uil uil-user-times"></i>
-              <span class="text">Reservaciones canceladas</span>
-              <span class="number">2,000</span>
+              <span class="number"><%=reportList[8]%></span>
             </div>
           </div>
         </div>
@@ -194,66 +176,41 @@
         <div class="activity">
           <div class="title">
             <i class="uil uil-clock-three"></i>
-            <span class="text">Actividad Reciente</span>
+            <span class="text">Ultimas reservaciones</span>
           </div>
 
-          <div class="activity-data">
-            <div class="data joined">
-              <span class="data-title">Fecha</span>
-              <span class="data-list">2022-07-12</span>
-              <span class="data-list">2022-03-12</span>
-              <span class="data-list">2022-11-13</span>
-              <span class="data-list">2022-04-13</span>
-              <span class="data-list">2022-01-14</span>
-              <span class="data-list">2022-12-14</span>
-              <span class="data-list">2022-06-15</span>
-              <span class="data-list">2022-10-15</span>
-            </div>
-
-            <div class="data joined">
-              <span class="data-title">Hora</span>
-              <span class="data-list">5:15:19 AM</span>
-              <span class="data-list">11:53:23 AM</span>
-              <span class="data-list">11:47:06 AM</span>
-              <span class="data-list">2:24:33 AM</span>
-              <span class="data-list">12:43:41 PM</span>
-              <span class="data-list">1:13:44 PM</span>
-              <span class="data-list">12:43:41 PM</span>
-              <span class="data-list">8:22:33 PM</span>
-            </div>
-
-            <div class="data joined">
-              <span class="data-title">Categor&iacutea</span>
-              <span class="data-list">5:15:19 AM</span>
-              <span class="data-list">11:53:23 AM</span>
-              <span class="data-list">11:47:06 AM</span>
-              <span class="data-list">2:24:33 AM</span>
-              <span class="data-list">12:43:41 PM</span>
-              <span class="data-list">1:13:44 PM</span>
-              <span class="data-list">12:43:41 PM</span>
-              <span class="data-list">8:22:33 PM</span>
-            </div>
-
-            <div class="data names">
-              <span class="data-title">Informaci&oacuten</span>
-              <span class="data-list">Visitante: "Anthony Tineo" creado</span>
-              <span class="data-list">Hospedaje: "Villa Alice" registrado</span>
-              <span class="data-list">Anfitrion: "Alejandro Perez" creado</span>
-              <span class="data-list"
-                >Hospedaje: "Villa Windsong" registrado</span
-              >
-              <span class="data-list"
-                >Visitante: "Maxibanex Rodriguez" creado</span
-              >
-              <span class="data-list"
-                >Hospedaje: "Casa Mango - Las Terrenas" registrado</span
-              >
-              <span class="data-list">Anfitrion: "Steven Ynoa" creado</span>
-              <span class="data-list"
-                >Hospedaje: "VILLA PARADISE, CAMAS TAMAÑO KING" registrado</span
-              >
-            </div>
-          </div>
+          <table class="table table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Fecha de reservacion</th>
+                <th scope="col">Fecha de retorno</th>
+                <th scope="col">Alojamiento</th>
+                <th scope="col">Monto pagado</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%if(recentRents!=''){%> <% recentRents.forEach(function(rent){ %>
+              <tr>
+                <td><%=rent.rental_date%></td>
+                <td><%=rent.return_date%></td>
+                <td>
+                  <a
+                    class="data-list"
+                    href="/lodging-profile?id=<%=rent.id_property%>"
+                    >Ver alojamiento</a
+                  >
+                </td>
+                <td><strong>$<%=rent.amount%>.00</strong></td>
+                <%if(rent.state==1){%>
+                <td><strong>Disponible</strong></td>
+                <%}else{%>
+                <td><strong>No disponible</strong></td>
+                <%}%>
+              </tr>
+              <%})%> <%}%>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
